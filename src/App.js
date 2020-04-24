@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  // Link,
   useParams,
   useRouteMatch
 } from 'react-router-dom';
@@ -21,36 +20,36 @@ export default function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <Container>
 
-        <Navbar expand="sm" variant="light" bg="light" className="my-4">
-          <LinkContainer to="/">
+        <Navbar expand='sm' variant='light' bg='light' className='my-4'>
+          <LinkContainer to='/'>
             <Navbar.Brand>Zonal Maps</Navbar.Brand>
           </LinkContainer>
-          <Nav className="mr-auto">
-            <LinkContainer exact to="/">
+          <Nav className='mr-auto'>
+            <LinkContainer exact to='/'>
               <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <NavDropdown title="Examples" id="basic-nav-dropdown">
-              <LinkContainer to="/example/1">
+            <NavDropdown title='Examples' id='basic-nav-dropdown'>
+              <LinkContainer to='/example/1'>
                 <NavDropdown.Item>Example 1</NavDropdown.Item>
               </LinkContainer>
-              <LinkContainer to="/example/2">
+              <LinkContainer to='/example/2'>
                 <NavDropdown.Item>Example 2</NavDropdown.Item>
               </LinkContainer>
-              <LinkContainer to="/example/3">
+              <LinkContainer to='/example/3'>
                 <NavDropdown.Item>Example 3</NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="https://github.com/evaldasstu/zonalmaps">GitHub</Nav.Link>
+            <Nav.Link href='https://github.com/evaldasstu/zonalmaps'>GitHub</Nav.Link>
           </Nav>
         </Navbar>
 
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
             <Home />
           </Route>
-          <Route path="/example">
+          <Route path='/example'>
             <Examples />
           </Route>
         </Switch>

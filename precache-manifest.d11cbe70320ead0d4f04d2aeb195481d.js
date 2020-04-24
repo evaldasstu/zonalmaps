@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d17cb436ecbbedb62d9306a0035affd0",
+    "revision": "ec363af92af3dcb76dbbbad2ad6659ae",
     "url": "/zonalmaps/index.html"
   },
   {
-    "revision": "8d227b35476e0a7fdc58",
+    "revision": "19364872afbdb6ea3b82",
     "url": "/zonalmaps/static/css/main.13de6188.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zonalmaps/static/js/2.a6ce10bb.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8d227b35476e0a7fdc58",
-    "url": "/zonalmaps/static/js/main.60b16dd5.chunk.js"
+    "revision": "19364872afbdb6ea3b82",
+    "url": "/zonalmaps/static/js/main.c91815f6.chunk.js"
   },
   {
     "revision": "8b057fd2a4994b417278",

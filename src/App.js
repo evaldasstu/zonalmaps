@@ -15,7 +15,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Container>
 
         <Navbar expand="lg" variant="light" bg="light" className="my-4">

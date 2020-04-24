@@ -6,19 +6,22 @@ import {
   // Link,
   useParams,
   useRouteMatch
-} from "react-router-dom";
+} from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import ReactMarkdown from 'react-markdown';
+import ReadMe from '../README.md';
 
 export default function App() {
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Container>
 
-        <Navbar expand="lg" variant="light" bg="light" className="my-4">
+        <Navbar expand="sm" variant="light" bg="light" className="my-4">
           <LinkContainer to="/">
             <Navbar.Brand>Zonal Maps</Navbar.Brand>
           </LinkContainer>
@@ -59,7 +62,7 @@ export default function App() {
 
 function Home() {
   return (
-    <h2>Zonal Maps</h2>
+    <ReactMarkdown source={ReadMe} />
   );
 }
 

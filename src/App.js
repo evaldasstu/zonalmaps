@@ -20,30 +20,35 @@ export default function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <Container>
 
-        <Navbar expand='sm' variant='light' bg='light' className='my-4'>
-          <LinkContainer to='/'>
-            <Navbar.Brand>Zonal Maps</Navbar.Brand>
-          </LinkContainer>
-          <Nav className='mr-auto'>
-            <LinkContainer exact to='/'>
-              <Nav.Link>Home</Nav.Link>
-            </LinkContainer>
-            <NavDropdown title='Examples' id='basic-nav-dropdown'>
-              <LinkContainer to='/example/1'>
-                <NavDropdown.Item>Example 1</NavDropdown.Item>
+        <Switch>
+          <Route path='/embed' />
+          <Route path='/'>
+            <Navbar expand='sm' variant='light' bg='light' className='my-4'>
+              <LinkContainer to='/'>
+                <Navbar.Brand>Zonal Maps</Navbar.Brand>
               </LinkContainer>
-              <LinkContainer to='/example/2'>
-                <NavDropdown.Item>Example 2</NavDropdown.Item>
-              </LinkContainer>
-              <LinkContainer to='/example/3'>
-                <NavDropdown.Item>Example 3</NavDropdown.Item>
-              </LinkContainer>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href='https://github.com/evaldasstu/zonalmaps'>GitHub</Nav.Link>
-          </Nav>
-        </Navbar>
+              <Nav className='mr-auto'>
+                <LinkContainer exact to='/'>
+                  <Nav.Link>Home</Nav.Link>
+                </LinkContainer>
+                <NavDropdown title='Examples' id='basic-nav-dropdown'>
+                  <LinkContainer to='/example/1'>
+                    <NavDropdown.Item>Example 1</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/example/2'>
+                    <NavDropdown.Item>Example 2</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/example/3'>
+                    <NavDropdown.Item>Example 3</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              </Nav>
+              <Nav>
+                <Nav.Link href='https://github.com/evaldasstu/zonalmaps'>GitHub</Nav.Link>
+              </Nav>
+            </Navbar>
+          </Route>
+        </Switch>
 
         <Switch>
           <Route exact path='/'>
@@ -55,6 +60,12 @@ export default function App() {
         </Switch>
 
       </Container>
+
+      <Switch>
+        <Route path='/embed'>
+          <Embed />
+        </Route>
+      </Switch>
     </Router>
   );
 }
@@ -80,5 +91,11 @@ function Example() {
   let { exampleId } = useParams();
   return (
     <h2>Example {exampleId}</h2>
+  );
+}
+
+function Embed() {
+  return (
+    <h2>Embed</h2>
   );
 }

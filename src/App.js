@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
+  useParams,
 } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -14,22 +14,32 @@ import ReactMarkdown from 'react-markdown';
 import ReadMe from '../README.md';
 
 export default function App() {
-
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Container>
         <Switch>
-          <Route path='/embed/:embedParams' />
-          <Route path='/' children={<Menu />} /> {/* All other routes */}
+          <Route path="/embed/:embedParams" />
+          <Route path="/">
+            {/* All other routes */}
+            <Menu />
+          </Route>
         </Switch>
         <Switch>
-          <Route exact path='/' children={<Home />} />
-          <Route path="/example/:exampleNo" children={<Example />} />
-          <Route exact path='/embed' children={<GenerateEmbedCode />} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/example/:exampleNo">
+            <Example />
+          </Route>
+          <Route exact path="/embed">
+            <GenerateEmbedCode />
+          </Route>
         </Switch>
       </Container>
       <Switch>
-        <Route path="/embed/:embedParams" children={<Embed />} />
+        <Route path="/embed/:embedParams">
+          <Embed />
+        </Route>
       </Switch>
     </Router>
   );
@@ -37,33 +47,33 @@ export default function App() {
 
 function Menu() {
   return (
-    <Navbar expand='sm' variant='light' bg='light' className='my-4'>
-    <LinkContainer to='/'>
-      <Navbar.Brand>Zonal Maps</Navbar.Brand>
-    </LinkContainer>
-    <Nav className='mr-auto'>
-      <LinkContainer exact to='/'>
-        <Nav.Link>Home</Nav.Link>
+    <Navbar expand="sm" variant="light" bg="light" className="my-4">
+      <LinkContainer to="/">
+        <Navbar.Brand>Zonal Maps</Navbar.Brand>
       </LinkContainer>
-      <LinkContainer to='/embed'>
-        <Nav.Link>Embed code</Nav.Link>
-      </LinkContainer>
-      <NavDropdown title='Examples' id='basic-nav-dropdown'>
-        <LinkContainer to='/example/1'>
-          <NavDropdown.Item>Example 1</NavDropdown.Item>
+      <Nav className="mr-auto">
+        <LinkContainer exact to="/">
+          <Nav.Link>Home</Nav.Link>
         </LinkContainer>
-        <LinkContainer to='/example/2'>
-          <NavDropdown.Item>Example 2</NavDropdown.Item>
+        <LinkContainer to="/embed">
+          <Nav.Link>Embed code</Nav.Link>
         </LinkContainer>
-        <LinkContainer to='/example/3'>
-          <NavDropdown.Item>Example 3</NavDropdown.Item>
-        </LinkContainer>
-      </NavDropdown>
-    </Nav>
-    <Nav>
-      <Nav.Link href='https://github.com/evaldasstu/zonalmaps'>GitHub</Nav.Link>
-    </Nav>
-  </Navbar>
+        <NavDropdown title="Examples" id="basic-nav-dropdown">
+          <LinkContainer to="/example/1">
+            <NavDropdown.Item>Example 1</NavDropdown.Item>
+          </LinkContainer>
+          <LinkContainer to="/example/2">
+            <NavDropdown.Item>Example 2</NavDropdown.Item>
+          </LinkContainer>
+          <LinkContainer to="/example/3">
+            <NavDropdown.Item>Example 3</NavDropdown.Item>
+          </LinkContainer>
+        </NavDropdown>
+      </Nav>
+      <Nav>
+        <Nav.Link href="https://github.com/evaldasstu/zonalmaps">GitHub</Nav.Link>
+      </Nav>
+    </Navbar>
   );
 }
 
@@ -74,9 +84,12 @@ function Home() {
 }
 
 function Example() {
-  let { exampleNo } = useParams();
+  const { exampleNo } = useParams();
   return (
-    <h2>Example {exampleNo}</h2>
+    <h2>
+      Example
+      {exampleNo}
+    </h2>
   );
 }
 
@@ -87,8 +100,11 @@ function GenerateEmbedCode() {
 }
 
 function Embed() {
-  let { embedParams } = useParams();
+  const { embedParams } = useParams();
   return (
-    <span>Embed params: {embedParams}</span>
+    <span>
+      Embed params:
+      {embedParams}
+    </span>
   );
 }

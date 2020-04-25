@@ -1,26 +1,27 @@
 // Webpack config overrides
-module.exports = function override(config, env) {
+module.exports = function override(config) {
+  const updatedConfig = config;
 
   // Allow imports outside of src directory
-  const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
-  config.resolve.plugins = config.resolve.plugins.filter(plugin => !(plugin instanceof ModuleScopePlugin));
+  updatedConfig.resolve.plugins = updatedConfig.resolve.plugins
+    .filter((plugin) => !(plugin.appSrcs && plugin.allowedFiles));
 
   // Add loader for .md files
-  config.module.rules = config.module.rules.map(rule => {
+  updatedConfig.module.rules = updatedConfig.module.rules.map((rule) => {
     if (rule.oneOf instanceof Array) {
       return {
         ...rule,
         oneOf: [
           {
             test: /\.md$/,
-            use: 'raw-loader'
+            use: 'raw-loader',
           },
-          ...rule.oneOf
-        ]
+          ...rule.oneOf,
+        ],
       };
     }
     return rule;
   });
 
-  return config;
-}
+  return updatedConfig;
+};

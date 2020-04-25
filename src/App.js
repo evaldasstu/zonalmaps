@@ -3,8 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams,
-  useRouteMatch
+  useParams
 } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -19,54 +18,52 @@ export default function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Container>
-
         <Switch>
-          <Route path='/embed' />
-          <Route path='/'>
-            <Navbar expand='sm' variant='light' bg='light' className='my-4'>
-              <LinkContainer to='/'>
-                <Navbar.Brand>Zonal Maps</Navbar.Brand>
-              </LinkContainer>
-              <Nav className='mr-auto'>
-                <LinkContainer exact to='/'>
-                  <Nav.Link>Home</Nav.Link>
-                </LinkContainer>
-                <NavDropdown title='Examples' id='basic-nav-dropdown'>
-                  <LinkContainer to='/example/1'>
-                    <NavDropdown.Item>Example 1</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/example/2'>
-                    <NavDropdown.Item>Example 2</NavDropdown.Item>
-                  </LinkContainer>
-                  <LinkContainer to='/example/3'>
-                    <NavDropdown.Item>Example 3</NavDropdown.Item>
-                  </LinkContainer>
-                </NavDropdown>
-              </Nav>
-              <Nav>
-                <Nav.Link href='https://github.com/evaldasstu/zonalmaps'>GitHub</Nav.Link>
-              </Nav>
-            </Navbar>
-          </Route>
+          <Route path='/embed/:embedParams' />
+          <Route path='/' children={<Menu />} /> {/* All other routes */}
         </Switch>
-
         <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/example'>
-            <Examples />
-          </Route>
+          <Route exact path='/' children={<Home />} />
+          <Route path="/example/:exampleNo" children={<Example />} />
+          <Route exact path='/embed' children={<GenerateEmbedCode />} />
         </Switch>
-
       </Container>
-
       <Switch>
-        <Route path='/embed'>
-          <Embed />
-        </Route>
+        <Route path="/embed/:embedParams" children={<Embed />} />
       </Switch>
     </Router>
+  );
+}
+
+function Menu() {
+  return (
+    <Navbar expand='sm' variant='light' bg='light' className='my-4'>
+    <LinkContainer to='/'>
+      <Navbar.Brand>Zonal Maps</Navbar.Brand>
+    </LinkContainer>
+    <Nav className='mr-auto'>
+      <LinkContainer exact to='/'>
+        <Nav.Link>Home</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to='/embed'>
+        <Nav.Link>Embed code</Nav.Link>
+      </LinkContainer>
+      <NavDropdown title='Examples' id='basic-nav-dropdown'>
+        <LinkContainer to='/example/1'>
+          <NavDropdown.Item>Example 1</NavDropdown.Item>
+        </LinkContainer>
+        <LinkContainer to='/example/2'>
+          <NavDropdown.Item>Example 2</NavDropdown.Item>
+        </LinkContainer>
+        <LinkContainer to='/example/3'>
+          <NavDropdown.Item>Example 3</NavDropdown.Item>
+        </LinkContainer>
+      </NavDropdown>
+    </Nav>
+    <Nav>
+      <Nav.Link href='https://github.com/evaldasstu/zonalmaps'>GitHub</Nav.Link>
+    </Nav>
+  </Navbar>
   );
 }
 
@@ -76,26 +73,22 @@ function Home() {
   );
 }
 
-function Examples() {
-  let { path } = useRouteMatch();
+function Example() {
+  let { exampleNo } = useParams();
   return (
-    <Switch>
-      <Route path={`${path}/:exampleId`}>
-        <Example />
-      </Route>
-    </Switch>
+    <h2>Example {exampleNo}</h2>
   );
 }
 
-function Example() {
-  let { exampleId } = useParams();
+function GenerateEmbedCode() {
   return (
-    <h2>Example {exampleId}</h2>
+    <h2>Generate embed code</h2>
   );
 }
 
 function Embed() {
+  let { embedParams } = useParams();
   return (
-    <h2>Embed</h2>
+    <span>Embed params: {embedParams}</span>
   );
 }

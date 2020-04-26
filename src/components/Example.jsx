@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 const examples = [
   {
     title: 'Responsive Embed 2x3',
-    embedCode: '<style>#zm { position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%; } #zm iframe, #zm object, #zm embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div id="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg" frameborder="0"></iframe></div>',
+    embedCode: '<style>#zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} #zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style><div id="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg" frameborder="0"></iframe></div>',
   },
   {
     title: 'Fixed-size Embed 640x480',
@@ -22,13 +23,18 @@ export default function Embed() {
   const { embedCode } = examples[exampleNo - 1];
   return (
     <>
-      <h2 className="mb-3">
+      <h2>
         Example
         {' '}
         {exampleNo}
         <br />
         <small className="text-muted">{title}</small>
       </h2>
+      <h3 className="mt-4">Embed code</h3>
+      <Card>
+        <Card.Body><code>{embedCode}</code></Card.Body>
+      </Card>
+      <h3 className="mt-4">Result</h3>
       <div dangerouslySetInnerHTML={{ __html: embedCode }} />
     </>
   );

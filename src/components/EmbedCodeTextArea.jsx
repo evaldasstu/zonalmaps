@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  Form, FormGroup, Button, Popover, OverlayTrigger,
+  Form, Button, Popover, OverlayTrigger,
 } from 'react-bootstrap';
 
 export default class EmbedCodeTextArea extends React.Component {
@@ -31,11 +31,9 @@ export default class EmbedCodeTextArea extends React.Component {
     );
     return (
       <>
-        <FormGroup>
-          <Form.Control as="textarea" rows="5" ref={(teaxtarea) => { this.textArea = teaxtarea; }} value={value} />
-        </FormGroup>
+        <Form.Control as="textarea" rows="5" ref={(teaxtarea) => { this.textArea = teaxtarea; }} value={value} className="mb-3" />
         <OverlayTrigger trigger="click" placement="right" overlay={popover} rootClose="true">
-          <Button variant="secondary" onClick={() => this.copyToClipboard()}>Copy to clipboard</Button>
+          <Button variant="secondary" onClick={() => this.copyToClipboard()} className="mb-4">Copy to clipboard</Button>
         </OverlayTrigger>
       </>
     );

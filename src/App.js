@@ -15,7 +15,7 @@ import Example from './components/Example';
 export default function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Container>
+      <Container className="my-4">
         <Switch>
           <Route path="/embed/:embedParams" />
           <Route path="/">

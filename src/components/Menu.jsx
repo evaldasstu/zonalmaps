@@ -6,7 +6,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 export default function GenerateEmbedCode() {
   return (
-    <Navbar expand="sm" variant="light" bg="light" className="my-4">
+    <Navbar expand="sm" variant="light" bg="light" className="mb-4">
       <LinkContainer to="/">
         <Navbar.Brand>Zonal Maps</Navbar.Brand>
       </LinkContainer>

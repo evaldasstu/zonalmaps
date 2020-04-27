@@ -32,20 +32,17 @@ export default function Example() {
   return (
     <>
       <h2>
-        Example
-        {' '}
-        {exampleNo}
-        <br />
+        Example {exampleNo}<br />
         <small className="text-muted">{example.title}</small>
       </h2>
-      <div dangerouslySetInnerHTML={{ __html: example.embedCode }} className="mb-4" />
-      <h3>Embed code</h3>
+      <div dangerouslySetInnerHTML={{ __html: example.embedCode }} />
+      <h3 className="mt-4">Embed code</h3>
       <EmbedCodeTextArea value={example.embedCode} />
-      <h3>Source data</h3>
-      <div className="spreadsheetEmbed mb-3">
+      <h3 className="mt-4">Source data</h3>
+      <div className="spreadsheetEmbed">
         <iframe title="Source data" src={spreadsheetEmbedCode} />
       </div>
-      <Button variant="secondary">Open in Google Sheets</Button>
+      <Button variant="secondary" className="mt-3">Open in Google Sheets</Button>
     </>
   );
 }

@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container';
 import ReactMarkdown from 'react-markdown';
 import ReadMe from '../README.md';
 import Menu from './components/Menu';
-import GenerateEmbedCode from './components/GenerateEmbedCode';
+import GetEmbedCode from './components/GetEmbedCode';
 import Embed from './components/Embed';
 import Example from './components/Example';
 
@@ -31,7 +31,7 @@ export default function App() {
             <Example />
           </Route>
           <Route exact path="/embed">
-            <GenerateEmbedCode />
+            <GetEmbedCode />
           </Route>
         </Switch>
       </Container>

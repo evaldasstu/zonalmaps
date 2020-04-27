@@ -31,9 +31,20 @@ export default class EmbedCodeTextArea extends React.Component {
     );
     return (
       <>
-        <Form.Control as="textarea" rows="5" ref={(teaxtarea) => { this.textArea = teaxtarea; }} value={value} className="mb-3" />
+        <Form.Control
+          as="textarea"
+          rows="5"
+          ref={(teaxtarea) => { this.textArea = teaxtarea; }}
+          value={value}
+        />
         <OverlayTrigger trigger="click" placement="right" overlay={popover} rootClose="true">
-          <Button variant="secondary" onClick={() => this.copyToClipboard()} className="mb-4">Copy to clipboard</Button>
+          <Button
+            variant="secondary"
+            className="mt-3"
+            onClick={() => this.copyToClipboard()}
+          >
+            Copy to clipboard
+          </Button>
         </OverlayTrigger>
       </>
     );

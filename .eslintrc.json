@@ -13,7 +13,8 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/no-danger": "off"
+        "react/no-danger": "off",
+        "react/jsx-one-expression-per-line": "off"
     },
     "env": {
         "browser": true

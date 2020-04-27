@@ -15,7 +15,7 @@ export default function Menu() {
           <Nav.Link>Home</Nav.Link>
         </LinkContainer>
         <LinkContainer to="/embed">
-          <Nav.Link>Embed code</Nav.Link>
+          <Nav.Link>Get embed code</Nav.Link>
         </LinkContainer>
         <NavDropdown title="Examples" id="basic-nav-dropdown">
           <LinkContainer to="/example/1">

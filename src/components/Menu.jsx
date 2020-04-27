@@ -3,19 +3,22 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function Menu() {
   return (
-    <Navbar expand="sm" variant="light" bg="light" className="mb-4">
+    <Navbar expand="sm" variant="dark" bg="dark" className="rounded mb-4">
       <LinkContainer to="/">
-        <Navbar.Brand>Zonal Maps</Navbar.Brand>
+        <Navbar.Brand>
+          <FontAwesomeIcon icon={faGlobeEurope} size="lg" />{' '}
+          Zonal Maps
+        </Navbar.Brand>
       </LinkContainer>
       <Nav className="mr-auto">
         <LinkContainer exact to="/">
-          <Nav.Link>Home</Nav.Link>
-        </LinkContainer>
-        <LinkContainer to="/embed">
-          <Nav.Link>Get embed code</Nav.Link>
+          <Nav.Link>Docs</Nav.Link>
         </LinkContainer>
         <NavDropdown title="Examples" id="basic-nav-dropdown">
           <LinkContainer to="/example/1">
@@ -28,9 +31,16 @@ export default function Menu() {
             <NavDropdown.Item>Example 3</NavDropdown.Item>
           </LinkContainer>
         </NavDropdown>
+        <LinkContainer to="/embed">
+          {/* https://github.com/react-bootstrap/react-router-bootstrap/issues/242#issuecomment-480330910 */}
+          <Nav.Link active={false}>Get embed code</Nav.Link>
+        </LinkContainer>
       </Nav>
       <Nav>
-        <Nav.Link href="https://github.com/evaldasstu/zonalmaps">GitHub</Nav.Link>
+        <Nav.Link href="https://github.com/evaldasstu/zonalmaps">
+          <FontAwesomeIcon icon={faGithub} />{' '}
+          GitHub
+        </Nav.Link>
       </Nav>
     </Navbar>
   );

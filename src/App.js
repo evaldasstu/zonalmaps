@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
+import { Container, Card } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import ReadMe from '../README.md';
 import Menu from './components/Menu';
@@ -15,29 +15,26 @@ import Example from './components/Example';
 export default function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Container className="my-4">
-        <Switch>
-          <Route path="/embed/:embedParams" />
-          <Route path="/">
-            {/* All other routes */}
-            <Menu />
-          </Route>
-        </Switch>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/example/:exampleNo">
-            <Example />
-          </Route>
-          <Route exact path="/embed">
-            <GetEmbedCode />
-          </Route>
-        </Switch>
-      </Container>
       <Switch>
         <Route path="/embed/:embedParams">
           <Embed />
+        </Route>
+        <Route path="/">
+          {/* All other routes */}
+          <Container className="my-4">
+            <Menu />
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/example/:exampleNo">
+                <Example />
+              </Route>
+              <Route exact path="/embed">
+                <GetEmbedCode />
+              </Route>
+            </Switch>
+          </Container>
         </Route>
       </Switch>
     </Router>
@@ -46,6 +43,10 @@ export default function App() {
 
 function Home() {
   return (
-    <ReactMarkdown source={ReadMe} />
+    <Card>
+      <Card.Body>
+        <ReactMarkdown source={ReadMe} />
+      </Card.Body>
+    </Card>
   );
 }

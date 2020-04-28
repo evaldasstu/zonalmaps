@@ -1,11 +1,128 @@
-// Override default variables before the import
-// $light: #e9ecef; // $gray-200
+// BOOTSTRAP: CLEAN OVERRIDES //
 
-// Import Bootstrap and its default variables
+// Body
+
+$body-bg: #f1f3f5;
+
+// Paragraphs
+
+$paragraph-margin-bottom: 1.5rem;
+
+// Typography
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+$font-size-base: 0.938rem; // 15px
+
+$line-height-base: 1.75;
+
+$h1-font-size: $font-size-base * 2.75;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+
+$headings-margin-bottom: 1rem;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 400;
+$headings-color: #000;
+
+$display4-size: 2.75rem;
+
+// Forms
+
+$form-check-input-margin-y: 0.5rem;
+
+// Navs
+
+$navbar-brand-font-size: 0.938rem; // 15px 
+
+// Cards
+
+$card-cap-bg: #fff;
+$card-cap-color: #000;
+
+
+// BOOTSTRAP: IMPORT //
+
 @import '~bootstrap/scss/bootstrap.scss';
 
-//Temp guides
+
+// BOOTSTRAP: CUSTOMIZATION //
+
+// Navs
+
+.navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+
+// Cards
+
+.card-header {
+    font-family: $headings-font-family;
+    font-size: 1rem; // 16px
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 0.8rem;
+}
+
+.card-link {
+    font-size: 0.75rem; // 12px
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.card-link .fa-xs {
+    margin-bottom: 0.063rem ;// 1px
+    margin-left: 0.313rem; // 5px
+}
+
+// ADDITIONAL STYLES //
+
+strong {
+    font-family: $headings-font-family;
+    color: $black;
+}
+
+.zm-page-title {
+    margin-top: 3.5rem; // 56px
+    margin-bottom: 1.5rem; // 24px
+}
+
+.zm-page-title small {
+    font-size: 70%;
+}
+
+
+// TEMP //
+
 iframe,
 .temp-border {
     border: 1px solid $gray-200;
 }
+
+
+// STASH
+
+// Buttons
+
+// $btn-padding-y: 9px;
+// $btn-font-size: 12px;
+
+// $btn-padding-y-sm: 6px;
+// $btn-font-size-sm: 10px;
+
+// $btn-font-weight: 600;
+
+// .btn,
+// .card-link {
+//     text-transform: uppercase;
+//     letter-spacing: 0.1em;
+// }
+
+// .btn .fa-sm {
+//     margin-right: 6px;
+// }

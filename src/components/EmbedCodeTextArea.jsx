@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LinkContainer } from 'react-router-bootstrap';
 import {
-  Form, Button, Popover, OverlayTrigger,
+  Card, Form, Popover, OverlayTrigger,
 } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import './EmbedCodeTextArea.scss';
 
 export default class EmbedCodeTextArea extends React.Component {
   constructor(props) {
@@ -31,20 +35,23 @@ export default class EmbedCodeTextArea extends React.Component {
     );
     return (
       <>
-        <Form.Control
-          as="textarea"
-          rows="5"
-          ref={(teaxtarea) => { this.textArea = teaxtarea; }}
-          value={value}
-        />
+        <code>
+          <Form.Group>
+            <Form.Control
+              as="textarea"
+              rows="5"
+              ref={(teaxtarea) => { this.textArea = teaxtarea; }}
+              value={value}
+            />
+          </Form.Group>
+        </code>
         <OverlayTrigger trigger="click" placement="right" overlay={popover} rootClose="true">
-          <Button
-            variant="secondary"
-            className="mt-3"
-            onClick={() => this.copyToClipboard()}
-          >
-            Copy to clipboard
-          </Button>
+          <LinkContainer to="#">
+            <Card.Link onClick={() => this.copyToClipboard()}>
+              Copy to clipboard
+              <FontAwesomeIcon icon={faCopy} size="xs" />
+            </Card.Link>
+          </LinkContainer>
         </OverlayTrigger>
       </>
     );

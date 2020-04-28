@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import { Card } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import EmbedCodeTextArea from './EmbedCodeTextArea';
 import './Example.scss';
 
@@ -31,18 +33,29 @@ export default function Example() {
 
   return (
     <>
-      <h2>
+      <h1 className="zm-page-title">
         Example {exampleNo}<br />
         <small className="text-muted">{example.title}</small>
-      </h2>
+      </h1>
       <div dangerouslySetInnerHTML={{ __html: example.embedCode }} />
-      <h3 className="mt-4">Embed code</h3>
-      <EmbedCodeTextArea value={example.embedCode} />
-      <h3 className="mt-4">Source data</h3>
-      <div className="spreadsheetEmbed">
-        <iframe title="Source data" src={spreadsheetEmbedCode} />
-      </div>
-      <Button variant="secondary" className="mt-3">Open in Google Sheets</Button>
+      <Card className="mt-4">
+        <Card.Header>Embed code</Card.Header>
+        <Card.Body>
+          <EmbedCodeTextArea value={example.embedCode} />
+        </Card.Body>
+      </Card>
+      <Card className="mt-4">
+        <Card.Header>Source spreadsheet</Card.Header>
+        <Card.Body>
+          <div className="spreadsheetEmbed mb-3">
+            <iframe title="Source data" src={spreadsheetEmbedCode} />
+          </div>
+          <Card.Link href="#">
+            Open in Google Sheets
+            <FontAwesomeIcon icon={faExternalLinkAlt} size="xs" />
+          </Card.Link>
+        </Card.Body>
+      </Card>
     </>
   );
 }

@@ -43,10 +43,13 @@ export default function App() {
 
 function Home() {
   return (
-    <Card>
-      <Card.Body>
-        <ReactMarkdown source={ReadMe} />
-      </Card.Body>
-    </Card>
+    <>
+      <h1 className="zm-page-title">How to use</h1>
+      <Card>
+        <Card.Body>
+          <ReactMarkdown source={ReadMe} />
+        </Card.Body>
+      </Card>
+    </>
   );
 }

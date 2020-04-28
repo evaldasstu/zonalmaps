@@ -12,7 +12,7 @@ export default function Menu() {
     <Navbar expand="sm" variant="dark" bg="dark" className="rounded mb-4">
       <LinkContainer to="/">
         <Navbar.Brand>
-          <FontAwesomeIcon icon={faGlobeEurope} size="lg" />{' '}
+          <FontAwesomeIcon icon={faGlobeEurope} size="lg" className="mr-2" />
           Zonal Maps
         </Navbar.Brand>
       </LinkContainer>

@@ -16,7 +16,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 $font-size-base: 0.938rem; // 15px
 
-$line-height-base: 1.75;
+$line-height-base: 1.7;
 
 $h1-font-size: $font-size-base * 2.75;
 $h2-font-size: $font-size-base * 1.75;
@@ -33,9 +33,11 @@ $display4-size: 2.75rem;
 
 $form-check-input-margin-y: 0.5rem;
 
-// Navs
+// Navbar
 
-$navbar-brand-font-size: 0.938rem; // 15px 
+$navbar-padding-x: 1.25rem; // $card-spacer-x
+
+$navbar-brand-font-size: 0.938rem; // 15px
 
 // Cards
 
@@ -49,14 +51,6 @@ $card-cap-color: #000;
 
 
 // BOOTSTRAP: CUSTOMIZATION //
-
-// Navs
-
-.navbar-brand {
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    font-weight: 700;
-}
 
 // Cards
 
@@ -79,6 +73,7 @@ $card-cap-color: #000;
     margin-bottom: 0.063rem ;// 1px
     margin-left: 0.313rem; // 5px
 }
+
 
 // ADDITIONAL STYLES //
 

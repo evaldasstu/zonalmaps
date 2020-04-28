@@ -1,0 +1,19 @@
+// Import Bootstrap variables
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+// Navs
+
+.nav-link {
+    font-weight: 600;
+}
+
+// Navbar
+
+.navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    font-family: 'Montserrat';
+}

@@ -6,19 +6,20 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import './Menu.scss';
 
 export default function Menu() {
   return (
-    <Navbar expand="sm" variant="dark" bg="dark" className="rounded mb-4">
+    <Navbar variant="dark" bg="dark" className="rounded mb-4 flex-column flex-md-row">
       <LinkContainer to="/">
-        <Navbar.Brand>
+        <Navbar.Brand className="align-self-start">
           <FontAwesomeIcon icon={faGlobeEurope} size="lg" className="mr-2" />
           Zonal Maps
         </Navbar.Brand>
       </LinkContainer>
-      <Nav className="mr-auto">
+      <Nav className="mr-auto flex-column flex-md-row">
         <LinkContainer exact to="/">
-          <Nav.Link>Docs</Nav.Link>
+          <Nav.Link>How to use</Nav.Link>
         </LinkContainer>
         <NavDropdown title="Examples" id="basic-nav-dropdown">
           <LinkContainer to="/example/1">
@@ -36,7 +37,7 @@ export default function Menu() {
           <Nav.Link active={false}>Get embed code</Nav.Link>
         </LinkContainer>
       </Nav>
-      <Nav>
+      <Nav className="align-self-start">
         <Nav.Link href="https://github.com/evaldasstu/zonalmaps">
           <FontAwesomeIcon icon={faGithub} />{' '}
           GitHub

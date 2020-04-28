@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import EmbedCodeTextArea from './EmbedCodeTextArea';
+import EmbedCodeTextarea from './EmbedCodeTextarea';
 
 export default function GetEmbedCode() {
   const [openCustomize, setOpenCustomize] = useState(false);
@@ -100,7 +100,7 @@ export default function GetEmbedCode() {
       <Card className="mt-3">
         <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
         <Card.Body>
-          <EmbedCodeTextArea />
+          <EmbedCodeTextarea />
         </Card.Body>
       </Card>
     </>

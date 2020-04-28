@@ -1,5 +1,9 @@
+// Import Bootstrap variables
+
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
+
+// Embed code textarea
 
 code textarea.form-control,
 code textarea.form-control:focus {

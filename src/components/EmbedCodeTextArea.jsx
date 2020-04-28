@@ -6,9 +6,9 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import './EmbedCodeTextArea.scss';
+import './EmbedCodeTextarea.scss';
 
-export default class EmbedCodeTextArea extends React.Component {
+export default class EmbedCodeTextarea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +17,7 @@ export default class EmbedCodeTextArea extends React.Component {
   }
 
   copyToClipboard = () => {
-    const element = this.textArea;
+    const element = this.textarea;
     element.select();
     document.execCommand('copy');
     this.setState({ copySuccess: true });
@@ -40,7 +40,7 @@ export default class EmbedCodeTextArea extends React.Component {
             <Form.Control
               as="textarea"
               rows="5"
-              ref={(teaxtarea) => { this.textArea = teaxtarea; }}
+              ref={(teaxtarea) => { this.textarea = teaxtarea; }}
               value={value}
             />
           </Form.Group>
@@ -58,10 +58,10 @@ export default class EmbedCodeTextArea extends React.Component {
   }
 }
 
-EmbedCodeTextArea.propTypes = {
+EmbedCodeTextarea.propTypes = {
   value: PropTypes.string,
 };
 
-EmbedCodeTextArea.defaultProps = {
+EmbedCodeTextarea.defaultProps = {
   value: '',
 };

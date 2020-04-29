@@ -2,15 +2,23 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
-  Card, Form, Collapse, Col, Row,
+  Card, Form, Collapse, Col, Row, Alert,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp, faChevronDown, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import TextArea from './TextArea';
 
 export default function GetEmbedCode() {
+  const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
+  const [spreadsheetUrlValid, setSpreadsheetUrlValid] = useState(false);
   const [openCustomize, setOpenCustomize] = useState(false);
   const [displayTable, setDisplayTable] = useState(true);
+
+  const handleSpreadsheetUrlChange = (event) => {
+    setSpreadsheetUrl(event.target.value);
+    setSpreadsheetUrlValid((RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').test(event.target.value)));
+  };
+
   const handleDisplayTableClick = () => setDisplayTable(!displayTable);
 
   return (
@@ -19,7 +27,7 @@ export default function GetEmbedCode() {
 
       <Card>
         <Card.Header>
-          <strong>Step 1:</strong> Prepare the spreadsheet
+          <strong>Step 1:</strong> Prepare a spreadsheet
         </Card.Header>
         <Card.Body>
           <Card.Text>
@@ -35,15 +43,24 @@ export default function GetEmbedCode() {
 
       <Card className="mt-3">
         <Card.Header>
-          <strong>Step 2:</strong> Access the data
+          <strong>Step 2:</strong> Access data
         </Card.Header>
         <Card.Body>
+          <Alert variant="danger" show={!spreadsheetUrlValid && Boolean(spreadsheetUrl)}>
+            <FontAwesomeIcon icon={faExclamationCircle} size="sm" className="mr-2" />
+            Input does not seem to be a valid Google Sheets spreadsheet URL.
+          </Alert>
           <Form>
             <Form.Group controlId="spreadsheetUrl">
               <Form.Label>
-                Paste the public spreadsheet link here:
+                Paste a public spreadsheet link here:
               </Form.Label>
-              <Form.Control type="url" placeholder="Enter URL" />
+              <Form.Control
+                value={spreadsheetUrl}
+                onChange={handleSpreadsheetUrlChange}
+                type="text"
+                placeholder="Enter URL"
+              />
             </Form.Group>
           </Form>
 
@@ -101,7 +118,7 @@ export default function GetEmbedCode() {
       <Card className="mt-3">
         <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
         <Card.Body>
-          <TextArea />
+          <TextArea value={spreadsheetUrl} />
         </Card.Body>
       </Card>
     </>

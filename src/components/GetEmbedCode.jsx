@@ -10,13 +10,13 @@ import TextArea from './TextArea';
 
 export default function GetEmbedCode() {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
-  const [spreadsheetUrlValid, setSpreadsheetUrlValid] = useState(false);
+  const [spreadsheetId, setSpreadsheetId] = useState('');
   const [openCustomize, setOpenCustomize] = useState(false);
   const [displayTable, setDisplayTable] = useState(true);
 
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
-    setSpreadsheetUrlValid((RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').test(event.target.value)));
+    setSpreadsheetId((RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').exec(event.target.value)));
   };
 
   const handleDisplayTableClick = () => setDisplayTable(!displayTable);
@@ -44,10 +44,10 @@ export default function GetEmbedCode() {
 
       <Card className="mt-3">
         <Card.Header>
-          <strong>Step 2:</strong> Access data
+          <strong>Step 2:</strong> Access your data
         </Card.Header>
         <Card.Body>
-          <Alert variant="danger" show={!spreadsheetUrlValid && Boolean(spreadsheetUrl)}>
+          <Alert variant="danger" show={Boolean(!spreadsheetId) && Boolean(spreadsheetUrl)}>
             <FontAwesomeIcon icon={faExclamationCircle} size="sm" className="mr-2" />
             Input does not seem to be a valid Google Sheets spreadsheet URL.
           </Alert>

@@ -9,12 +9,15 @@
     "plugins": [
         "jsx-a11y",
         "react",
-        "jest"
+        "jest",
+        "react-hooks"
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/no-danger": "off",
-        "react/jsx-one-expression-per-line": "off"
+        "react/jsx-one-expression-per-line": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
     },
     "env": {
         "browser": true

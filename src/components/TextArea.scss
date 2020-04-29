@@ -6,7 +6,7 @@
 // Embed code textarea
 
 code textarea.form-control,
-code textarea.form-control:focus {
+code textarea.form-control[readonly] {
     background-color: $dark;
     color: $gray-300;
     font-size: 0.75rem; // 12px

@@ -35,8 +35,9 @@ export default function GetEmbedCode() {
             <Link to="/#specs">specification</Link>.
           </Card.Text>
           <Card.Text>
-            Choose <strong>File</strong> &gt; <strong>Publish to the web</strong>{' '}
-            in Google Sheets to allow the spreadsheet to be publicly readable and copy the link.
+            Choose <strong>File</strong> &gt; <strong>Share</strong> and select{' '}
+            <strong>Get shareable link</strong> in Google Sheets to allow the spreadsheet{' '}
+            to be publicly readable.
           </Card.Text>
         </Card.Body>
       </Card>

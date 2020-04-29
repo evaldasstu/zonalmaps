@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import EmbedCodeTextArea from './EmbedCodeTextArea';
+import TextArea from './TextArea';
 import './Example.scss';
 
 export default function Example() {
@@ -41,7 +41,7 @@ export default function Example() {
       <Card className="mt-4">
         <Card.Header>Embed code</Card.Header>
         <Card.Body>
-          <EmbedCodeTextArea value={example.embedCode} />
+          <TextArea value={example.embedCode} />
         </Card.Body>
       </Card>
       <Card className="mt-4">

@@ -6,9 +6,9 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import './EmbedCodeTextArea.scss';
+import './TextArea.scss';
 
-export default class EmbedCodeTextArea extends React.Component {
+export default class TextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,7 +47,8 @@ export default class EmbedCodeTextArea extends React.Component {
         </code>
         <OverlayTrigger trigger="click" placement="right" overlay={popover} rootClose="true">
           <LinkContainer to="#">
-            <Card.Link onClick={() => this.copyToClipboard()}>
+            {/* Interim padding to offset overlay */}
+            <Card.Link onClick={() => this.copyToClipboard()} className="pr-2">
               Copy to clipboard
               <FontAwesomeIcon icon={faCopy} size="xs" />
             </Card.Link>
@@ -58,10 +59,10 @@ export default class EmbedCodeTextArea extends React.Component {
   }
 }
 
-EmbedCodeTextArea.propTypes = {
+TextArea.propTypes = {
   value: PropTypes.string,
 };
 
-EmbedCodeTextArea.defaultProps = {
+TextArea.defaultProps = {
   value: '',
 };

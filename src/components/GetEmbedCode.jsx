@@ -6,7 +6,7 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import EmbedCodeTextArea from './EmbedCodeTextArea';
+import TextArea from './TextArea';
 
 export default function GetEmbedCode() {
   const [openCustomize, setOpenCustomize] = useState(false);
@@ -19,7 +19,7 @@ export default function GetEmbedCode() {
 
       <Card>
         <Card.Header>
-          <strong>Step 1:</strong> Prepare spreadsheet
+          <strong>Step 1:</strong> Prepare the spreadsheet
         </Card.Header>
         <Card.Body>
           <Card.Text>
@@ -35,7 +35,7 @@ export default function GetEmbedCode() {
 
       <Card className="mt-3">
         <Card.Header>
-          <strong>Step 2:</strong> Setup data source
+          <strong>Step 2:</strong> Access the data
         </Card.Header>
         <Card.Body>
           <Form>
@@ -61,6 +61,7 @@ export default function GetEmbedCode() {
                     type="checkbox"
                     label="Display table"
                     checked={displayTable}
+                    readOnly // temp; will need onChange
                     onClick={handleDisplayTableClick}
                     className="mt-2 mb-3"
                   />
@@ -100,7 +101,7 @@ export default function GetEmbedCode() {
       <Card className="mt-3">
         <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
         <Card.Body>
-          <EmbedCodeTextArea />
+          <TextArea />
         </Card.Body>
       </Card>
     </>

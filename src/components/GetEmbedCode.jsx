@@ -16,6 +16,43 @@ import {
 import AnimatedContainer from './AnimatedContainer';
 import TextArea from './TextArea';
 
+function InvalidUrlMessage() {
+  return (
+    <Alert variant="danger" className="d-flex">
+      <FontAwesomeIcon icon={faExclamationCircle} />
+      Input does not seem to be a valid Google Sheets URL.
+    </Alert>
+  );
+}
+
+function ProgressMessage() {
+  return (
+    <Alert variant="info" className="d-flex">
+      <FontAwesomeIcon icon={faFan} spin />
+      Connecting to Google Sheets...
+    </Alert>
+  );
+}
+
+function WarningMessage() {
+  return (
+    <Alert variant="warning" className="d-flex">
+      <FontAwesomeIcon icon={faExclamationTriangle} />
+      Google Sheets API error placeholder.<br />
+      Generated embed code will produce correct output once all issues are resolved.
+    </Alert>
+  );
+}
+
+function SuccessMessage() {
+  return (
+    <Alert variant="success" className="d-flex">
+      <FontAwesomeIcon icon={faCheckCircle} />
+      Spreadsheet data received succesfully.
+    </Alert>
+  );
+}
+
 export default function GetEmbedCode() {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
   const [message, setMessage] = useState('');
@@ -61,40 +98,14 @@ export default function GetEmbedCode() {
           <strong>Step 2:</strong> Access your data
         </Card.Header>
         <Card.Body>
+
           <AnimatedContainer isOpen={Boolean(message)}>
-            {
-              message === 'invalidUrl' && (
-                <Alert variant="danger">
-                  <FontAwesomeIcon icon={faExclamationCircle} />
-                  Input does not seem to be a valid Google Sheets URL.
-                </Alert>
-              )
-            }
-            {
-              message === 'progress' && (
-                <Alert variant="info">
-                  <FontAwesomeIcon icon={faFan} spin />
-                  Connecting to Google Sheets...
-                </Alert>
-              )
-            }
-            {
-              message === 'warning' && (
-                <Alert variant="warning" className="d-flex">
-                  <FontAwesomeIcon icon={faExclamationTriangle} />
-                  Google Sheets API error placeholder.<br />
-                  Generated embed code will produce correct output once all issues are resolved.
-                </Alert>
-              )
-            }
-            {
-              message === 'success' && (
-                <Alert variant="success" className="d-flex">
-                  <FontAwesomeIcon icon={faCheckCircle} />
-                  Spreadsheet data received succesfully.
-                </Alert>
-              )
-            }
+            <div>
+              {message === 'invalidUrl' && <InvalidUrlMessage />}
+              {message === 'progress' && <ProgressMessage />}
+              {message === 'warning' && <WarningMessage />}
+              {message === 'success' && <SuccessMessage />}
+            </div>
           </AnimatedContainer>
 
           <Form>

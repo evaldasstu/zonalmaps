@@ -2,66 +2,43 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
-  Card, Form, Col, Row, Alert,
+  Card, Form, Col, Row,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChevronUp,
-  faChevronDown,
-  faExclamationCircle,
-  faExclamationTriangle,
-  faCheckCircle,
-  faFan,
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import AnimatedContainer from './AnimatedContainer';
+import Message from './Message';
 import TextArea from './TextArea';
 
-function InvalidUrlMessage() {
-  return (
-    <Alert variant="danger" className="d-flex">
-      <FontAwesomeIcon icon={faExclamationCircle} />
-      Input does not seem to be a valid Google Sheets URL.
-    </Alert>
-  );
-}
-
-function ProgressMessage() {
-  return (
-    <Alert variant="info" className="d-flex">
-      <FontAwesomeIcon icon={faFan} spin />
-      Connecting to Google Sheets...
-    </Alert>
-  );
-}
-
-function WarningMessage() {
-  return (
-    <Alert variant="warning" className="d-flex">
-      <FontAwesomeIcon icon={faExclamationTriangle} />
-      Google Sheets API error placeholder.<br />
-      Generated embed code will produce correct output once all issues are resolved.
-    </Alert>
-  );
-}
-
-function SuccessMessage() {
-  return (
-    <Alert variant="success" className="d-flex">
-      <FontAwesomeIcon icon={faCheckCircle} />
-      Spreadsheet data received succesfully.
-    </Alert>
-  );
-}
+const messages = {
+  invalidUrl: {
+    type: 'danger',
+    text: 'Input does not seem to be a valid Google Sheets URL.',
+  },
+  progress: {
+    type: 'info',
+    text: 'Connecting to Google Sheets...',
+  },
+  warning: {
+    type: 'warning',
+    text: 'Input does not seem to be a valid Google Sheets URL.',
+  },
+  success: {
+    type: 'success',
+    text: 'Spreadsheet data received succesfully.',
+  },
+};
 
 export default function GetEmbedCode() {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
   const [message, setMessage] = useState('');
-  const [customizeIsOpen, setCustomizeIsOpen] = useState(false);
+  const [customizeIsActive, setCustomizeIsActive] = useState(false);
   const [displayPropertyTable, setDisplayPropertyTable] = useState(true);
 
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
-    const extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').exec(event.target.value);
+    const extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)')
+      .exec(event.target.value);
     if (event.target.value && extractedSpreadsheetId) {
       // Connect call placeholder
       setMessage('progress');
@@ -99,13 +76,11 @@ export default function GetEmbedCode() {
         </Card.Header>
         <Card.Body>
 
-          <AnimatedContainer isOpen={Boolean(message)}>
-            <div>
-              {message === 'invalidUrl' && <InvalidUrlMessage />}
-              {message === 'progress' && <ProgressMessage />}
-              {message === 'warning' && <WarningMessage />}
-              {message === 'success' && <SuccessMessage />}
-            </div>
+          <AnimatedContainer isExpanded={Boolean(message)}>{
+            message
+              ? <Message type={messages[message].type} text={messages[message].text} />
+              : null
+          }
           </AnimatedContainer>
 
           <Form>
@@ -122,7 +97,7 @@ export default function GetEmbedCode() {
             </Form.Group>
           </Form>
 
-          <AnimatedContainer isOpen={customizeIsOpen}>
+          <AnimatedContainer isExpanded={customizeIsActive}>
             <Form id="collapse-customize">
               <Row className="mb-2">
                 <Col sm={6} md={4} lg={3} className="my-auto">
@@ -158,12 +133,12 @@ export default function GetEmbedCode() {
           <LinkContainer to="#">
             <Card.Link
               aria-controls="collapse-customize"
-              aria-expanded={customizeIsOpen}
-              onClick={() => setCustomizeIsOpen(!customizeIsOpen)}
+              aria-expanded={customizeIsActive}
+              onClick={() => setCustomizeIsActive(!customizeIsActive)}
             >
               Customize embed
               <FontAwesomeIcon
-                icon={customizeIsOpen ? faChevronUp : faChevronDown}
+                icon={customizeIsActive ? faChevronUp : faChevronDown}
                 size="xs"
               />
             </Card.Link>

@@ -30,16 +30,16 @@ const animationConfig = {
   },
 };
 
-export default function AnimatedContainer({ children, isOpen }) {
+export default function AnimatedContainer({ children, isExpanded }) {
   const [bindHeight, { height: measuredHeight }] = useMeasure();
   const { height } = useSpring({
     from: { height: 0 },
-    to: { height: isOpen ? measuredHeight : 0 },
+    to: { height: isExpanded ? measuredHeight : 0 },
     config: animationConfig.stretch,
   });
   const { opacity } = useSpring({
     from: { opacity: 0 },
-    to: { opacity: isOpen ? 1 : 0 },
+    to: { opacity: isExpanded ? 1 : 0 },
     config: animationConfig.fade,
   });
 
@@ -54,10 +54,9 @@ export default function AnimatedContainer({ children, isOpen }) {
 
 AnimatedContainer.propTypes = {
   children: PropTypes.element,
-  isOpen: PropTypes.bool,
+  isExpanded: PropTypes.bool.isRequired,
 };
 
 AnimatedContainer.defaultProps = {
   children: null,
-  isOpen: false,
 };

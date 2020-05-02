@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { LinkContainer } from 'react-router-bootstrap';
-import { Card, Form, Alert } from 'react-bootstrap';
+import { Card, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
+import AnimatedContainer from './AnimatedContainer';
+import Message from './Message';
 import './TextArea.scss';
 
-export default function TextArea(props) {
+export default function TextArea({ value }) {
   const [copySuccess, setCopySuccess] = useState(false);
   let textArea = React.createRef();
-
-  const { value } = props;
 
   const copyToClipboard = () => {
     textArea.select();
@@ -20,9 +20,15 @@ export default function TextArea(props) {
 
   return (
     <>
-      <Alert variant="success" show={copySuccess} onClose={() => setCopySuccess(false)} dismissible>
-        Embed code copied to clipboard.
-      </Alert>
+      <AnimatedContainer isExpanded={copySuccess}>
+        <Message
+          type="success"
+          text="Embed code copied to clipboard."
+          dismissible
+          onClose={() => setCopySuccess(false)}
+        />
+      </AnimatedContainer>
+
       <code>
         <Form.Group>
           <Form.Control
@@ -34,6 +40,7 @@ export default function TextArea(props) {
           />
         </Form.Group>
       </code>
+
       <LinkContainer to="#">
         <Card.Link onClick={copyToClipboard}>
           Copy to clipboard

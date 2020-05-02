@@ -11,6 +11,7 @@ import {
   faExclamationCircle,
   faExclamationTriangle,
   faCheckCircle,
+  faFan,
 } from '@fortawesome/free-solid-svg-icons';
 import AnimatedContainer from './AnimatedContainer';
 import TextArea from './TextArea';
@@ -64,7 +65,7 @@ export default function GetEmbedCode() {
             {
               message === 'invalidUrl' && (
                 <Alert variant="danger">
-                  <FontAwesomeIcon icon={faExclamationCircle} size="sm" className="mr-2" />
+                  <FontAwesomeIcon icon={faExclamationCircle} />
                   Input does not seem to be a valid Google Sheets URL.
                 </Alert>
               )
@@ -72,14 +73,15 @@ export default function GetEmbedCode() {
             {
               message === 'progress' && (
                 <Alert variant="info">
+                  <FontAwesomeIcon icon={faFan} spin />
                   Connecting to Google Sheets...
                 </Alert>
               )
             }
             {
               message === 'warning' && (
-                <Alert variant="warning">
-                  <FontAwesomeIcon icon={faExclamationTriangle} size="sm" className="mr-2" />
+                <Alert variant="warning" className="d-flex">
+                  <FontAwesomeIcon icon={faExclamationTriangle} />
                   Google Sheets API error placeholder.<br />
                   Generated embed code will produce correct output once all issues are resolved.
                 </Alert>
@@ -87,8 +89,8 @@ export default function GetEmbedCode() {
             }
             {
               message === 'success' && (
-                <Alert variant="success">
-                  <FontAwesomeIcon icon={faCheckCircle} size="sm" className="mr-2" />
+                <Alert variant="success" className="d-flex">
+                  <FontAwesomeIcon icon={faCheckCircle} />
                   Spreadsheet data received succesfully.
                 </Alert>
               )

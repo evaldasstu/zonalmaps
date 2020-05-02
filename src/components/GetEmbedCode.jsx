@@ -2,24 +2,37 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
-  Card, Form, Collapse, Col, Row, Alert,
+  Card, Form, Col, Row, Alert,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faChevronUp,
+  faChevronDown,
+  faExclamationCircle,
+  faExclamationTriangle,
+  faCheckCircle,
+} from '@fortawesome/free-solid-svg-icons';
+import AnimatedContainer from './AnimatedContainer';
 import TextArea from './TextArea';
 
 export default function GetEmbedCode() {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
-  const [spreadsheetId, setSpreadsheetId] = useState('');
-  const [openCustomize, setOpenCustomize] = useState(false);
-  const [displayTable, setDisplayTable] = useState(true);
+  const [message, setMessage] = useState('');
+  const [customizeIsOpen, setCustomizeIsOpen] = useState(false);
+  const [displayPropertyTable, setDisplayPropertyTable] = useState(true);
 
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
-    setSpreadsheetId((RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').exec(event.target.value)));
+    const extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').exec(event.target.value);
+    if (event.target.value && extractedSpreadsheetId) {
+      // Connect call placeholder
+      setMessage('progress');
+    } else if (event.target.value && !extractedSpreadsheetId) {
+      setMessage('invalidUrl');
+    } else {
+      setMessage(null);
+    }
   };
-
-  const handleDisplayTableClick = () => setDisplayTable(!displayTable);
 
   return (
     <>
@@ -47,10 +60,41 @@ export default function GetEmbedCode() {
           <strong>Step 2:</strong> Access your data
         </Card.Header>
         <Card.Body>
-          <Alert variant="danger" show={Boolean(!spreadsheetId) && Boolean(spreadsheetUrl)}>
-            <FontAwesomeIcon icon={faExclamationCircle} size="sm" className="mr-2" />
-            Input does not seem to be a valid Google Sheets spreadsheet URL.
-          </Alert>
+          <AnimatedContainer isOpen={Boolean(message)}>
+            {
+              message === 'invalidUrl' && (
+                <Alert variant="danger">
+                  <FontAwesomeIcon icon={faExclamationCircle} size="sm" className="mr-2" />
+                  Input does not seem to be a valid Google Sheets URL.
+                </Alert>
+              )
+            }
+            {
+              message === 'progress' && (
+                <Alert variant="info">
+                  Connecting to Google Sheets...
+                </Alert>
+              )
+            }
+            {
+              message === 'warning' && (
+                <Alert variant="warning">
+                  <FontAwesomeIcon icon={faExclamationTriangle} size="sm" className="mr-2" />
+                  Google Sheets API error placeholder.<br />
+                  Generated embed code will produce correct output once all issues are resolved.
+                </Alert>
+              )
+            }
+            {
+              message === 'success' && (
+                <Alert variant="success">
+                  <FontAwesomeIcon icon={faCheckCircle} size="sm" className="mr-2" />
+                  Spreadsheet data received succesfully.
+                </Alert>
+              )
+            }
+          </AnimatedContainer>
+
           <Form>
             <Form.Group controlId="spreadsheetUrl">
               <Form.Label>
@@ -65,22 +109,21 @@ export default function GetEmbedCode() {
             </Form.Group>
           </Form>
 
-          <Collapse in={openCustomize}>
+          <AnimatedContainer isOpen={customizeIsOpen}>
             <Form id="collapse-customize">
               <Row className="mb-2">
                 <Col sm={6} md={4} lg={3} className="my-auto">
-                  <Form.Label htmlFor="displayTable" className="mt-2 mb-3">
+                  <Form.Label htmlFor="displayPropertyTable" className="mt-2 mb-3">
                     Property table visibility:
                   </Form.Label>
                 </Col>
                 <Col sm={6} md={8} lg={4} className="my-auto">
                   <Form.Check
-                    id="displayTable"
+                    id="displayPropertyTable"
                     type="checkbox"
                     label="Display table"
-                    checked={displayTable}
-                    readOnly // temp; will need onChange
-                    onClick={handleDisplayTableClick}
+                    checked={displayPropertyTable}
+                    onChange={() => { setDisplayPropertyTable(!displayPropertyTable); }}
                     className="mt-2 mb-3"
                   />
                 </Col>
@@ -97,17 +140,17 @@ export default function GetEmbedCode() {
                 </Col>
               </Row>
             </Form>
-          </Collapse>
+          </AnimatedContainer>
 
           <LinkContainer to="#">
             <Card.Link
               aria-controls="collapse-customize"
-              aria-expanded={openCustomize}
-              onClick={() => setOpenCustomize(!openCustomize)}
+              aria-expanded={customizeIsOpen}
+              onClick={() => setCustomizeIsOpen(!customizeIsOpen)}
             >
               Customize embed
               <FontAwesomeIcon
-                icon={openCustomize ? faChevronUp : faChevronDown}
+                icon={customizeIsOpen ? faChevronUp : faChevronDown}
                 size="xs"
               />
             </Card.Link>

@@ -72,7 +72,7 @@ export default function GetEmbedCode() {
 
       <Card className="mt-3">
         <Card.Header>
-          <strong>Step 2:</strong> Access your data
+          <strong>Step 2:</strong> Setup embed
         </Card.Header>
         <Card.Body>
 
@@ -84,57 +84,86 @@ export default function GetEmbedCode() {
           </AnimatedContainer>
 
           <Form>
-            <Form.Group controlId="spreadsheetUrl">
-              <Form.Label>
-                Paste a public spreadsheet link here:
-              </Form.Label>
-              <Form.Control
-                value={spreadsheetUrl}
-                onChange={handleSpreadsheetUrlChange}
-                type="text"
-                placeholder="Enter URL"
-              />
-            </Form.Group>
+            <Form.Label htmlFor="spreadsheetUrl">
+              Paste a public spreadsheet link here:
+            </Form.Label>
+            <Form.Control
+              id="spreadsheetUrl"
+              value={spreadsheetUrl}
+              onChange={handleSpreadsheetUrlChange}
+              type="text"
+              placeholder="Enter URL"
+            />
           </Form>
 
           <AnimatedContainer isExpanded={customizeIsActive}>
-            <Form id="collapse-customize">
-              <Row className="mb-2">
-                <Col sm={6} md={4} lg={3} className="my-auto">
-                  <Form.Label htmlFor="displayPropertyTable" className="mt-2 mb-3">
-                    Property table visibility:
-                  </Form.Label>
-                </Col>
-                <Col sm={6} md={8} lg={4} className="my-auto">
-                  <Form.Check
-                    id="displayPropertyTable"
-                    type="checkbox"
-                    label="Display table"
-                    checked={displayPropertyTable}
-                    onChange={() => { setDisplayPropertyTable(!displayPropertyTable); }}
-                    className="mt-2 mb-3"
-                  />
-                </Col>
-                <Col sm={6} md={4} lg={2} className="my-auto">
-                  <Form.Label htmlFor="language" className="mt-2 mb-3">
-                    Language:
-                  </Form.Label>
-                </Col>
-                <Col sm={6} md={8} lg={3}>
-                  <Form.Control id="language" as="select">
-                    <option value="en">English</option>
-                    <option value="lt">Lithuanian</option>
-                  </Form.Control>
-                </Col>
-              </Row>
-            </Form>
+            <Card bg="light border-0 mt-3">
+              <Card.Body>
+                <Form>
+                  <Row>
+                    <Col xs={4} lg="auto" className="my-auto">
+                      <Form.Label htmlFor="method" className="mb-0">
+                        Method:
+                      </Form.Label>
+                    </Col>
+
+                    <Col xs={8} lg={3}>
+                      <Form.Control id="method" as="select">
+                        <option value="iframe">iframe</option>
+                        <option value="oembed">oEmbed</option>
+                      </Form.Control>
+                    </Col>
+
+                    {/* Fluid spacer column for horizontal layout */}
+                    <Col lg />
+
+                    {/* Spacer row for vertical layout */}
+                    <Col xs={12} className="d-lg-none my-1" />
+
+                    <Col xs={4} lg="auto" className="my-auto">
+                      <Form.Label htmlFor="language" className="mb-0">
+                        Language:
+                      </Form.Label>
+                    </Col>
+
+                    <Col xs={8} lg={3}>
+                      <Form.Control id="language" as="select">
+                        <option value="en">English</option>
+                        <option value="lt">Lithuanian</option>
+                      </Form.Control>
+                    </Col>
+
+                    {/* Fluid spacer column for horizontal layout */}
+                    <Col lg />
+
+                    {/* Spacer row for vertical layout */}
+                    <Col xs={12} className="d-lg-none my-1" />
+
+                    <Col xs={4} className="my-auto d-lg-none py-2">
+                      <Form.Label htmlFor="displayPropertyTable" className="mb-0">
+                        Table:
+                      </Form.Label>
+                    </Col>
+
+                    <Col xs={8} lg="auto" className="my-auto py-2">
+                      <Form.Check
+                        id="displayPropertyTable"
+                        type="checkbox"
+                        label="Display property table"
+                        checked={displayPropertyTable}
+                        onChange={() => { setDisplayPropertyTable(!displayPropertyTable); }}
+                      />
+                    </Col>
+                  </Row>
+                </Form>
+              </Card.Body>
+            </Card>
           </AnimatedContainer>
 
           <LinkContainer to="#">
             <Card.Link
-              aria-controls="collapse-customize"
-              aria-expanded={customizeIsActive}
               onClick={() => setCustomizeIsActive(!customizeIsActive)}
+              className="d-block mt-4"
             >
               Customize embed
               <FontAwesomeIcon

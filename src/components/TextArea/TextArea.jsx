@@ -30,19 +30,17 @@ export default function TextArea({ value }) {
       </AnimatedContainer>
 
       <code>
-        <Form.Group>
-          <Form.Control
-            as="textarea"
-            value={value}
-            rows="5"
-            readOnly
-            ref={(element) => { textArea = element; }}
-          />
-        </Form.Group>
+        <Form.Control
+          as="textarea"
+          value={value}
+          rows="5"
+          readOnly
+          ref={(element) => { textArea = element; }}
+        />
       </code>
 
       <LinkContainer to="#">
-        <Card.Link onClick={copyToClipboard}>
+        <Card.Link onClick={copyToClipboard} className="d-block mt-4">
           Copy to clipboard
           <FontAwesomeIcon icon={faCopy} size="xs" />
         </Card.Link>

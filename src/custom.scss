@@ -1,12 +1,22 @@
 // BOOTSTRAP: CLEAN OVERRIDES //
 
+// Color system
+
+$gray-150: #f1f3f5;
+
+$light: $gray-150;
+
 // Body
 
-$body-bg: #f1f3f5;
+$body-bg: $light;
 
 // Paragraphs
 
 $paragraph-margin-bottom: 1.5rem;
+
+// Grid columns
+
+$grid-gutter-width: 15px;
 
 // Typography
 
@@ -31,18 +41,19 @@ $display4-size: 2.75rem;
 
 // Forms
 
-$form-check-input-margin-y: 0.5rem;
-
-// Navbar
-
-$navbar-padding-x: 1.25rem; // $card-spacer-x
-
-$navbar-brand-font-size: 0.938rem; // 15px
+$form-check-input-margin-y: 0.4rem;
 
 // Cards
 
+$card-spacer-x: 1.5rem;
 $card-cap-bg: #fff;
 $card-cap-color: #000;
+
+// Navbar
+
+$navbar-padding-x: $card-spacer-x;
+
+$navbar-brand-font-size: 0.938rem; // 15px
 
 
 // BOOTSTRAP: IMPORT //
@@ -60,6 +71,10 @@ $card-cap-color: #000;
     font-weight: 500;
     padding-top: 1rem;
     padding-bottom: 0.8rem;
+}
+
+.card-body {
+    padding: $card-spacer-x;
 }
 
 .card-link {

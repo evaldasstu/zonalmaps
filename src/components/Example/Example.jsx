@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-import TextArea from './TextArea';
+import TextArea from '../TextArea/TextArea';
 import './Example.scss';
 
 export default function Example() {

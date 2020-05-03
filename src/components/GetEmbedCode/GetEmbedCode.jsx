@@ -6,9 +6,9 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import AnimatedContainer from './AnimatedContainer';
-import Message from './Message';
-import TextArea from './TextArea';
+import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
+import Message from '../Message/Message';
+import TextArea from '../TextArea/TextArea';
 
 const messages = {
   invalidUrl: {

@@ -7,10 +7,10 @@ import {
 import { Container, Card } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import ReadMe from '../README.md';
-import Menu from './components/Menu';
-import GetEmbedCode from './components/GetEmbedCode';
-import Embed from './components/Embed';
-import Example from './components/Example';
+import Menu from './components/Menu/Menu';
+import GetEmbedCode from './components/GetEmbedCode/GetEmbedCode';
+import Embed from './components/Embed/Embed';
+import Example from './components/Example/Example';
 
 export default function App() {
   return (

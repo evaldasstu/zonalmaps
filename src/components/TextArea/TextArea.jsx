@@ -4,8 +4,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
-import AnimatedContainer from './AnimatedContainer';
-import Message from './Message';
+import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
+import Message from '../Message/Message';
 import './TextArea.scss';
 
 export default function TextArea({ value }) {

@@ -11,7 +11,9 @@ function useMeasure() {
       left: 0, top: 0, width: 0, height: 0,
     },
   );
+
   const [observer] = useState(() => new ResizeObserver(([entry]) => setBounds(entry.contentRect)));
+
   useEffect(() => {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -32,11 +34,15 @@ const animationConfig = {
 
 export default function AnimatedContainer({ children, isExpanded }) {
   const [bindHeight, { height: measuredHeight }] = useMeasure();
+
+  // Container height stretch
   const { height } = useSpring({
     from: { height: 0 },
     to: { height: isExpanded ? measuredHeight : 0 },
     config: animationConfig.stretch,
   });
+
+  // Contents fade-in
   const { opacity } = useSpring({
     from: { opacity: 0 },
     to: { opacity: isExpanded ? 1 : 0 },

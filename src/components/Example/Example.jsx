@@ -24,6 +24,7 @@ export default function Example() {
       embedCode: '<iframe width="640" height="960" src="https://evaldasstu.github.io/zonalmaps/embed/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg" frameborder="0"></iframe>',
     },
   ];
+
   const { exampleNo } = useParams();
   const example = examples[exampleNo - 1];
   const spreadsheetEmbedCodePrefix = 'https://docs.google.com/spreadsheets/d/e/';
@@ -38,12 +39,14 @@ export default function Example() {
         <small className="text-muted">{example.title}</small>
       </h1>
       <div dangerouslySetInnerHTML={{ __html: example.embedCode }} />
+
       <Card className="mt-4">
         <Card.Header>Embed code</Card.Header>
         <Card.Body>
           <TextArea value={example.embedCode} />
         </Card.Body>
       </Card>
+
       <Card className="mt-4">
         <Card.Header>Source spreadsheet</Card.Header>
         <Card.Body>

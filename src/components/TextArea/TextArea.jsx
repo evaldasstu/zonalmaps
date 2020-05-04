@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
-import Message from '../Message/Message';
+import { SelfDestructiveMessage } from '../Message/Message';
 import './TextArea.scss';
 
 export default function TextArea({ value }) {
   const [copySuccess, setCopySuccess] = useState(false);
-  let textArea = React.createRef();
+  let textArea = createRef();
 
   const copyToClipboard = () => {
     textArea.select();
@@ -20,14 +20,15 @@ export default function TextArea({ value }) {
 
   return (
     <>
-      <AnimatedContainer isExpanded={copySuccess}>
-        <Message
-          type="success"
-          text="Embed code copied to clipboard."
-          dismissible
-          onClose={() => setCopySuccess(false)}
-        />
-      </AnimatedContainer>
+      { copySuccess && (
+        <AnimatedContainer isExpanded={copySuccess}>
+          <SelfDestructiveMessage
+            type="success"
+            text="Embed code copied to clipboard."
+            dismiss={() => setCopySuccess(false)}
+          />
+        </AnimatedContainer>
+      ) }
 
       <code>
         <Form.Control

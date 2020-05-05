@@ -70,7 +70,7 @@ const GetEmbedCode = () => {
           </Card.Text>
           <Card.Text>
             Choose <strong>File</strong> &gt; <strong>Share</strong>, select{' '}
-            <strong>Copy link</strong> and change <strong>Restricted</strong> to {' '}
+            <strong>Copy link</strong> and change <strong>Restricted</strong> to{' '}
             <strong>Anyone with the link</strong> in Google Sheets to allow the spreadsheet{' '}
             to be publicly readable.
           </Card.Text>
@@ -83,11 +83,10 @@ const GetEmbedCode = () => {
         </Card.Header>
         <Card.Body>
 
-          <AnimatedContainer isExpanded={Boolean(setupMessage)}>{
-            setupMessage
+          <AnimatedContainer isExpanded={Boolean(setupMessage)}>
+            {setupMessage
               ? <Message type={messages[setupMessage].type} text={messages[setupMessage].text} />
-              : null
-          }
+              : null}
           </AnimatedContainer>
 
           <Form>

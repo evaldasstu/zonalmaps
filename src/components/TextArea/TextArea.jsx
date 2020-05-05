@@ -20,7 +20,7 @@ const TextArea = ({ embedCode }) => {
 
   return (
     <>
-      { copySuccess && (
+      {copySuccess && (
         <AnimatedContainer isExpanded={copySuccess}>
           <SelfDestructiveMessage
             type="success"
@@ -28,7 +28,7 @@ const TextArea = ({ embedCode }) => {
             dismiss={() => setCopySuccess(false)}
           />
         </AnimatedContainer>
-      ) }
+      )}
 
       <code>
         <Form.Control

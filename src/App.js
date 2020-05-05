@@ -4,24 +4,12 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import { Container, Card } from 'react-bootstrap';
-import ReactMarkdown from 'react-markdown';
-import ReadMe from '../README.md';
+import { Container } from 'react-bootstrap';
 import Menu from './components/Menu/Menu';
-import GetEmbedCode from './components/GetEmbedCode/GetEmbedCode';
+import HowTo from './pages/HowTo/HowTo';
+import GetEmbedCode from './pages/GetEmbedCode/GetEmbedCode';
 import Embed from './components/Embed/Embed';
-import Example from './components/Example/Example';
-
-const Home = () => (
-  <>
-    <h1 className="zm-page-title">How to use</h1>
-    <Card>
-      <Card.Body>
-        <ReactMarkdown source={ReadMe} />
-      </Card.Body>
-    </Card>
-  </>
-);
+import Example from './pages/Example/Example';
 
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
@@ -35,7 +23,7 @@ const App = () => (
           <Menu />
           <Switch>
             <Route exact path="/">
-              <Home />
+              <HowTo />
             </Route>
             <Route path="/example/:exampleNo">
               <Example />

@@ -6,9 +6,9 @@ import {
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
-import { Message } from '../Message/Message';
-import TextArea from '../TextArea/TextArea';
+import AnimatedContainer from '../../components/AnimatedContainer/AnimatedContainer';
+import { Message } from '../../components/Message/Message';
+import TextArea from '../../components/TextArea/TextArea';
 import generateEmbedCode from '../../utils/generateEmbedCode';
 
 const messages = {

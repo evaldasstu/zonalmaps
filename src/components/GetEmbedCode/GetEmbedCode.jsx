@@ -29,7 +29,7 @@ const messages = {
   },
 };
 
-export default function GetEmbedCode() {
+const GetEmbedCode = () => {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
   const [message, setMessage] = useState('');
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
@@ -184,4 +184,6 @@ export default function GetEmbedCode() {
       </Card>
     </>
   );
-}
+};
+
+export default GetEmbedCode;

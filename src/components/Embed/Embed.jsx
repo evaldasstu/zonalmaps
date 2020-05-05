@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function Embed() {
+const Embed = () => {
   const { embedParams } = useParams();
   return (
     <div className="temp-border">
@@ -9,4 +9,6 @@ export default function Embed() {
       {embedParams}
     </div>
   );
-}
+};
+
+export default Embed;

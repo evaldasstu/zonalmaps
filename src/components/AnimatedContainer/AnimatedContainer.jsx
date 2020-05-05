@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { animated, useSpring } from 'react-spring';
 import './AnimatedContainer.scss';
 
-function useMeasure() {
+const useMeasure = () => {
   const ref = useRef();
   const [bounds, setBounds] = useState(
     {
@@ -19,7 +19,7 @@ function useMeasure() {
     return () => observer.disconnect();
   }, [observer]);
   return [{ ref }, bounds];
-}
+};
 
 const animationConfig = {
   stretch: {
@@ -32,7 +32,7 @@ const animationConfig = {
   },
 };
 
-export default function AnimatedContainer({ children, isExpanded }) {
+const AnimatedContainer = ({ children, isExpanded }) => {
   const [bindHeight, { height: measuredHeight }] = useMeasure();
 
   // Container height stretch
@@ -56,7 +56,7 @@ export default function AnimatedContainer({ children, isExpanded }) {
       </div>
     </animated.div>
   );
-}
+};
 
 AnimatedContainer.propTypes = {
   children: PropTypes.element,
@@ -66,3 +66,5 @@ AnimatedContainer.propTypes = {
 AnimatedContainer.defaultProps = {
   children: null,
 };
+
+export default AnimatedContainer;

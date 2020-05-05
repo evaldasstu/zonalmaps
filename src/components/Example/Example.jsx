@@ -6,7 +6,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import TextArea from '../TextArea/TextArea';
 import './Example.scss';
 
-export default function Example() {
+const Example = () => {
   const examples = [
     {
       title: 'Responsive Embed 2x3',
@@ -61,4 +61,6 @@ export default function Example() {
       </Card>
     </>
   );
-}
+};
+
+export default Example;

@@ -18,16 +18,21 @@ const icons = {
   success: <FontAwesomeIcon icon={faCheckCircle} />,
 };
 
-export function Message({ type, text }) {
-  return (
-    <Alert variant={type} className="d-flex">
-      {icons[type]}
-      {text}
-    </Alert>
-  );
-}
+const Message = ({ type, text }) => (
+  <Alert variant={type} className="d-flex">
+    {icons[type]}
+    {text}
+  </Alert>
+);
 
-export function SelfDestructiveMessage({ type, text, dismiss }) {
+Message.propTypes = {
+  type: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+export { Message };
+
+const SelfDestructiveMessage = ({ type, text, dismiss }) => {
   const message = useRef();
 
   const [props, setAnimationParams] = useSpring(() => ({
@@ -55,11 +60,6 @@ export function SelfDestructiveMessage({ type, text, dismiss }) {
       <animated.div className="zm-progress-bar" style={props} />
     </Alert>
   );
-}
-
-Message.propTypes = {
-  type: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
 };
 
 SelfDestructiveMessage.propTypes = {
@@ -69,5 +69,7 @@ SelfDestructiveMessage.propTypes = {
 };
 
 SelfDestructiveMessage.defaultProps = {
-  dismiss: () => {},
+  dismiss: () => { },
 };
+
+export { SelfDestructiveMessage };

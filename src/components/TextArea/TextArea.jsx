@@ -8,7 +8,7 @@ import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
 import { SelfDestructiveMessage } from '../Message/Message';
 import './TextArea.scss';
 
-export default function TextArea({ value }) {
+const TextArea = ({ value }) => {
   const [copySuccess, setCopySuccess] = useState(false);
   let textArea = createRef();
 
@@ -48,7 +48,7 @@ export default function TextArea({ value }) {
       </LinkContainer>
     </>
   );
-}
+};
 
 TextArea.propTypes = {
   value: PropTypes.string,
@@ -57,3 +57,5 @@ TextArea.propTypes = {
 TextArea.defaultProps = {
   value: '',
 };
+
+export default TextArea;

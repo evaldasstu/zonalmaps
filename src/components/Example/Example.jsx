@@ -43,7 +43,7 @@ const Example = () => {
       <Card className="mt-4">
         <Card.Header>Embed code</Card.Header>
         <Card.Body>
-          <TextArea value={example.embedCode} />
+          <TextArea embedCode={example.embedCode} />
         </Card.Body>
       </Card>
 

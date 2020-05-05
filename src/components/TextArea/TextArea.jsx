@@ -8,7 +8,7 @@ import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
 import { SelfDestructiveMessage } from '../Message/Message';
 import './TextArea.scss';
 
-const TextArea = ({ value }) => {
+const TextArea = ({ embedCode }) => {
   const [copySuccess, setCopySuccess] = useState(false);
   let textArea = createRef();
 
@@ -33,7 +33,7 @@ const TextArea = ({ value }) => {
       <code>
         <Form.Control
           as="textarea"
-          value={value}
+          value={embedCode || 'Waiting for a Google Sheets link...'}
           rows="5"
           readOnly
           ref={(element) => { textArea = element; }}
@@ -51,11 +51,11 @@ const TextArea = ({ value }) => {
 };
 
 TextArea.propTypes = {
-  value: PropTypes.string,
+  embedCode: PropTypes.string,
 };
 
 TextArea.defaultProps = {
-  value: '',
+  embedCode: '',
 };
 
 export default TextArea;

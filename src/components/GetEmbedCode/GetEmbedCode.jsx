@@ -9,6 +9,7 @@ import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
 import { Message } from '../Message/Message';
 import TextArea from '../TextArea/TextArea';
+import generateEmbedCode from '../../utils/generateEmbedCode';
 
 const messages = {
   invalidUrl: {
@@ -31,22 +32,27 @@ const messages = {
 
 const GetEmbedCode = () => {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
-  const [message, setMessage] = useState('');
+  const [spreadsheetId, setSpreadsheetId] = useState('');
+  const [setupMessage, setSetupMessage] = useState('');
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
+  const [method, setMethod] = useState('iframe');
+  const [language, setLanguage] = useState('en');
   const [displayPropertyTable, setDisplayPropertyTable] = useState(true);
 
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
-    const extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)')
+    let extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)')
       .exec(event.target.value);
+    extractedSpreadsheetId = extractedSpreadsheetId ? extractedSpreadsheetId[1] : null;
     if (event.target.value && extractedSpreadsheetId) {
       // Connect call placeholder
-      setMessage('progress');
-    } else if (event.target.value && !extractedSpreadsheetId) {
-      setMessage('invalidUrl');
+      setSetupMessage('progress');
+    } else if (event.target.value && !spreadsheetId) {
+      setSetupMessage('invalidUrl');
     } else {
-      setMessage(null);
+      setSetupMessage(null);
     }
+    setSpreadsheetId(extractedSpreadsheetId);
   };
 
   return (
@@ -76,9 +82,9 @@ const GetEmbedCode = () => {
         </Card.Header>
         <Card.Body>
 
-          <AnimatedContainer isExpanded={Boolean(message)}>{
-            message
-              ? <Message type={messages[message].type} text={messages[message].text} />
+          <AnimatedContainer isExpanded={Boolean(setupMessage)}>{
+            setupMessage
+              ? <Message type={messages[setupMessage].type} text={messages[setupMessage].text} />
               : null
           }
           </AnimatedContainer>
@@ -108,7 +114,11 @@ const GetEmbedCode = () => {
                     </Col>
 
                     <Col xs={8} lg={3}>
-                      <Form.Control id="method" as="select">
+                      <Form.Control
+                        id="method"
+                        as="select"
+                        onChange={(event) => setMethod(event.target.value)}
+                      >
                         <option value="iframe">iframe</option>
                         <option value="oembed">oEmbed</option>
                       </Form.Control>
@@ -127,7 +137,11 @@ const GetEmbedCode = () => {
                     </Col>
 
                     <Col xs={8} lg={3}>
-                      <Form.Control id="language" as="select">
+                      <Form.Control
+                        id="language"
+                        as="select"
+                        onChange={(event) => setLanguage(event.target.value)}
+                      >
                         <option value="en">English</option>
                         <option value="lt">Lithuanian</option>
                       </Form.Control>
@@ -179,7 +193,13 @@ const GetEmbedCode = () => {
       <Card className="mt-3">
         <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
         <Card.Body>
-          <TextArea value={spreadsheetUrl} />
+          <TextArea embedCode={generateEmbedCode({
+            spreadsheetId,
+            method,
+            language,
+            // displayPropertyTable,
+          })}
+          />
         </Card.Body>
       </Card>
     </>

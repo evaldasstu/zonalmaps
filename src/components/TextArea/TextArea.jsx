@@ -40,12 +40,21 @@ const TextArea = ({ embedCode }) => {
         />
       </code>
 
-      <LinkContainer to="#">
-        <Card.Link onClick={copyToClipboard} className="d-block mt-4">
-          Copy to clipboard
-          <FontAwesomeIcon icon={faCopy} size="xs" />
-        </Card.Link>
-      </LinkContainer>
+      {embedCode
+        ? (
+          <LinkContainer to="#">
+            <Card.Link onClick={copyToClipboard} className="d-block mt-4">
+              Copy to clipboard
+              <FontAwesomeIcon icon={faCopy} size="xs" />
+            </Card.Link>
+          </LinkContainer>
+        )
+        : (
+          <Card.Link className="d-block mt-4">
+            Copy to clipboard
+            <FontAwesomeIcon icon={faCopy} size="xs" />
+          </Card.Link>
+        )}
     </>
   );
 };

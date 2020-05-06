@@ -38,8 +38,9 @@ Expanding **Customize embed** panel and choosing **Method** allows to choose fro
 
 *iframe* method output example:
 
-<style>
-pre {white-space: pre-wrap}
+<style
+  type="text/css">
+pre {white-space: pre-wrap;}
 </style>
 
 ```

@@ -1,3 +1,5 @@
+# Zonal Maps
+
 ## Overview
 
 Zonal Maps creates embeddable maps with location markers using data from [Google Sheets](https://www.google.com/sheets/about/) spreadsheets. It has a powerful **zoning feature** which allows assigning object sets to geographical areas and automatically displays boundaries and additional information for such zones.
@@ -28,17 +30,15 @@ Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to ac
 
 #### Customize embed: Method
 
-Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Both methods produce a responsive 100% width output that nicely fits its container. Also, both methods work well for WordPress websites. Check the [Embedding in WordPress](#wordpress) section below for instructions for each approach.
+Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Also, both methods work well for WordPress websites. Check the [Embedding in WordPress](#wordpress) section below for instructions for each approach.
 
 ##### iframe
 
-*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code.
+*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
 
-Output sample 1:
+*iframe* method output example:
 
-`<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>`
-
-Output sample 2:
+<style>pre {white-space: pre-wrap}</style>
 
 ```
 <div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>
@@ -48,15 +48,9 @@ Output sample 2:
 
 *oEmbed* is a newer standard which lets embedding content into compatible websites and platforms without a clunky HTML snippet. A simple URL of embeddable content is enough (where this method is supported, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites). More on this open standard can be found [here](https://oembed.com/).
 
-Output sample 1:
+*oEmbed* method output example:
 
 `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM`
-
-Output sample 2:
-
-```
-https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM
-```
 
 #### Customize embed: Language
 

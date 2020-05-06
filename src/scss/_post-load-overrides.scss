@@ -12,7 +12,6 @@ strong {
 
 // Typography
 
-
 h1 {
     margin-top: 3.5rem; // 56px
     margin-bottom: 1.5rem; // 24px
@@ -44,15 +43,15 @@ h1 small {
     letter-spacing: 0.1em;
 }
 
-.card-link .fa-xs {
-    margin-bottom: 0.063rem ;// 1px
-    margin-left: 0.313rem; // 5px
-}
-
 .card-link:not([href]),
 .card-link:not([href]):hover {
     color: $nav-link-disabled-color;
     cursor: default;
+}
+
+.card-link .fa-xs {
+    margin-bottom: 0.063rem ;// 1px
+    margin-left: 0.313rem; // 5px
 }
 
 

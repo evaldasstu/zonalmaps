@@ -38,7 +38,9 @@ Expanding **Customize embed** panel and choosing **Method** allows to choose fro
 
 *iframe* method output example:
 
-<style>pre {white-space: pre-wrap}</style>
+<style>
+pre {white-space: pre-wrap}
+</style>
 
 ```
 <div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>

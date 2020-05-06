@@ -1,0 +1,63 @@
+// Bootstrap: Variable overrides
+// Customizations loaded before Bootstrap
+
+
+// Color system
+
+$gray-150: #f1f3f5;
+
+$light: $gray-150;
+
+
+// Body
+
+$body-bg: $light;
+
+
+// Paragraphs
+
+$paragraph-margin-bottom: 1.5rem;
+
+
+// Grid columns
+
+$grid-gutter-width: 15px;
+
+
+// Typography
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+$font-size-base: 0.938rem; // 15px
+
+$line-height-base: 1.7;
+
+$h1-font-size: $font-size-base * 2.75;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+
+$headings-margin-bottom: 1rem;
+$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-weight: 400;
+$headings-color: #000;
+
+$display4-size: 2.75rem;
+
+
+// Forms
+
+$form-check-input-margin-y: 0.4rem;
+
+
+// Cards
+
+$card-spacer-x: 1.5rem;
+$card-cap-bg: #fff;
+$card-cap-color: #000;
+
+
+// Navbar
+
+$navbar-padding-x: $card-spacer-x;
+
+$navbar-brand-font-size: 0.938rem; // 15px

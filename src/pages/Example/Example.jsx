@@ -34,7 +34,7 @@ const Example = () => {
 
   return (
     <>
-      <h1 className="zm-page-title">
+      <h1>
         Example {exampleNo}<br />
         <small className="text-muted">{example.title}</small>
       </h1>

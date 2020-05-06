@@ -57,7 +57,7 @@ const GetEmbedCode = () => {
 
   return (
     <>
-      <h1 className="zm-page-title">Get embed code</h1>
+      <h1>Get embed code</h1>
 
       <Card>
         <Card.Header>

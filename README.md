@@ -1,5 +1,5 @@
 # Zonal Maps
-> https://evaldasstu.github.io/zonalmaps>
+> https://evaldasstu.github.io/zonalmaps
 
 ## Overview
 
@@ -25,7 +25,7 @@ Row 1 cell values represent property table header values. Some of these values a
 
 To do: describe **hidden** as row 2 cell values to hide columns.
 
-#### Reserved header values
+#### Reserved headers
 
 | Header      | Required | Example |
 |:------------|:--------:|:--------|
@@ -39,16 +39,14 @@ In Google Sheets, choose **File** > **Share**, select **Copy link** and change *
 
 Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator. To do: add more.
 
-### Customize embed: Method
+### Embed method
 
 Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Also, both methods work well for WordPress websites. Check the [Embedding in WordPress](#embedding-in-wordpress) section below for instructions for each approach.
 
-#### iframe
-
-*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
-
-| *iframe* example |
-| :----------------|
+| iframe      |
+|:------------|
+| *iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container. |
+| **Example**     |
 | `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>` |
 
 #### oEmbed
@@ -99,7 +97,7 @@ To do.
 
 ## Development
 
-Project source code is stored in a public GitHub repository at <https://github.com/evaldasstu/zonalmaps>.
+Project source code is stored in a public GitHub repository at https://github.com/evaldasstu/zonalmaps.
 
 This project is based on Create React App. Standard `npm start`, `npm test`, `npm run build` scripts are available in a Node.js development environment. More on this [here](https://create-react-app.dev/docs/available-scripts).
 

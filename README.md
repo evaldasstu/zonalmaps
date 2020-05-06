@@ -1,68 +1,101 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Zonal Maps creates embeddable maps with geographical location markers out of [Google Sheets](https://www.google.com/sheets/about/) spreadsheets. It has a powerful **zoning feature** which allows assigning object sets to geographical areas and automatically displaying boundaries and additional information for such zones.
 
-In the project directory, you can run:
+This project was created to create commercial real estate property maps to be displayed on the web and to provide a convenient and easy to learn approach of updating the content in real–time.
 
-### `npm start`
+Zonal Maps is built with [React](https://reactjs.org) and uses map data provided by [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Usage
 
-### `npm test`
+### Create the spreadsheet
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To do: add description.
 
-### `npm run build`
+To do: add visuals.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Spreadsheet specification {#spec}
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To do.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Share the spreadsheet
 
-### `npm run eject`
+In Google Sheets, choose **File** > **Share**, select **Copy link** and change **Restricted** to **Anyone with the link** to allow the spreadsheet to be publicly readable.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Get embed code
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Customize embed
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### Method
 
-## Learn More
+Zonal Maps can generate its embed code in two different formats. To do: more on this. More on oEmbed [here](https://oembed.com/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Both methods work well for WordPress websites. Check [this section] below for the details of each approach.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Language
 
-### Code Splitting
+By default, Zonal Maps outputs a user interface in English. However, this can be changed by choosing **Customize embed** and selecting **Language**.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+##### Display property table
 
-### Analyzing the Bundle Size
+By default, Zonal Maps displays a property list in a sortable table format under the map. If this functionality is not needed, table display can be turned off by choosing **Customize embed** and unchecking the **Display property table** option.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Using in a WordPress website {#wordpress}
 
-### Making a Progressive Web App
+To do.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### iframe method
 
-### Advanced Configuration
+To do.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### oEmbed method
+
+To do.
+
+### Browser compatibility
+
+To do.
+
+---
+
+## Examples
+
+* [Link to Example 1](https://evaldasstu.github.io/zonalmaps/example/1)
+* [Link to Example 2](https://evaldasstu.github.io/zonalmaps/example/2)
+* [Link to Example 3](https://evaldasstu.github.io/zonalmaps/example/3)
+
+---
+
+## Development
+
+Project source code is stored in a public GitHub repository at <https://github.com/evaldasstu/zonalmaps>.
+
+This project is based on Create React App. Standard `npm start`, `npm test`, `npm run build` scripts are available in a Node.js development environment ([read more](https://create-react-app.dev/docs/available-scripts)).
+
+To do: add more on integration, branches, GitHub's encrypted secrets, Google Sheets API code.
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Project's `package.json` is configured for deployment to GitHub Pages using `npm run deploy` script.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Acknowledgements
+
+Zonal Maps runs using:
+
+* [React](https://reactjs.org)
+* [OpenStreetMap](https://openstreetmap.org) via [Leaflet](https://leafletjs.com)
+* [Google Sheets API](https://developers.google.com/sheets/api)
+
+As well as [Bootstrap](https://getbootstrap.com), [Sass](https://sass-lang.com), [react-spring](https://www.react-spring.io/), [Jest](https://jestjs.io) and other components. For full list, check the [dependency graph](https://github.com/evaldasstu/zonalmaps/network/dependencies).
+
+---
+
+## License
+
+Zonal Maps is open source software licensed as... To do: choose a license.

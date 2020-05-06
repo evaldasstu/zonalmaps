@@ -1,4 +1,4 @@
-// Bootstrap: Post-load overrides
+// *** Bootstrap: post-load overrides *** //
 // Here is what could not be themed using Bootstrap variables
 
 
@@ -15,6 +15,7 @@ strong {
 h1 {
     margin-top: 3.5rem; // 56px
     margin-bottom: 1.5rem; // 24px
+    margin-left: $card-spacer-x;
 }
 
 h1 small {

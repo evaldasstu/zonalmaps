@@ -1,4 +1,5 @@
 # Zonal Maps
+> https://evaldasstu.github.io/zonalmaps>
 
 ## Overview
 
@@ -8,65 +9,67 @@ This project was developed to simplify a process of creating commercial real est
 
 Zonal Maps is built with [React](https://reactjs.org) and uses map data provided by [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
 
-## Using Zonal Maps
-
-### Create the spreadsheet
-
-To do: add description.
-
 To do: add visuals.
+
+## Prepare a spreadsheet
+
+[Create a spreadsheet](https://sheet.new/) on Google Sheets.
+
+To do: add a screenshot.
 
 ### Spreadsheet specification
 
-To do.
+To do: introduction.
+
+Row 1 cell values represent property table header values. Some of these values are reserved (see table below). To do: add more.
+
+To do: describe **hidden** as row 2 cell values to hide columns.
+
+#### Reserved header values
+
+| Header      | Required | Example |
+|:------------|:--------:|:--------|
+|No           |+         | 1       |
 
 ### Share the spreadsheet
 
-In Google Sheets, choose **File** > **Share**, select **Copy link** and change **Restricted** to **Anyone with the link** to allow the spreadsheet to be publicly readable.
+In Google Sheets, choose **File** > **Share**, select **Copy link** and change **Restricted** to **Anyone with the link** to allow the spreadsheet to be publicly readable. The spreadsheet will have to remain public for the embed to work.
 
-### Get embed code
+## Generate embed code
 
 Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator. To do: add more.
 
-#### Customize embed: Method
+### Customize embed: Method
 
 Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Also, both methods work well for WordPress websites. Check the [Embedding in WordPress](#embedding-in-wordpress) section below for instructions for each approach.
 
-##### iframe
+#### iframe
 
 *iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
 
-| *iframe* method embed example: |
-| -------------------------------|
+| *iframe* example |
+| :----------------|
 | `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>` |
 
-
-
-`<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>`
-
-##### oEmbed
+#### oEmbed
 
 *oEmbed* is a newer standard which lets embedding content into compatible websites and platforms without a clunky HTML snippet. A simple URL of embeddable content is enough (where this method is supported, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites). More on this open standard can be found [here](https://oembed.com/).
 
-*oEmbed* method embed example:
+| *oEmbed* example |
+| :----------------|
+| `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM` |
 
-`https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM`
+### Additional options
 
-#### Customize embed: Language
+#### Language
 
 By default, Zonal Maps outputs a user interface in English. However, this can be changed by choosing **Customize embed** and selecting **Language**.
 
-#### Customize embed: Display property table
+#### Display property table
 
 By default, Zonal Maps displays a property list in a sortable table format under the map. If this functionality is not needed, table display can be turned off by choosing **Customize embed** and unchecking the **Display property table** option.
 
-### Theming
-
-To do.
-
-### Browser compatibility
-
-To do.
+## Retrieve and use embed code
 
 ### Embedding in WordPress
 
@@ -77,6 +80,14 @@ To do.
 To do.
 
 #### oEmbed method
+
+To do.
+
+### Theming
+
+To do.
+
+### Browser compatibility
 
 To do.
 

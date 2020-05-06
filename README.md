@@ -6,8 +6,6 @@ This project was created to create commercial real estate property maps to be di
 
 Zonal Maps is built with [React](https://reactjs.org) and uses map data provided by [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
 
----
-
 ## Usage
 
 ### Create the spreadsheet
@@ -60,15 +58,11 @@ To do.
 
 To do.
 
----
-
 ## Examples
 
 * [Link to Example 1](https://evaldasstu.github.io/zonalmaps/example/1)
 * [Link to Example 2](https://evaldasstu.github.io/zonalmaps/example/2)
 * [Link to Example 3](https://evaldasstu.github.io/zonalmaps/example/3)
-
----
 
 ## Development
 
@@ -82,8 +76,6 @@ To do: add more on integration, branches, GitHub's encrypted secrets, Google She
 
 Project's `package.json` is configured for deployment to GitHub Pages using `npm run deploy` script.
 
----
-
 ## Acknowledgements
 
 Zonal Maps runs using:
@@ -93,8 +85,6 @@ Zonal Maps runs using:
 * [Google Sheets API](https://developers.google.com/sheets/api)
 
 As well as [Bootstrap](https://getbootstrap.com), [Sass](https://sass-lang.com), [react-spring](https://www.react-spring.io/), [Jest](https://jestjs.io) and other components. For full list, check the [dependency graph](https://github.com/evaldasstu/zonalmaps/network/dependencies).
-
----
 
 ## License
 

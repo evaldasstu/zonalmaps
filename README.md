@@ -47,13 +47,17 @@ Expanding **Customize embed** panel and choosing **Method** allows to choose fro
 
 *iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
 
-| *iframe* example:<br><br> `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>` |
-|:--|
+| iframe example |
+|:---------------|
+| `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>` |
 
-| oEmbed |
-|:-------|
-| *oEmbed* is a newer standard which lets embedding content into compatible websites and platforms without a clunky HTML snippet. A simple URL of embeddable content is enough (where this method is supported, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites). More on this open standard can be found [here](https://oembed.com/). |
-| *Embed code example* <br> `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM` |
+#### oEmbed
+
+*oEmbed* is a newer standard which lets embedding content into compatible websites and platforms without a clunky HTML snippet. A simple URL of embeddable content is enough (where this method is supported, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites). More on this open standard can be found [here](https://oembed.com/).
+
+| oEmbed example |
+|:---------------|
+| `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM` |
 
 ### Additional options
 

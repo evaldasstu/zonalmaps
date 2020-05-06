@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import Menu from './components/Menu/Menu';
-import HowTo from './pages/HowTo/HowTo';
+import HowToUse from './pages/HowToUse/HowToUse';
 import GetEmbedCode from './pages/GetEmbedCode/GetEmbedCode';
 import Embed from './components/Embed/Embed';
 import Example from './pages/Example/Example';
@@ -23,7 +23,7 @@ const App = () => (
           <Menu />
           <Switch>
             <Route exact path="/">
-              <HowTo />
+              <HowToUse />
             </Route>
             <Route path="/example/:exampleNo">
               <Example />

@@ -1,0 +1,48 @@
+// Import Bootstrap variable overrides
+
+@import '../../scss/variable-overrides';
+
+// Import Bootstrap variables
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+
+// *** HowToUse *** //
+
+// Headings
+
+h2 {
+    padding-bottom: $spacer / 2;
+    border-bottom: solid $border-width $card-border-color;
+    margin-bottom: $headings-margin-bottom;
+}
+
+h2 + h3 {
+    margin-top: 0;
+}
+
+h2:not(:first-of-type) {
+    margin-top: 3rem;
+}
+
+h3 {
+    margin-top: 2.75rem;
+}
+
+h4, h5 {
+    margin-top: 2.5rem;
+}
+
+h5 {
+    font-weight: 500;
+}
+
+
+// Code
+
+table code {
+    background: $gray-200;
+    padding: 0.125rem 0.25rem;
+    font-weight: 600;
+}

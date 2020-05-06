@@ -18,7 +18,7 @@ const Menu = () => (
     </LinkContainer>
     <Nav className="mr-auto flex-column flex-md-row">
       <LinkContainer exact to="/">
-        <Nav.Link>How to</Nav.Link>
+        <Nav.Link>How to use</Nav.Link>
       </LinkContainer>
       <NavDropdown title="Examples" id="basic-nav-dropdown">
         <LinkContainer to="/example/1">

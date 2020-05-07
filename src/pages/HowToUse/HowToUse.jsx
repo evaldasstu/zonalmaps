@@ -18,6 +18,7 @@ function HeadingRenderer(props) {
   const slug = Children.toArray(children).reduce(flatten, '').toLowerCase().replace(/\W/g, '-');
   return createElement(`h${level}`, { id: slug }, children);
 }
+
 HeadingRenderer.propTypes = {
   level: PropTypes.number.isRequired,
   children: PropTypes.arrayOf(PropTypes.object).isRequired,

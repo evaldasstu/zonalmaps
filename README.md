@@ -21,31 +21,39 @@ To do: add a screenshot.
 
 To do: introduction.
 
-Row 1 cell values represent property table header values. Some of these values are reserved (see table below). To do: add more.
+Row 1 cell values represent property table header values. **Coordinates** and **Zone** are reserved as special attributes. To do: add more.
 
-To do: describe **hidden** as row 2 cell values to hide columns.
+To do: add example spreadsheet screenshot.
 
-#### Reserved headers
+[Open this spreadsheet](https://docs.google.com/spreadsheets/d/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM/edit?usp=sharing) in Google Sheets.
 
-| Header      | Required | Example |
-|:------------|:--------:|:--------|
-|No           |+         | 1       |
+#### Special attributes
+
+To do: special attribute description.
+
+| Attribute   | Required | Example                   |
+|:------------|:--------:|:--------------------------|
+| Coordinates | +        | 54.698415, 25.271016      | 
+| Zone        | -        | Central Business District |
+
+
+Example coordinates are presented in the same format as the one used in Google Maps, as it is a convenient source to get them from. However, for most purposes four decimal places (`54.6984, 25.2710`) are usually sufficiently precise. This numeric coordinate format is called Decimal degrees (DD), first number is for latitude, second is for longitude. Space between numbers is optional, however latitude and longitude values must be comma–separated.
 
 ### Share the spreadsheet
 
 In Google Sheets, choose **File** > **Share**, select **Copy link** and change **Restricted** to **Anyone with the link** to allow the spreadsheet to be publicly readable. The spreadsheet will have to remain public for the embed to work.
 
-## Generate embed code
+## Get embed code
 
 Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator. To do: add more.
 
 ### Embed method
 
-Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Also, both methods work well for WordPress websites. Check the [Embedding in WordPress](#embedding-in-wordpress) section below for instructions for each approach.
+Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Both methods work well for WordPress websites. Check [Embedding in WordPress](#embedding-in-wordpress) below for instructions using both approaches.
 
 #### iframe
 
-*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
+*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it if you have access to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
 
 | iframe example |
 |:---------------|
@@ -65,11 +73,13 @@ Expanding **Customize embed** panel and choosing **Method** allows to choose fro
 
 By default, Zonal Maps outputs a user interface in English. However, this can be changed by choosing **Customize embed** and selecting **Language**.
 
+To do: add instruction on translating attributes.
+
 #### Display property table
 
 By default, Zonal Maps displays a property list in a sortable table format under the map. If this functionality is not needed, table display can be turned off by choosing **Customize embed** and unchecking the **Display property table** option.
 
-## Retrieve and use embed code
+## Use embed code
 
 ### Embedding in WordPress
 
@@ -80,10 +90,6 @@ To do.
 To do.
 
 #### oEmbed method
-
-To do.
-
-### Theming
 
 To do.
 

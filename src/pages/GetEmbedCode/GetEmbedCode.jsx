@@ -191,7 +191,7 @@ const GetEmbedCode = () => {
       </Card>
 
       <Card className="mt-3">
-        <Card.Header><strong>Step 3:</strong> Retrieve generated code for usage</Card.Header>
+        <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
         <Card.Body>
           <TextArea embedCode={generateEmbedCode({
             spreadsheetId,

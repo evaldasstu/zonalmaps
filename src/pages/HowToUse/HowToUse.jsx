@@ -1,4 +1,5 @@
 import React, { Children, createElement } from 'react';
+import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import ReadMe from '../../../README.md';
@@ -7,16 +8,20 @@ import './HowToUse.scss';
 function flatten(text, child) {
   return typeof child === 'string'
     ? text + child
-    : React.Children.toArray(child.props.children).reduce(flatten, text)
+    : Children.toArray(child.props.children).reduce(flatten, text);
 }
 
 // Render anchors for section links
 function HeadingRenderer(props) {
-  const children = Children.toArray(props.children)
-  const text = children.reduce(flatten, '')
-  const slug = text.toLowerCase().replace(/\W/g, '-')
-  return createElement('h' + props.level, {id: slug}, props.children)
+  const { level } = props;
+  const { children } = props;
+  const slug = Children.toArray(children).reduce(flatten, '').toLowerCase().replace(/\W/g, '-');
+  return createElement(`h${level}`, { id: slug }, children);
 }
+HeadingRenderer.propTypes = {
+  level: PropTypes.number.isRequired,
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 const HowToUse = () => (
   <>

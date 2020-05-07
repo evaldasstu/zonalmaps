@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { LinkContainer } from 'react-router-bootstrap';
 import {
   Card, Form, Col, Row,
@@ -66,7 +66,7 @@ const GetEmbedCode = () => {
         <Card.Body>
           <Card.Text>
             Create a Google Sheets spreadsheet and fill it with data according to the{' '}
-            <Link to="/#specs">specification</Link>.
+            <Link to="/#spreadsheet-specification">specification</Link>.
           </Card.Text>
           <Card.Text>
             Choose <strong>File</strong> &gt; <strong>Share</strong>, select{' '}
@@ -79,7 +79,7 @@ const GetEmbedCode = () => {
 
       <Card className="mt-3">
         <Card.Header>
-          <strong>Step 2:</strong> Setup embed
+          <strong>Step 2:</strong> Generate embed code
         </Card.Header>
         <Card.Body>
 
@@ -191,7 +191,7 @@ const GetEmbedCode = () => {
       </Card>
 
       <Card className="mt-3">
-        <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
+        <Card.Header><strong>Step 3:</strong> Retrieve generated code for usage</Card.Header>
         <Card.Body>
           <TextArea embedCode={generateEmbedCode({
             spreadsheetId,

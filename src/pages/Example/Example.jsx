@@ -8,7 +8,6 @@ import generateEmbedCode from '../../utils/generateEmbedCode';
 import './Example.scss';
 
 const Example = () => {
-
   // title: temp
   // spreadsheetPublishUrl: possibly also temp
   const examples = [
@@ -39,7 +38,10 @@ const Example = () => {
         Example {exampleNo}<br />
         <small className="text-muted">{example.title}</small>
       </h1>
-      <div dangerouslySetInnerHTML={{ __html: generateEmbedCode({ spreadsheetId: example.spreadsheetId }) }} />
+      <div dangerouslySetInnerHTML={
+        { __html: generateEmbedCode({ spreadsheetId: example.spreadsheetId }) }
+      }
+      />
 
       <Card className="mt-4">
         <Card.Header>Embed code</Card.Header>

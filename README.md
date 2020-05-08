@@ -19,7 +19,7 @@ To do: add visuals.
 
 The simplest possible spreadsheet that could be understood by Zonal Maps would look like this:
 
-![Spreadsheet screenshot](./public/spreadsheet-screenshot-927427.png =250x)
+<img src="./public/spreadsheet-screenshot-927427.png" alt="Spreadsheet screenshot" width="349" height="143" />
 
 To do: explain regular attributes.
 

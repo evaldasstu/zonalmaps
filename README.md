@@ -19,11 +19,11 @@ To do: add visuals.
 
 The simplest possible spreadsheet that could be understood by Zonal Maps would look like this:
 
-![Spreadsheet screenshot](./public/spreadsheet-screenshot-927427.png)
+![Spreadsheet screenshot](./public/spreadsheet-screenshot-927427.png =250x)
 
 To do: explain regular attributes.
 
-![Spreadsheet screenshot](./public/spreadsheet-screenshot-374628.png)
+![Spreadsheet screenshot](./public/spreadsheet-screenshot-374628.png =250x)
 
 To do: describe that order numbers are not needed.
 

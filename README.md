@@ -3,7 +3,7 @@
 
 ## Overview
 
-Zonal Maps creates embeddable maps with location markers using data from [Google Sheets](https://www.google.com/sheets/about/) spreadsheets. It has a powerful **zoning feature** which allows assigning object sets to geographical areas and automatically displays boundaries and additional information for such zones.
+Zonal Maps creates embeddable maps with location markers using data from [Google Sheets](https://www.google.com/sheets/about/) spreadsheets. It has a powerful **zoning feature** which allows assigning object sets to geographical areas and automatically displays boundaries of such zones.
 
 To do: add zoning visual?
 
@@ -17,13 +17,25 @@ To do: add visuals.
 
 [Create a spreadsheet](https://sheet.new/) on Google Sheets.
 
-To do: add a screenshot.
+The simplest possible spreadsheet that could be understood by Zonal Maps would look like this:
+
+![Spreadsheet screenshot](./spreadsheet-screenshot-927427.png)
+
+To do: explain regular attributes.
+
+![Spreadsheet screenshot](./spreadsheet-screenshot-374628.png)
+
+To do: describe that order numbers are not needed.
 
 ### Spreadsheet specification
 
+For a spreadsheet that 
+
 To do: introduction.
 
-Row 1 cell values represent property table header values. To do.
+To do: sheet names: Locations, Translations (?).
+
+Row 1 cell values represent location list header values. To do.
 
 To do: add example spreadsheet screenshot.
 
@@ -31,20 +43,20 @@ To do: add example spreadsheet screenshot.
 
 #### Special attributes
 
-Special attributes are not visible in location lists. Attribute names are case–insensitive.
+Special attribute names are presented in uppercase form to keep consistency with custom attributes, however they are case–insensitive. Special attributes are not displayed in location lists. 
 
-| Special attribute | Required | Example                     |
-|:------------------|:--------:|:----------------------------|
-| `Coordinates`     | `+`      | `54.698415, 25.271016`      | 
-| `Zone`            | `-`      | `Central Business District` |
+| Special attribute | Required | Example value             |
+|:------------------|:---------|:--------------------------|
+| `Coordinates`     | +        | `54.698415, 25.271016`    | 
+| `Zone`            |          | Central Business District |
 
 ##### `Coordinates`
 
-Geographical coordinates use Decimal degrees (DD) format, first number is for latitude, second is for longitude. For the example above, numbers have been conveniently copied from Google Maps, however four decimal places (`54.6984, 25.2710`) would suffice for most practical purposes. Space between latitude and longitude is optional, numbers must be comma–separated.
+Geographical coordinates are expected to be provided in Decimal degrees (DD) format. First number is for latitude, second is for longitude. For the example above, numbers for the example value have been conveniently copied from Google Maps, however four decimal places (`54.6984, 25.2710`) would suffice for most practical purposes. Space between latitude and longitude is optional, numbers must be comma–separated.
 
 ##### `Zone`
 
-This attribute is used to pool geographical objects into groups and display boundaries around such areas.
+This attribute is used to assign objects to groups for displaying boundaries around geographic areas.
 
 ### Share the spreadsheet
 
@@ -54,9 +66,11 @@ In Google Sheets, choose **File** > **Share**, select **Copy link** and change *
 
 Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator. To do: add more.
 
-### Embed method
+### Embed format
 
-Expanding **Customize embed** panel and choosing **Method** allows to choose from two different options: **iframe** and **oEmbed**. Both methods work well for WordPress websites. Check [Embedding in WordPress](#embedding-in-wordpress) below for instructions using both approaches.
+Expanding **Customize embed** panel and choosing **Format** allows to choose from two different options: **iframe** and **oEmbed**.
+
+Note: In [WordPress](https://wordpress.org) websites, *iframe* method works out of the box. *oEmbed* can also be used, but one additional configuration step needs to be taken. Check [Embedding in WordPress](#embedding-in-wordpress) below for more info.
 
 #### iframe
 
@@ -68,7 +82,7 @@ Expanding **Customize embed** panel and choosing **Method** allows to choose fro
 
 #### oEmbed
 
-*oEmbed* is a newer standard which lets embedding content into compatible websites and platforms using a shorter and simpler code snippet, which is a simple URL of embeddable content. This method is supported in some environments, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites. More on this open standard can be found [here](https://oembed.com/).
+*oEmbed* is a newer standard which lets embedding content into compatible websites and platforms using a shorter and simpler code snippet, which is a simple URL of embeddable content. This method is supported in some environments, e.g. in [Squarespace](https://squarespace.com) websites. More on this open standard can be found [here](https://oembed.com/).
 
 ##### oEmbed embed code example:
 
@@ -82,27 +96,38 @@ By default, Zonal Maps outputs a user interface in English. However, this can be
 
 To do: add instruction on translating attributes.
 
-#### Display property table
+#### Display location list
 
-By default, Zonal Maps displays a property list in a sortable table format under the map. If this functionality is not needed, table display can be turned off by choosing **Customize embed** and unchecking the **Display property table** option.
+By default, Zonal Maps displays a location list as a sortable table below the map. If this functionality is not needed, list display can be turned off by choosing **Customize embed** and unchecking **Display location list**.
 
 ## Use embed code
 
 ### Embedding in WordPress
 
-To do.
+#### iframe format
 
-#### iframe method
+To add an embed to a [WordPress](https://wordpress.org) website using Block Editor (default since version 5.0), add a **Custom HTML** block and paste the embed code.
 
-To do.
+When using the Classic Editor or pre–Gutenberg WordPress, switch to **Text** tab of the editor and paste the embed code.
 
-#### oEmbed method
+#### oEmbed format
 
-To do.
+WordPress supports *oEmbed* format and automatically displays content from selected websites by converting URLs into content objects straight in the editor. However, it uses an internal whitelist of trusted websites for this feature. To enable *oEmbed* for Zonal Maps, add this line to `functions.php` file of your theme:
 
-### Browser compatibility
+> `wp_oembed_add_provider( 'https://evaldasstu.github.io/zonalmaps/embed/*', 'https://evaldasstu.github.io/zonalmaps/oembed', false );`
 
-To do.
+To do: check syntax.
+
+### Browser support
+
+| Desktop              | Mobile             |
+|:---------------------|:-------------------|
+| Chrome               | Chrome             |
+| Firefox              | Firefox            |
+| Safari 5+ (Mac only) | Safari 7+          |
+| Opera 12+            | Android Browser 5+ |
+| IE 10+               |                    |
+| Edge                 |                    |
 
 ## Examples
 
@@ -130,7 +155,7 @@ Zonal Maps runs using:
 * [OpenStreetMap](https://openstreetmap.org) via [Leaflet](https://leafletjs.com)
 * [Google Sheets API](https://developers.google.com/sheets/api)
 
-...as well as [Bootstrap](https://getbootstrap.com), [Sass](https://sass-lang.com), [react-spring](https://www.react-spring.io/), [Jest](https://jestjs.io) and other components. For full list, check the [dependency graph](https://github.com/evaldasstu/zonalmaps/network/dependencies).
+As well as with the help of [Bootstrap](https://getbootstrap.com), [Sass](https://sass-lang.com), [react-spring](https://www.react-spring.io/), [Jest](https://jestjs.io) and other packages. For full list, check the [dependency graph](https://github.com/evaldasstu/zonalmaps/network/dependencies).
 
 ## License
 

@@ -28,8 +28,10 @@
    // Headings
 
    h2 {
-      padding-bottom: $spacer * 0.5;
-      border-bottom: solid $border-width $card-border-color;
+      padding-bottom: $spacer * 0.25;
+      border-bottom-style: solid;
+      border-bottom-width: 2 * $table-border-width;
+      border-bottom-color: $table-border-color;
       margin-bottom: $headings-margin-bottom;
    }
 
@@ -60,8 +62,12 @@
    table {
       @extend .table;
       @extend .table-sm;
+      table-layout: fixed;
    }
 
+   table th {
+      border-top: 0;
+   }
 
    // Code
 

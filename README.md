@@ -23,7 +23,7 @@ The simplest possible spreadsheet that could be understood by Zonal Maps would l
 
 To do: explain regular attributes.
 
-<img src="./public/readme/spreadsheet-screenshot-374628.png" alt="Spreadsheet screenshot" width="604" />
+<img src="./public/readme/spreadsheet-screenshot-374628.png" alt="Spreadsheet screenshot" width="588" />
 
 To do: describe that order numbers are not needed.
 

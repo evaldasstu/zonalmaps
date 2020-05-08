@@ -1,8 +1,8 @@
 const generateEmbedCode = ({
   spreadsheetId,
-  format,
-  language,
-  displayList,
+  format = 'iframe',
+  language = 'en',
+  displayList = 'true',
 }) => {
   const iframePrefix = '<div class="zm"><iframe src="';
 

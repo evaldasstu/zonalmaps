@@ -4,33 +4,34 @@ import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import TextArea from '../../components/TextArea/TextArea';
+import generateEmbedCode from '../../utils/generateEmbedCode';
 import './Example.scss';
 
 const Example = () => {
+
+  // title: temp
+  // spreadsheetPublishUrl: possibly also temp
   const examples = [
     {
-      title: 'Responsive Embed 2x3',
-      spreadsheetId: '2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg',
-      embedCode: '<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>',
+      title: 'Example 1 Title',
+      spreadsheetId: '1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM',
+      spreadsheetPublishUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
     },
     {
-      title: 'Fixed-size Embed 640x480',
-      spreadsheetId: '2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg',
-      embedCode: '<iframe width="640" height="480" src="https://evaldasstu.github.io/zonalmaps/embed/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg" frameborder="0"></iframe>',
+      title: 'Example 2 Title',
+      spreadsheetId: '1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM',
+      spreadsheetPublishUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
     },
     {
-      title: 'Fixed-size Embed 640x960',
-      spreadsheetId: '2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg',
-      embedCode: '<iframe width="640" height="960" src="https://evaldasstu.github.io/zonalmaps/embed/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg" frameborder="0"></iframe>',
+      title: 'Example 3 Title',
+      spreadsheetId: '1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM',
+      spreadsheetPublishUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
     },
   ];
 
+  // Select example data by URL parameter
   const { exampleNo } = useParams();
   const example = examples[exampleNo - 1];
-  const spreadsheetEmbedCodePrefix = 'https://docs.google.com/spreadsheets/d/e/';
-  const spreadsheetEmbedCodeSuffix = '/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false';
-  const spreadsheetEmbedCode = spreadsheetEmbedCodePrefix + example.spreadsheetId
-    + spreadsheetEmbedCodeSuffix;
 
   return (
     <>
@@ -38,22 +39,22 @@ const Example = () => {
         Example {exampleNo}<br />
         <small className="text-muted">{example.title}</small>
       </h1>
-      <div dangerouslySetInnerHTML={{ __html: example.embedCode }} />
+      <div dangerouslySetInnerHTML={{ __html: generateEmbedCode({ spreadsheetId: example.spreadsheetId }) }} />
 
       <Card className="mt-4">
         <Card.Header>Embed code</Card.Header>
         <Card.Body>
-          <TextArea embedCode={example.embedCode} />
+          <TextArea embedCode={generateEmbedCode({ spreadsheetId: example.spreadsheetId })} />
         </Card.Body>
       </Card>
 
       <Card className="mt-4">
         <Card.Header>Source spreadsheet</Card.Header>
         <Card.Body>
-          <div className="spreadsheetEmbed mb-3">
-            <iframe title="Source data" src={spreadsheetEmbedCode} />
+          <div className="spreadsheetEmbed">
+            <iframe title="Source data" src={example.spreadsheetPublishUrl} />
           </div>
-          <Card.Link href="#">
+          <Card.Link href="#" className="d-block mt-4">
             Open in Google Sheets
             <FontAwesomeIcon icon={faExternalLinkAlt} size="xs" />
           </Card.Link>

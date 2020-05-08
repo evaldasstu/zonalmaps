@@ -17,9 +17,11 @@ To do: add visuals.
 
 [Create a spreadsheet](https://sheet.new/) on Google Sheets.
 
-The simplest possible spreadsheet that could be understood by Zonal Maps would look like this:
+The simplest possible spreadsheet that could be understood by Zonal Maps looks like this:
 
 <img src="./public/readme/spreadsheet-screenshot-927427.png" alt="Spreadsheet screenshot" width="175" />
+
+It would result in a single point rendered on a map.
 
 To do: explain regular attributes.
 
@@ -29,11 +31,11 @@ To do: describe that order numbers are not needed.
 
 ### Spreadsheet specification
 
-For a spreadsheet that 
-
 To do: introduction.
 
-To do: sheet names: Locations, Translations (?).
+#### `Locations` sheet
+
+To do: naming not necessary if there is only one sheet (?)
 
 Row 1 cell values represent location list header values. To do.
 
@@ -57,6 +59,10 @@ Geographical coordinates are expected to be provided in Decimal degrees (DD) for
 ##### `Zone`
 
 This attribute is used to assign objects to groups for displaying boundaries around geographic areas.
+
+#### `Translations` sheet
+
+To do.
 
 ### Share the spreadsheet
 
@@ -159,4 +165,5 @@ As well as with the help of [Bootstrap](https://getbootstrap.com), [Sass](https:
 
 ## License
 
-Zonal Maps is open source software licensed as... To do: choose a license.
+Zonal Maps is open source software licensed under the MIT license.  
+Copyright © 2020 Evaldas Stulgaitis

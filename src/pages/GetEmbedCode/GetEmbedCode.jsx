@@ -89,7 +89,8 @@ const GetEmbedCode = () => {
               : null}
           </AnimatedContainer>
 
-          <Form>
+          {/* Prevent form submission on Enter keypress */}
+          <Form onSubmit={(event) => { event.preventDefault(); }}>
             <Form.Label htmlFor="spreadsheetUrl">
               Paste a public spreadsheet link here:
             </Form.Label>

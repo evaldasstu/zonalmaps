@@ -37,7 +37,7 @@ const GetEmbedCode = () => {
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
   const [format, setFormat] = useState('iframe');
   const [language, setLanguage] = useState('en');
-  const [displayPropertyTable, setDisplayPropertyTable] = useState(true);
+  const [displayList, setDisplayList] = useState(true);
 
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
@@ -154,18 +154,18 @@ const GetEmbedCode = () => {
                     <Col xs={12} className="d-lg-none my-1" />
 
                     <Col xs={4} className="my-auto d-lg-none py-2">
-                      <Form.Label htmlFor="displayPropertyTable" className="mb-0">
-                        Table:
+                      <Form.Label htmlFor="displayList" className="mb-0">
+                        List:
                       </Form.Label>
                     </Col>
 
                     <Col xs={8} lg="auto" className="my-auto py-2">
                       <Form.Check
-                        id="displayPropertyTable"
+                        id="displayList"
                         type="checkbox"
-                        label="Display property table"
-                        checked={displayPropertyTable}
-                        onChange={() => { setDisplayPropertyTable(!displayPropertyTable); }}
+                        label="Display location list"
+                        checked={displayList}
+                        onChange={() => { setDisplayList(!displayList); }}
                       />
                     </Col>
                   </Row>
@@ -197,7 +197,7 @@ const GetEmbedCode = () => {
             spreadsheetId,
             format,
             language,
-            // displayPropertyTable,
+            displayList,
           })}
           />
         </Card.Body>

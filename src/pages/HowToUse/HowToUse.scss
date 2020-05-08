@@ -1,14 +1,13 @@
 // Bootstrap variable overrides
-
 @import '../../scss/variable-overrides';
 
 // Bootstrap variables
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
 
-// @import '~bootstrap/scss/functions';
-// @import '~bootstrap/scss/variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Bootstrap tables
+@import '~bootstrap/scss/tables';
 
 // Bootstrap: post-load overrides
 @import '../../scss/post-load-overrides';
@@ -25,7 +24,7 @@
    }
 
 
-   // Headings
+   // Typography
 
    h2 {
       padding-bottom: $spacer * 0.25;
@@ -56,6 +55,10 @@
       margin-bottom: 1rem; // $headings-margin-bottom: 1.5rem
    }
 
+   p:last-of-type {
+      margin-bottom: 0;
+   }
+
 
    // Tables
 
@@ -68,6 +71,7 @@
    table th {
       border-top: 0;
    }
+
 
    // Code
 

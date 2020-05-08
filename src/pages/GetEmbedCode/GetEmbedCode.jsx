@@ -35,7 +35,7 @@ const GetEmbedCode = () => {
   const [spreadsheetId, setSpreadsheetId] = useState('');
   const [setupMessage, setSetupMessage] = useState('');
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
-  const [method, setMethod] = useState('iframe');
+  const [format, setFormat] = useState('iframe');
   const [language, setLanguage] = useState('en');
   const [displayPropertyTable, setDisplayPropertyTable] = useState(true);
 
@@ -108,16 +108,16 @@ const GetEmbedCode = () => {
                 <Form>
                   <Row>
                     <Col xs={4} lg="auto" className="my-auto">
-                      <Form.Label htmlFor="method" className="mb-0">
-                        Method:
+                      <Form.Label htmlFor="format" className="mb-0">
+                        Format:
                       </Form.Label>
                     </Col>
 
                     <Col xs={8} lg={3}>
                       <Form.Control
-                        id="method"
+                        id="format"
                         as="select"
-                        onChange={(event) => setMethod(event.target.value)}
+                        onChange={(event) => setFormat(event.target.value)}
                       >
                         <option value="iframe">iframe</option>
                         <option value="oembed">oEmbed</option>
@@ -195,7 +195,7 @@ const GetEmbedCode = () => {
         <Card.Body>
           <TextArea embedCode={generateEmbedCode({
             spreadsheetId,
-            method,
+            format,
             language,
             // displayPropertyTable,
           })}

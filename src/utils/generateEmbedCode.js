@@ -1,6 +1,6 @@
 const generateEmbedCode = ({
   spreadsheetId,
-  method,
+  format,
   language,
   displayPropertyTable,
 }) => {
@@ -21,7 +21,7 @@ const generateEmbedCode = ({
     extraOptions = `?table=0&lang=${language}`;
   }
   embedCode = `${embedCode}${extraOptions}`;
-  embedCode = method === 'iframe' ? `${iframePrefix}${embedCode}${iframeSuffix}` : embedCode;
+  embedCode = format === 'iframe' ? `${iframePrefix}${embedCode}${iframeSuffix}` : embedCode;
 
   return spreadsheetId ? embedCode : null;
 };

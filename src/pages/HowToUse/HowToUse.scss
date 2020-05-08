@@ -1,48 +1,83 @@
-// Import Bootstrap variable overrides
+// Bootstrap variable overrides
 
 @import '../../scss/variable-overrides';
 
-// Import Bootstrap variables
+// Bootstrap variables
 
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
+// @import '~bootstrap/scss/functions';
+// @import '~bootstrap/scss/variables';
 
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Bootstrap: post-load overrides
+@import '../../scss/post-load-overrides';
 
 // *** HowToUse *** //
 
-// Headings
+.how-to-use {
 
-h2 {
-    padding-bottom: $spacer / 2;
-    border-bottom: solid $border-width $card-border-color;
-    margin-bottom: $headings-margin-bottom;
-}
+   // Hide title and subtitle
 
-h2 + h3 {
-    margin-top: 0;
-}
-
-h2:not(:first-of-type) {
-    margin-top: 3rem;
-}
-
-h3 {
-    margin-top: 2.75rem;
-}
-
-h4, h5 {
-    margin-top: 2.5rem;
-}
-
-h5 {
-    font-weight: 500;
-}
+   h1,
+   h1 + blockquote {
+      display: none;
+   }
 
 
-// Code
+   // Headings
 
-table code {
-    background: $gray-200;
-    padding: 0.125rem 0.25rem;
-    font-weight: 600;
+   h2 {
+      padding-bottom: $spacer * 0.5;
+      border-bottom: solid $border-width $card-border-color;
+      margin-bottom: $headings-margin-bottom;
+   }
+
+   h2 + h3 {
+      margin-top: 0;
+   }
+
+   h2:not(:first-of-type) {
+      margin-top: 3rem;
+   }
+
+   h3 {
+      margin-top: 2.75rem;
+   }
+
+   h4, h5 {
+      margin-top: 2.5rem;
+   }
+
+   h5 {
+      font-weight: 500;
+      margin-bottom: 1rem; // $headings-margin-bottom: 1.5rem
+   }
+
+
+   // Tables
+
+   table {
+      @extend .table;
+      @extend .table-sm;
+   }
+
+
+   // Code
+
+   code {
+      font-weight: 500;
+      background: $gray-150;
+      padding: 0.125rem 0.25rem;
+   }
+
+  table code {
+      background: none;
+      padding: 0;
+   }
+
+   blockquote code {
+      display: block;
+      padding: 0.5rem 0.75rem;
+   }
 }

@@ -27,7 +27,7 @@ HeadingRenderer.propTypes = {
 const HowToUse = () => (
   <>
     <h1>How to use</h1>
-    <Card>
+    <Card className="how-to-use">
       <Card.Body>
         <ReactMarkdown source={ReadMe} renderers={{ heading: HeadingRenderer }} />
       </Card.Body>

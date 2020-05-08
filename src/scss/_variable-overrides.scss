@@ -29,6 +29,7 @@ $grid-gutter-width: 15px;
 // Typography
 
 $font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
 
 $font-size-base: 0.938rem; // 15px
 
@@ -69,4 +70,5 @@ $navbar-brand-font-size: 0.938rem; // 15px
 
 // Code
 
+// $code-font-size: 87.5% !default;
 $code-color: $body-color;

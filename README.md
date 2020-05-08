@@ -5,6 +5,8 @@
 
 Zonal Maps creates embeddable maps with location markers using data from [Google Sheets](https://www.google.com/sheets/about/) spreadsheets. It has a powerful **zoning feature** which allows assigning object sets to geographical areas and automatically displays boundaries and additional information for such zones.
 
+To do: add zoning visual?
+
 This project was developed to simplify a process of creating commercial real estate property maps and to provide an easy to learn and convenient way of real–time content update.
 
 Zonal Maps is built with [React](https://reactjs.org) and uses map data provided by [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
@@ -21,7 +23,7 @@ To do: add a screenshot.
 
 To do: introduction.
 
-Row 1 cell values represent property table header values. **Coordinates** and **Zone** are reserved as special attributes. To do: add more.
+Row 1 cell values represent property table header values. To do.
 
 To do: add example spreadsheet screenshot.
 
@@ -29,15 +31,20 @@ To do: add example spreadsheet screenshot.
 
 #### Special attributes
 
-To do: special attribute description.
+Special attributes are not visible in location lists. Attribute names are case–insensitive.
 
-| Attribute   | Required | Example                   |
-|:------------|:--------:|:--------------------------|
-| Coordinates | +        | 54.698415, 25.271016      | 
-| Zone        | -        | Central Business District |
+| Special attribute | Required | Example                     |
+|:------------------|:--------:|:----------------------------|
+| `Coordinates`     | `+`      | `54.698415, 25.271016`      | 
+| `Zone`            | `-`      | `Central Business District` |
 
+##### `Coordinates`
 
-Example coordinates are presented in the same format as the one used in Google Maps, as it is a convenient source to get them from. However, for most purposes four decimal places (`54.6984, 25.2710`) are usually sufficiently precise. This numeric coordinate format is called Decimal degrees (DD), first number is for latitude, second is for longitude. Space between numbers is optional, however latitude and longitude values must be comma–separated.
+Geographical coordinates use Decimal degrees (DD) format, first number is for latitude, second is for longitude. For the example above, numbers have been conveniently copied from Google Maps, however four decimal places (`54.6984, 25.2710`) would suffice for most practical purposes. Space between latitude and longitude is optional, numbers must be comma–separated.
+
+##### `Zone`
+
+This attribute is used to pool geographical objects into groups and display boundaries around such areas.
 
 ### Share the spreadsheet
 
@@ -53,25 +60,17 @@ Expanding **Customize embed** panel and choosing **Method** allows to choose fro
 
 #### iframe
 
-*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it if you have access to website's HTML code. Please note that `<style>` tag is added to make this embed a responsive 100 percent width element so it can nicely fit its container.
+*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it if you have access to website's HTML code. `<style>` tag is included in the embed code to make the content responsively fit its container.
 
-| iframe embed code example |
-|:--------------------------|
-| `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>` |
-
-Blockquote:
+##### iframe embed code example:
 
 > `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>`
 
 #### oEmbed
 
-*oEmbed* is a newer standard which lets embedding content into compatible websites and platforms without a clunky HTML snippet. A simple URL of embeddable content is enough (where this method is supported, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites). More on this open standard can be found [here](https://oembed.com/).
+*oEmbed* is a newer standard which lets embedding content into compatible websites and platforms using a shorter and simpler code snippet, which is a simple URL of embeddable content. This method is supported in some environments, e.g. in [WordPress](https://wordpress.org) or [Squarespace](https://squarespace.com) websites. More on this open standard can be found [here](https://oembed.com/).
 
-| oEmbed embed code example |
-|:--------------------------|
-| `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM` |
-
-Blockquote:
+##### oEmbed embed code example:
 
 > `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM`
 

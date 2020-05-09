@@ -36,25 +36,25 @@ const TextArea = ({ embedCode }) => {
           value={embedCode || 'Waiting for a Google Sheets link...'}
           rows="5"
           readOnly
-          ref={(element) => { textArea = element; }}
+          ref={(element) => {
+            textArea = element;
+          }}
         />
       </code>
 
-      {embedCode
-        ? (
-          <LinkContainer to="#">
-            <Card.Link onClick={copyToClipboard} className="d-block mt-4">
-              Copy to clipboard
-              <FontAwesomeIcon icon={faCopy} size="xs" />
-            </Card.Link>
-          </LinkContainer>
-        )
-        : (
-          <Card.Link className="d-block mt-4">
+      {embedCode ? (
+        <LinkContainer to="#">
+          <Card.Link onClick={copyToClipboard} className="d-block mt-4">
             Copy to clipboard
             <FontAwesomeIcon icon={faCopy} size="xs" />
           </Card.Link>
-        )}
+        </LinkContainer>
+      ) : (
+        <Card.Link className="d-block mt-4">
+          Copy to clipboard
+          <FontAwesomeIcon icon={faCopy} size="xs" />
+        </Card.Link>
+      )}
     </>
   );
 };

@@ -14,17 +14,20 @@ const Example = () => {
     {
       title: 'Example 1 Title',
       spreadsheetId: '1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM',
-      spreadsheetPublishUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
+      spreadsheetPublishUrl:
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
     },
     {
       title: 'Example 2 Title',
       spreadsheetId: '1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM',
-      spreadsheetPublishUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
+      spreadsheetPublishUrl:
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
     },
     {
       title: 'Example 3 Title',
       spreadsheetId: '1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM',
-      spreadsheetPublishUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
+      spreadsheetPublishUrl:
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vTQhSNDZHmt2bCca8hpeSe_bLtFSkqLttRO06RJk_JpDpk0jb0uW0co5acE_toHzHFZxZsPXGFHYXsg/pubhtml',
     },
   ];
 
@@ -35,18 +38,24 @@ const Example = () => {
   return (
     <>
       <h1>
-        Example {exampleNo}<br />
+        Example {exampleNo}
+        <br />
         <small className="text-muted">{example.title}</small>
       </h1>
-      <div dangerouslySetInnerHTML={
-        { __html: generateEmbedCode({ spreadsheetId: example.spreadsheetId }) }
-      }
+      <div
+        dangerouslySetInnerHTML={{
+          __html: generateEmbedCode({ spreadsheetId: example.spreadsheetId }),
+        }}
       />
 
       <Card className="mt-4">
         <Card.Header>Embed code</Card.Header>
         <Card.Body>
-          <TextArea embedCode={generateEmbedCode({ spreadsheetId: example.spreadsheetId })} />
+          <TextArea
+            embedCode={generateEmbedCode({
+              spreadsheetId: example.spreadsheetId,
+            })}
+          />
         </Card.Body>
       </Card>
 

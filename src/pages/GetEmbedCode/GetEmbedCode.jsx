@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { LinkContainer } from 'react-router-bootstrap';
-import {
-  Card, Form, Col, Row,
-} from 'react-bootstrap';
+import { Card, Form, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import AnimatedContainer from '../../components/AnimatedContainer/AnimatedContainer';
@@ -41,8 +39,9 @@ const GetEmbedCode = () => {
 
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
-    let extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)')
-      .exec(event.target.value);
+    let extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').exec(
+      event.target.value,
+    );
     extractedSpreadsheetId = extractedSpreadsheetId ? extractedSpreadsheetId[1] : null;
     if (event.target.value && extractedSpreadsheetId) {
       // Connect call placeholder
@@ -71,8 +70,8 @@ const GetEmbedCode = () => {
           <Card.Text>
             Choose <strong>File</strong> &gt; <strong>Share</strong>, select{' '}
             <strong>Copy link</strong> and change <strong>Restricted</strong> to{' '}
-            <strong>Anyone with the link</strong> in Google Sheets to allow the spreadsheet{' '}
-            to be publicly readable.
+            <strong>Anyone with the link</strong> in Google Sheets to allow the spreadsheet to be
+            publicly readable.
           </Card.Text>
         </Card.Body>
       </Card>
@@ -82,18 +81,19 @@ const GetEmbedCode = () => {
           <strong>Step 2:</strong> Generate embed code
         </Card.Header>
         <Card.Body>
-
           <AnimatedContainer isExpanded={Boolean(setupMessage)}>
-            {setupMessage
-              ? <Message type={messages[setupMessage].type} text={messages[setupMessage].text} />
-              : null}
+            {setupMessage ? (
+              <Message type={messages[setupMessage].type} text={messages[setupMessage].text} />
+            ) : null}
           </AnimatedContainer>
 
           {/* Prevent form submission on Enter keypress */}
-          <Form onSubmit={(event) => { event.preventDefault(); }}>
-            <Form.Label htmlFor="spreadsheetUrl">
-              Paste a public spreadsheet link here:
-            </Form.Label>
+          <Form
+            onSubmit={(event) => {
+              event.preventDefault();
+            }}
+          >
+            <Form.Label htmlFor="spreadsheetUrl">Paste a public spreadsheet link here:</Form.Label>
             <Form.Control
               id="spreadsheetUrl"
               value={spreadsheetUrl}
@@ -166,7 +166,9 @@ const GetEmbedCode = () => {
                         type="checkbox"
                         label="Display location list"
                         checked={displayList}
-                        onChange={() => { setDisplayList(!displayList); }}
+                        onChange={() => {
+                          setDisplayList(!displayList);
+                        }}
                       />
                     </Col>
                   </Row>
@@ -181,25 +183,24 @@ const GetEmbedCode = () => {
               className="d-block mt-4"
             >
               Customize embed
-              <FontAwesomeIcon
-                icon={customizeIsActive ? faChevronUp : faChevronDown}
-                size="xs"
-              />
+              <FontAwesomeIcon icon={customizeIsActive ? faChevronUp : faChevronDown} size="xs" />
             </Card.Link>
           </LinkContainer>
-
         </Card.Body>
       </Card>
 
       <Card className="mt-3">
-        <Card.Header><strong>Step 3:</strong> Copy generated code</Card.Header>
+        <Card.Header>
+          <strong>Step 3:</strong> Copy generated code
+        </Card.Header>
         <Card.Body>
-          <TextArea embedCode={generateEmbedCode({
-            spreadsheetId,
-            format,
-            language,
-            displayList,
-          })}
+          <TextArea
+            embedCode={generateEmbedCode({
+              spreadsheetId,
+              format,
+              language,
+              displayList,
+            })}
           />
         </Card.Body>
       </Card>

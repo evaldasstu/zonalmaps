@@ -1,9 +1,0 @@
-{
-  "plugins": [
-    "stylelint-scss"
-  ],
-  "extends": "stylelint-config-airbnb",
-  "rules": {
-    "at-rule-empty-line-before": "never"
-  }
-}

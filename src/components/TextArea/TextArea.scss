@@ -3,15 +3,14 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 
-
 // *** TextArea *** //
 
 code textarea.form-control,
 code textarea.form-control[readonly] {
-    background-color: $dark;
-    color: $gray-300;
-    font-size: 0.75rem; // 12px
-    font-weight: 400;
-    padding: 0.563rem 0.875rem; // 9px 14px
-    line-height: 1.7;
+  background-color: $dark;
+  color: $gray-300;
+  font-size: 0.75rem; // 12px
+  font-weight: 400;
+  padding: 0.563rem 0.875rem; // 9px 14px
+  line-height: 1.7;
 }

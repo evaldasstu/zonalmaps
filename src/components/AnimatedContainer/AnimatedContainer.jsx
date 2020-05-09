@@ -6,11 +6,12 @@ import './AnimatedContainer.scss';
 
 const useMeasure = () => {
   const ref = useRef();
-  const [bounds, setBounds] = useState(
-    {
-      left: 0, top: 0, width: 0, height: 0,
-    },
-  );
+  const [bounds, setBounds] = useState({
+    left: 0,
+    top: 0,
+    width: 0,
+    height: 0,
+  });
 
   const [observer] = useState(() => new ResizeObserver(([entry]) => setBounds(entry.contentRect)));
 
@@ -51,9 +52,7 @@ const AnimatedContainer = ({ children, isExpanded }) => {
 
   return (
     <animated.div style={{ height, opacity }} className="zm-animated-container">
-      <div ref={bindHeight.ref}>
-        {children}
-      </div>
+      <div ref={bindHeight.ref}>{children}</div>
     </animated.div>
   );
 };

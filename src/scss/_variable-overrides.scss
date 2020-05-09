@@ -1,7 +1,6 @@
 // *** Bootstrap: variable overrides *** //
 // Customizations loaded before Bootstrap
 
-
 // Color system
 
 $gray-150: #f1f3f5;
@@ -9,29 +8,25 @@ $gray-800: #343a40; // same as !default
 
 $light: $gray-150;
 
-
 // Body
 
 $body-bg: $light;
 $body-color: $gray-800;
 
-
 // Paragraphs
 
 $paragraph-margin-bottom: 1.5rem;
-
 
 // Grid columns
 
 $grid-gutter-width: 15px;
 
-
 // Typography
 
-$font-family-sans-serif: "Open Sans", sans-serif;
-$font-family-monospace: "Roboto Mono", monospace;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-monospace: 'Roboto Mono', monospace;
 
-$font-size-base: .938rem; // 15px
+$font-size-base: 0.938rem; // 15px
 
 $line-height-base: 1.7;
 
@@ -42,17 +37,15 @@ $h4-font-size: 1.25rem; // 20px
 $h5-font-size: $font-size-base; // 15px
 
 $headings-margin-bottom: 1.5rem;
-$headings-font-family: "Montserrat", sans-serif;
+$headings-font-family: 'Montserrat', sans-serif;
 $headings-font-weight: 400;
 $headings-color: #000;
 
 $display4-size: 2.75rem;
 
-
 // Forms
 
-$form-check-input-margin-y: .4rem;
-
+$form-check-input-margin-y: 0.4rem;
 
 // Cards
 
@@ -60,13 +53,11 @@ $card-spacer-x: 1.5rem;
 $card-cap-bg: #fff;
 $card-cap-color: #000;
 
-
 // Navbar
 
 $navbar-padding-x: $card-spacer-x;
 
-$navbar-brand-font-size: .938rem; // 15px
-
+$navbar-brand-font-size: 0.938rem; // 15px
 
 // Code
 

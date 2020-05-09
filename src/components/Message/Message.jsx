@@ -69,7 +69,7 @@ SelfDestructiveMessage.propTypes = {
 };
 
 SelfDestructiveMessage.defaultProps = {
-  dismiss: () => { },
+  dismiss: () => {},
 };
 
 export { SelfDestructiveMessage };

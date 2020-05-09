@@ -1,10 +1,12 @@
 // Webpack config overrides
+
 module.exports = function override(config) {
   const updatedConfig = config;
 
   // Allow imports outside of src directory
-  updatedConfig.resolve.plugins = updatedConfig.resolve.plugins
-    .filter((plugin) => !(plugin.appSrcs && plugin.allowedFiles));
+  updatedConfig.resolve.plugins = updatedConfig.resolve.plugins.filter(
+    (plugin) => !(plugin.appSrcs && plugin.allowedFiles),
+  );
 
   // Add loader for .md files
   updatedConfig.module.rules = updatedConfig.module.rules.map((rule) => {

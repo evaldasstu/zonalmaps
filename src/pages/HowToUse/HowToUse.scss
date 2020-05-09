@@ -15,79 +15,76 @@
 // *** HowToUse *** //
 
 .how-to-use {
+  // Hide title and subtitle
 
-   // Hide title and subtitle
+  h1,
+  h1 + blockquote {
+    display: none;
+  }
 
-   h1,
-   h1 + blockquote {
-      display: none;
-   }
+  // Typography
 
+  h2 {
+    padding-bottom: $spacer * 0.25;
+    border-bottom-style: solid;
+    border-bottom-width: 2 * $table-border-width;
+    border-bottom-color: $table-border-color;
+    margin-bottom: $headings-margin-bottom;
+  }
 
-   // Typography
+  h2 + h3 {
+    margin-top: 0;
+  }
 
-   h2 {
-      padding-bottom: $spacer * 0.25;
-      border-bottom-style: solid;
-      border-bottom-width: 2 * $table-border-width;
-      border-bottom-color: $table-border-color;
-      margin-bottom: $headings-margin-bottom;
-   }
+  h2:not(:first-of-type) {
+    margin-top: 3rem;
+  }
 
-   h2 + h3 {
-      margin-top: 0;
-   }
+  h3 {
+    margin-top: 2.75rem;
+  }
 
-   h2:not(:first-of-type) {
-      margin-top: 3rem;
-   }
+  h4,
+  h5 {
+    margin-top: 2.5rem;
+  }
 
-   h3 {
-      margin-top: 2.75rem;
-   }
+  h5 {
+    font-weight: 500;
+    margin-bottom: 1rem; // $headings-margin-bottom: 1.5rem
+  }
 
-   h4, h5 {
-      margin-top: 2.5rem;
-   }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 
-   h5 {
-      font-weight: 500;
-      margin-bottom: 1rem; // $headings-margin-bottom: 1.5rem
-   }
+  // Tables
 
-   p:last-of-type {
-      margin-bottom: 0;
-   }
+  table {
+    @extend .table;
+    @extend .table-sm;
+    table-layout: fixed;
+  }
 
+  table th {
+    border-top: 0;
+  }
 
-   // Tables
+  // Code
 
-   table {
-      @extend .table;
-      @extend .table-sm;
-      table-layout: fixed;
-   }
-
-   table th {
-      border-top: 0;
-   }
-
-
-   // Code
-
-   code {
-      font-weight: 500;
-      background: $gray-150;
-      padding: 0.125rem 0.25rem;
-   }
+  code {
+    font-weight: 500;
+    background: $gray-150;
+    padding: 0.125rem 0.25rem;
+  }
 
   table code {
-      background: none;
-      padding: 0;
-   }
+    background: none;
+    padding: 0;
+  }
 
-   blockquote code {
-      display: block;
-      padding: 0.5rem 0.75rem;
-   }
+  blockquote code {
+    display: block;
+    padding: 0.5rem 0.75rem;
+  }
 }

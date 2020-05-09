@@ -20,6 +20,7 @@ const TextArea = ({ embedCode }) => {
 
   return (
     <>
+      {/* Successfully copied to clipboard */}
       {copySuccess && (
         <AnimatedContainer isExpanded={copySuccess}>
           <SelfDestructiveMessage

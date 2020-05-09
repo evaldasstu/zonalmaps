@@ -14,7 +14,7 @@ const App = () => (
         <Embed />
       </Route>
       <Route path="/">
-        {/* All other routes */}
+        {/* All other routes except /embed */}
         <Container className="my-4">
           <Row className="justify-content-center">
             <Col xl={10}>

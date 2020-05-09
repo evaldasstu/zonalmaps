@@ -6,7 +6,6 @@ import ReadMe from '../../../README.md';
 import './HowToUse.scss';
 
 // Render heading anchors for section links
-
 function flatten(text, child) {
   return typeof child === 'string'
     ? text + child
@@ -26,7 +25,6 @@ HeadingRenderer.propTypes = {
 };
 
 // Remove 'public/' from image paths
-
 function ImageRenderer(props) {
   const { value } = props;
   const parsedHtml = new DOMParser().parseFromString(value, 'text/html');

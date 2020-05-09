@@ -59,6 +59,7 @@ const Example = () => {
         </Card.Body>
       </Card>
 
+      {/* Google Sheets iframe */}
       <Card className="mt-4">
         <Card.Header>Source spreadsheet</Card.Header>
         <Card.Body>

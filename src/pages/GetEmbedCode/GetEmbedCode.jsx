@@ -37,6 +37,7 @@ const GetEmbedCode = () => {
   const [language, setLanguage] = useState('en');
   const [displayList, setDisplayList] = useState(true);
 
+  // Extract spreadsheet ID from URL
   const handleSpreadsheetUrlChange = (event) => {
     setSpreadsheetUrl(event.target.value);
     let extractedSpreadsheetId = RegExp('/spreadsheets/d/([a-zA-Z0-9-_]+)').exec(
@@ -87,7 +88,7 @@ const GetEmbedCode = () => {
             ) : null}
           </AnimatedContainer>
 
-          {/* Prevent form submission on Enter keypress */}
+          {/* Prevent form submission on Enter */}
           <Form
             onSubmit={(event) => {
               event.preventDefault();

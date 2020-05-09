@@ -48,7 +48,7 @@ const SelfDestructiveMessage = ({ type, text, dismiss }) => {
     },
   }));
 
-  // Close message to greatly speed up self-destruct
+  // Closing message speeds up self-destruct
   const speedUp = () => {
     setAnimationParams({ config: { duration: 200 } });
   };

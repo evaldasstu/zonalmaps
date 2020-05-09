@@ -13,6 +13,7 @@ const useMeasure = () => {
     height: 0,
   });
 
+  // Get own height for performing stretch animation
   const [observer] = useState(() => new ResizeObserver(([entry]) => setBounds(entry.contentRect)));
 
   useEffect(() => {

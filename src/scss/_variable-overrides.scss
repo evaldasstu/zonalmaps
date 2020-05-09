@@ -28,10 +28,10 @@ $grid-gutter-width: 15px;
 
 // Typography
 
-$font-family-sans-serif: 'Open Sans', sans-serif;
-$font-family-monospace: 'Roboto Mono', monospace;
+$font-family-sans-serif: "Open Sans", sans-serif;
+$font-family-monospace: "Roboto Mono", monospace;
 
-$font-size-base: 0.938rem; // 15px
+$font-size-base: .938rem; // 15px
 
 $line-height-base: 1.7;
 
@@ -42,7 +42,7 @@ $h4-font-size: 1.25rem; // 20px
 $h5-font-size: $font-size-base; // 15px
 
 $headings-margin-bottom: 1.5rem;
-$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-family: "Montserrat", sans-serif;
 $headings-font-weight: 400;
 $headings-color: #000;
 
@@ -51,7 +51,7 @@ $display4-size: 2.75rem;
 
 // Forms
 
-$form-check-input-margin-y: 0.4rem;
+$form-check-input-margin-y: .4rem;
 
 
 // Cards
@@ -65,7 +65,7 @@ $card-cap-color: #000;
 
 $navbar-padding-x: $card-spacer-x;
 
-$navbar-brand-font-size: 0.938rem; // 15px
+$navbar-brand-font-size: .938rem; // 15px
 
 
 // Code

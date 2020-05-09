@@ -6,12 +6,12 @@
 // Bootstrap: variable overrides
 @import 'variable-overrides';
 
-// Bootstrap: Required
+// Bootstrap: required parts
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 
-// Bootstrap: Optional parts
+// Bootstrap: needed parts only
 @import '~bootstrap/scss/reboot';
 @import '~bootstrap/scss/type';
 @import '~bootstrap/scss/images';
@@ -27,5 +27,5 @@
 @import '~bootstrap/scss/popover';
 @import '~bootstrap/scss/utilities';
 
-// Bootstrap: post-load overrides
+// Post-Bootstrap-load overrides
 @import 'post-load-overrides';

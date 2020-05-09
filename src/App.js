@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Menu from './components/Menu/Menu';
 import HowToUse from './pages/HowToUse/HowToUse';
 import GetEmbedCode from './pages/GetEmbedCode/GetEmbedCode';
@@ -20,18 +20,22 @@ const App = () => (
       <Route path="/">
         {/* All other routes */}
         <Container className="my-4">
-          <Menu />
-          <Switch>
-            <Route exact path="/">
-              <HowToUse />
-            </Route>
-            <Route path="/example/:exampleNo">
-              <Example />
-            </Route>
-            <Route exact path="/embed">
-              <GetEmbedCode />
-            </Route>
-          </Switch>
+          <Row className="justify-content-center">
+            <Col xl={10}>
+              <Menu />
+              <Switch>
+                <Route exact path="/">
+                  <HowToUse />
+                </Route>
+                <Route path="/example/:exampleNo">
+                  <Example />
+                </Route>
+                <Route exact path="/embed">
+                  <GetEmbedCode />
+                </Route>
+              </Switch>
+            </Col>
+          </Row>
         </Container>
       </Route>
     </Switch>

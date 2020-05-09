@@ -7,7 +7,7 @@ Zonal Maps creates embeddable maps with location markers using data from [Google
 
 To do: add zoning visual?
 
-This project was developed to simplify a process of creating commercial real estate property maps and to provide an easy to learn and convenient way of real–time content update.
+This project was developed to simplify a process of creating commercial real estate property maps and to provide an easy to learn and convenient way of content update.
 
 Zonal Maps is built with [React](https://reactjs.org) and uses map data provided by [OpenStreetMap contributors](https://www.openstreetmap.org/copyright).
 
@@ -23,25 +23,15 @@ The simplest possible spreadsheet that could be understood by Zonal Maps looks l
 
 It would result in a single point rendered on a map.
 
-To do: explain regular attributes.
+`Coordinates` is the only required *attribute* in the spreadsheet, but there can be more of them. Attributes can be freely named, except `Coordinates` and `Zone`, which are [*special attributes*.](#special-attributes). `Attributes` must reside in spreadsheet's Row 1. Each subsequent row represents a location displayed on the map. There is no need for a list numbering attribute, as numbers are assigned automatically.
+
+This is an example of a bit more complex spreadsheet, which includes [`Zone`](#zone), another special attribute:
 
 <img src="./public/readme/spreadsheet-screenshot-374628.png" alt="Spreadsheet screenshot" width="588" />
 
-To do: describe that order numbers are not needed.
+If there is a need for embedding maps into multilingual websites, additional sheet, called `Translations` will have to be created in the same spreadsheet. In this case, the main sheet will have to be named `Data`. Otherwise, it can keep *Sheet 1* or any other name. More on translating, check [Multilingual embeds](#multilingual-embeds) below.
 
 ### Spreadsheet specification
-
-To do: introduction.
-
-#### `Locations` sheet
-
-To do: naming not necessary if there is only one sheet (?)
-
-Row 1 cell values represent location list header values. To do.
-
-To do: add example spreadsheet screenshot.
-
-[Open this spreadsheet](https://docs.google.com/spreadsheets/d/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM/edit?usp=sharing) in Google Sheets.
 
 #### Special attributes
 
@@ -60,9 +50,14 @@ Geographical coordinates are expected to be provided in Decimal degrees (DD) for
 
 This attribute is used to assign objects to groups for displaying boundaries around geographic areas.
 
-#### `Translations` sheet
+To do: add more.
 
-To do.
+#### Spreadsheet's sheets
+
+| Sheet name     | Required | Notes                                              |
+|:---------------|:---------|:---------------------------------------------------|
+| `Data`         | +        | Can have any name when no other sheets are present | 
+| `Translations` |          | See [Multilingual embeds](#multilingual-embeds)    |
 
 ### Share the spreadsheet
 
@@ -76,7 +71,7 @@ Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to ac
 
 Expanding **Customize embed** panel and choosing **Format** allows to choose from two different options: **iframe** and **oEmbed**.
 
-Note: In [WordPress](https://wordpress.org) websites, *iframe* method works out of the box. *oEmbed* can also be used, but one additional configuration step needs to be taken. Check [Embedding in WordPress](#embedding-in-wordpress) below for more info.
+*Note:* In [WordPress](https://wordpress.org) websites, *iframe* method works out of the box. *oEmbed* can also be used, but one additional configuration step needs to be taken. Check [Embedding in WordPress](#embedding-in-wordpress) below for more info.
 
 #### iframe
 
@@ -100,7 +95,7 @@ Note: In [WordPress](https://wordpress.org) websites, *iframe* method works out 
 
 By default, Zonal Maps outputs a user interface in English. However, this can be changed by choosing **Customize embed** and selecting **Language**.
 
-To do: add instruction on translating attributes.
+See [Multilingual embeds](#multilingual-embeds) for details.
 
 #### Display location list
 
@@ -124,7 +119,17 @@ WordPress supports *oEmbed* format and automatically displays content from selec
 
 To do: check syntax.
 
-### Browser support
+## Multilingual embeds
+
+If there is a need to offer map versions in more than one language, it is possible to provide attribute translations in the same spreadsheet. In such case, the main sheet of the spreadsheet containing the list of locations will have to be named `Data`, while another sheet named `Translations` will have to be created.
+
+Open [this spreadsheet](https://docs.google.com/spreadsheets/d/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM/edit?usp=sharing), which is the source for [Example 1](https://evaldasstu.github.io/zonalmaps/example/1) and check `Translations` sheet to see how multilingual map versions can be implemented.
+
+When [Get embed code](https://evaldasstu.github.io/zonalmaps/embed) form is provided with a link to a spreadsheet containing multilingual attributes, **Language** option gets enabled in **Customize embed** setting panel. All languages that are set in the spreadsheet appear in the dropdown menu.
+
+To do: more on locale and numbers?
+
+## Browser support
 
 | Desktop              | Mobile             |
 |:---------------------|:-------------------|

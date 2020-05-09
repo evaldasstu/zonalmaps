@@ -38,7 +38,7 @@ const Menu = () => (
     </Nav>
     <Nav className="align-self-start">
       <Nav.Link href="https://github.com/evaldasstu/zonalmaps">
-        <FontAwesomeIcon icon={faGithub} />{' '}
+        <FontAwesomeIcon icon={faGithub} className="mr-1" />
         GitHub
       </Nav.Link>
     </Nav>

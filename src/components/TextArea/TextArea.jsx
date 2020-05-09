@@ -1,4 +1,4 @@
-import React, { useState, createRef } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Form } from 'react-bootstrap';
@@ -10,7 +10,7 @@ import './TextArea.scss';
 
 const TextArea = ({ embedCode }) => {
   const [copySuccess, setCopySuccess] = useState(false);
-  let textArea = createRef();
+  let textArea = useRef();
 
   const copyToClipboard = () => {
     textArea.select();

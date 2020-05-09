@@ -22,13 +22,13 @@ const Menu = () => (
       </LinkContainer>
       <NavDropdown title="Examples" id="basic-nav-dropdown">
         <LinkContainer to="/example/1">
-          <NavDropdown.Item>Example 1</NavDropdown.Item>
+          <NavDropdown.Item>Example Map 1</NavDropdown.Item>
         </LinkContainer>
         <LinkContainer to="/example/2">
-          <NavDropdown.Item>Example 2</NavDropdown.Item>
+          <NavDropdown.Item>Example Map 2</NavDropdown.Item>
         </LinkContainer>
         <LinkContainer to="/example/3">
-          <NavDropdown.Item>Example 3</NavDropdown.Item>
+          <NavDropdown.Item>Example Map 3</NavDropdown.Item>
         </LinkContainer>
       </NavDropdown>
       <LinkContainer to="/embed">

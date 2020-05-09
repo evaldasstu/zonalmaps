@@ -142,9 +142,9 @@ To do: more on locale and numbers?
 
 ## Examples
 
-* [Link to Example 1](https://evaldasstu.github.io/zonalmaps/example/1)
-* [Link to Example 2](https://evaldasstu.github.io/zonalmaps/example/2)
-* [Link to Example 3](https://evaldasstu.github.io/zonalmaps/example/3)
+* [Link to Example Map 1](https://evaldasstu.github.io/zonalmaps/example/1)
+* [Link to Example Map 2](https://evaldasstu.github.io/zonalmaps/example/2)
+* [Link to Example Map 3](https://evaldasstu.github.io/zonalmaps/example/3)
 
 ## Development
 

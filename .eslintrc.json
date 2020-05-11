@@ -7,7 +7,8 @@
     "plugin:jest/recommended",
     "plugin:jest/style",
     "plugin:testing-library/recommended",
-    "plugin:testing-library/react"
+    "plugin:testing-library/react",
+    "plugin:jest-dom/recommended"
   ],
   "plugins": [
     "jsx-a11y",
@@ -15,7 +16,8 @@
     "jest",
     "react-hooks",
     "prettier",
-    "testing-library"
+    "testing-library",
+    "jest-dom"
   ],
   "rules": {
     "react/jsx-filename-extension": [

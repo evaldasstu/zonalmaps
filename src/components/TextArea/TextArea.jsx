@@ -32,7 +32,11 @@ const TextArea = ({ embedCode }) => {
       )}
 
       <code>
+        <Form.Label htmlFor="embedCode" srOnly="true">
+          Embed code
+        </Form.Label>
         <Form.Control
+          id="embedCode"
           as="textarea"
           value={embedCode || 'Waiting for a Google Sheets link...'}
           rows="5"

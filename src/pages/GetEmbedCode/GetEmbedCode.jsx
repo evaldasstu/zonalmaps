@@ -24,7 +24,7 @@ const messages = {
   },
   success: {
     type: 'success',
-    text: 'Spreadsheet data received succesfully.',
+    text: 'Spreadsheet data received successfully.',
   },
 };
 

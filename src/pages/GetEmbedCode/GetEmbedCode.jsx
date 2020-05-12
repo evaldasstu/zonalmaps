@@ -36,7 +36,6 @@ const GetEmbedCode = () => {
   const [spreadsheetId, setSpreadsheetId] = useState('');
   const [setupMessage, setSetupMessage] = useState('');
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
-  const [format, setFormat] = useState('iframe');
   const [language, setLanguage] = useState('en');
   const [displayList, setDisplayList] = useState(true);
 
@@ -112,24 +111,22 @@ const GetEmbedCode = () => {
               <Card.Body>
                 <Form>
                   <Row>
-                    <Col xs={4} lg="auto" className="my-auto">
-                      <Form.Label htmlFor="format" className="mb-0">
-                        Format
+                    <Col xs={4} className="my-auto d-lg-none py-2">
+                      <Form.Label htmlFor="displayList" className="mb-0">
+                        List
                       </Form.Label>
                     </Col>
 
-                    <Col xs={8} lg={3} className="d-flex align-items-center">
-                      <Form.Control
-                        id="format"
-                        as="select"
-                        onChange={(event) => setFormat(event.target.value)}
-                      >
-                        <option value="iframe">iframe</option>
-                        <option value="oembed">oEmbed</option>
-                      </Form.Control>
-                      <InfoPopover>
-                        How to use: <Link to="/#embed-format">Embed format</Link>
-                      </InfoPopover>
+                    <Col xs={8} lg="auto" className="my-auto py-2">
+                      <Form.Check
+                        id="displayList"
+                        type="checkbox"
+                        label="Display location list"
+                        checked={displayList}
+                        onChange={() => {
+                          setDisplayList(!displayList);
+                        }}
+                      />
                     </Col>
 
                     {/* Fluid spacer column for horizontal layout */}
@@ -157,30 +154,6 @@ const GetEmbedCode = () => {
                         How to use: <Link to="/#multilingual-embeds">Multilingual embeds</Link>
                       </InfoPopover>
                     </Col>
-
-                    {/* Fluid spacer column for horizontal layout */}
-                    <Col lg />
-
-                    {/* Spacer row for vertical layout */}
-                    <Col xs={12} className="d-lg-none my-1" />
-
-                    <Col xs={4} className="my-auto d-lg-none py-2">
-                      <Form.Label htmlFor="displayList" className="mb-0">
-                        List
-                      </Form.Label>
-                    </Col>
-
-                    <Col xs={8} lg="auto" className="my-auto py-2">
-                      <Form.Check
-                        id="displayList"
-                        type="checkbox"
-                        label="Display location list"
-                        checked={displayList}
-                        onChange={() => {
-                          setDisplayList(!displayList);
-                        }}
-                      />
-                    </Col>
                   </Row>
                 </Form>
               </Card.Body>
@@ -207,7 +180,6 @@ const GetEmbedCode = () => {
           <TextArea
             embedCode={generateEmbedCode({
               spreadsheetId,
-              format,
               language,
               displayList,
             })}

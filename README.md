@@ -15,23 +15,23 @@ To do: add visuals.
 
 ## Prepare a spreadsheet
 
-[Create a spreadsheet](https://sheet.new/) on Google Sheets.
+[Create a spreadsheet](https://sheet.new/) on Google Sheets. To do: add more.
 
-The simplest possible spreadsheet that could be understood by Zonal Maps looks like this:
+### Spreadsheet specification
+
+The simplest possible spreadsheet that could be understood by Zonal Maps would look like this:
 
 <img src="./public/readme/spreadsheet-screenshot-927427.png" alt="Spreadsheet screenshot" width="175" />
 
-It would result in a single point rendered on a map.
+Pasting a link to this spreadhsheat into [Get embed code](https://evaldasstu.github.io/zonalmaps/embed) form would result a map centered around a single marked point. `Coordinates` is the only required *attribute* in the spreadsheet, but there can be more of them.
 
-`Coordinates` is the only required *attribute* in the spreadsheet, but there can be more of them. Attributes can be freely named, except `Coordinates` and `Zone`, which are [*special attributes*.](#special-attributes). `Attributes` must reside in spreadsheet's Row 1. Each subsequent row represents a location displayed on the map. There is no need for a list numbering attribute, as numbers are assigned automatically.
+Attributes can be freely named, except `Coordinates` and `Zone`, which are [*special attributes*.](#special-attributes). All attributes must reside in spreadsheet's Row 1. Each subsequent row represents a location displayed on the map. There is no need for a list numbering attribute, as numbers are assigned automatically.
 
 This is an example of a bit more complex spreadsheet, which includes [`Zone`](#zone), another special attribute:
 
 <img src="./public/readme/spreadsheet-screenshot-374628.png" alt="Spreadsheet screenshot" width="588" />
 
 If there is a need for embedding maps into multilingual websites, additional sheet, called `Translations` will have to be created in the same spreadsheet. In this case, the main sheet will have to be named `Data`. Otherwise, it can keep *Sheet 1* or any other name. More on translating, check [Multilingual embeds](#multilingual-embeds) below.
-
-### Spreadsheet specification
 
 #### Special attributes
 
@@ -65,39 +65,21 @@ In Google Sheets, choose **File** > **Share**, select **Copy link** and change *
 
 ## Get embed code
 
-Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator. To do: add more.
+Navigate to [Get Embed Code](https://evaldasstu.github.io/zonalmaps/embed) to access the embed code generator. To do: add more on pasting the link and something more.
 
-### Embed format
+It should be relatively easy to use such embed code by adding it if you have access to website's HTML code. `<style>` tag is included in the embed code to make the content responsively fit its container.
 
-Expanding **Customize embed** panel and choosing **Format** allows to choose from two different options: **iframe** and **oEmbed**.
-
-*Note:* In [WordPress](https://wordpress.org) websites, *iframe* method works out of the box. *oEmbed* can also be used, but one additional configuration step needs to be taken. Check [Embedding in WordPress](#embedding-in-wordpress) below for more info.
-
-#### iframe
-
-*iframe* embed is a versatile time–tested format. It should be relatively easy to use such embed code by adding it if you have access to website's HTML code. `<style>` tag is included in the embed code to make the content responsively fit its container.
-
-##### iframe embed code example:
+### Embed code example:
 
 > `<div class="zm"><iframe src="https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>`
 
-#### oEmbed
-
-*oEmbed* is a newer standard which lets embedding content into compatible websites and platforms using a shorter and simpler code snippet, which is a simple URL of embeddable content. This method is supported in some environments, e.g. in [Squarespace](https://squarespace.com) websites. More on this open standard can be found [here](https://oembed.com/).
-
-##### oEmbed embed code example:
-
-> `https://evaldasstu.github.io/zonalmaps/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM`
-
-### Additional options
-
-#### Language
+### Language
 
 By default, Zonal Maps outputs a user interface in English. However, this can be changed by choosing **Customize embed** and selecting **Language**.
 
 See [Multilingual embeds](#multilingual-embeds) for details.
 
-#### Display location list
+### Display location list
 
 By default, Zonal Maps displays a location list as a sortable table below the map. If this functionality is not needed, list display can be turned off by choosing **Customize embed** and unchecking **Display location list**.
 
@@ -105,19 +87,9 @@ By default, Zonal Maps displays a location list as a sortable table below the ma
 
 ### Embedding in WordPress
 
-#### iframe format
-
 To add an embed to a [WordPress](https://wordpress.org) website using Block Editor (default since version 5.0), add a **Custom HTML** block and paste the embed code.
 
 When using the Classic Editor or pre–Gutenberg WordPress, switch to **Text** tab of the editor and paste the embed code.
-
-#### oEmbed format
-
-WordPress supports *oEmbed* format and automatically displays content from selected websites by converting URLs into content objects straight in the editor. However, it uses an internal whitelist of trusted websites for this feature. To enable *oEmbed* for Zonal Maps, add this line to `functions.php` file of your theme:
-
-> `wp_oembed_add_provider( 'https://evaldasstu.github.io/zonalmaps/embed/*', 'https://evaldasstu.github.io/zonalmaps/oembed', false );`
-
-To do: check syntax.
 
 ## Multilingual embeds
 

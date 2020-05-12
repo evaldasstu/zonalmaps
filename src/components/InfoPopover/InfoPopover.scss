@@ -1,12 +1,10 @@
 // Bootstrap
-@import '../../scss/variable-overrides';
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 
 // Info popover
 .zm-info-trigger {
-  display: block;
-  color: $gray-550;
+  color: $gray-500;
 }
 
 .zm-info-trigger:hover {

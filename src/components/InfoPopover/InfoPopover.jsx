@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { HashLink as Link } from 'react-router-hash-link';
+import PropTypes from 'prop-types';
+import { Button } from 'react-bootstrap';
 import Popover from 'react-tiny-popover';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import './InfoPopover.scss';
 
-const InfoPopover = (props) => {
+const InfoPopover = ({ children }) => {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   return (
@@ -14,15 +15,23 @@ const InfoPopover = (props) => {
       onClickOutside={() => setPopoverOpen(!popoverOpen)}
       containerClassName="popover"
       padding={0}
-      content={<div className="popover-body">{props.children}</div>}
+      content={<div className="popover-body">{children}</div>}
     >
-      <div onClick={() => setPopoverOpen(!popoverOpen)}>
-        <Link to="#" className="zm-info-trigger">
-          <FontAwesomeIcon icon={faQuestionCircle} size="xs" className="ml-2" />
-        </Link>
+      <div>
+        <Button
+          variant="link"
+          className="zm-info-trigger pr-0"
+          onClick={() => setPopoverOpen(!popoverOpen)}
+        >
+          <FontAwesomeIcon icon={faQuestionCircle} size="xs" />
+        </Button>
       </div>
     </Popover>
   );
 };
 
 export default InfoPopover;
+
+InfoPopover.propTypes = {
+  children: PropTypes.element.isRequired,
+};

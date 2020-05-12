@@ -1,3 +1,10 @@
-.zm-card-muted {
+// Bootstrap variable overrides
+@import '../../scss/variable-overrides';
+
+.zm-muted {
   opacity: 0.25;
+}
+
+.zm-waiting-label {
+  margin-left: $card-spacer-x;
 }

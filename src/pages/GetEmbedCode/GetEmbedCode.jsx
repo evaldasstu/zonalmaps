@@ -199,7 +199,7 @@ const GetEmbedCode = () => {
         </Card.Body>
       </Card>
 
-      <Card className={spreadsheetId ? 'mt-3' : 'mt-3 zm-card-muted'}>
+      <Card className={spreadsheetId ? 'mt-3' : 'mt-3 zm-muted'}>
         <Card.Header>
           <strong>Step 3:</strong> Copy generated code
         </Card.Header>
@@ -214,6 +214,10 @@ const GetEmbedCode = () => {
           />
         </Card.Body>
       </Card>
+      <h2 className={spreadsheetId ? 'mt-4' : 'mt-4 zm-muted'}>Embed output</h2>
+      {!spreadsheetId && (
+        <p className="zm-waiting-label zm-muted">Waiting for a Google Sheets link...</p>
+      )}
     </>
   );
 };

@@ -10,6 +10,7 @@ import { Message } from '../../components/Message/Message';
 import TextArea from '../../components/TextArea/TextArea';
 import InfoPopover from '../../components/InfoPopover/InfoPopover';
 import generateEmbedCode from '../../utils/generateEmbedCode';
+import './GetEmbedCode.scss';
 
 const messages = {
   invalidUrl: {
@@ -198,7 +199,7 @@ const GetEmbedCode = () => {
         </Card.Body>
       </Card>
 
-      <Card className="mt-3">
+      <Card className={spreadsheetId ? 'mt-3' : 'mt-3 zm-card-muted'}>
         <Card.Header>
           <strong>Step 3:</strong> Copy generated code
         </Card.Header>

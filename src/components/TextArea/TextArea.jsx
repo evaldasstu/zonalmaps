@@ -48,6 +48,7 @@ const TextArea = ({ embedCode }) => {
       </code>
 
       {embedCode ? (
+        // Enabled copy button
         <LinkContainer to="#">
           <Card.Link onClick={copyToClipboard} className="d-inline-block mt-4">
             Copy to clipboard
@@ -55,6 +56,7 @@ const TextArea = ({ embedCode }) => {
           </Card.Link>
         </LinkContainer>
       ) : (
+        // Disabled copy button
         <Card.Link className="d-inline-block mt-4">
           Copy to clipboard
           <FontAwesomeIcon icon={faCopy} size="xs" />

@@ -49,13 +49,13 @@ const TextArea = ({ embedCode }) => {
 
       {embedCode ? (
         <LinkContainer to="#">
-          <Card.Link onClick={copyToClipboard} className="d-block mt-4">
+          <Card.Link onClick={copyToClipboard} className="d-inline-block mt-4">
             Copy to clipboard
             <FontAwesomeIcon icon={faCopy} size="xs" />
           </Card.Link>
         </LinkContainer>
       ) : (
-        <Card.Link className="d-block mt-4">
+        <Card.Link className="d-inline-block mt-4">
           Copy to clipboard
           <FontAwesomeIcon icon={faCopy} size="xs" />
         </Card.Link>

@@ -4,9 +4,11 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Form, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
 import AnimatedContainer from '../../components/AnimatedContainer/AnimatedContainer';
 import { Message } from '../../components/Message/Message';
 import TextArea from '../../components/TextArea/TextArea';
+import InfoPopover from '../../components/InfoPopover/InfoPopover';
 import generateEmbedCode from '../../utils/generateEmbedCode';
 
 const messages = {
@@ -111,11 +113,11 @@ const GetEmbedCode = () => {
                   <Row>
                     <Col xs={4} lg="auto" className="my-auto">
                       <Form.Label htmlFor="format" className="mb-0">
-                        Format:
+                        Format
                       </Form.Label>
                     </Col>
 
-                    <Col xs={8} lg={3}>
+                    <Col xs={8} lg={3} className="d-flex align-items-center">
                       <Form.Control
                         id="format"
                         as="select"
@@ -124,6 +126,9 @@ const GetEmbedCode = () => {
                         <option value="iframe">iframe</option>
                         <option value="oembed">oEmbed</option>
                       </Form.Control>
+                      <InfoPopover>
+                        How to use: <Link to="/#embed-format">Embed format</Link>
+                      </InfoPopover>
                     </Col>
 
                     {/* Fluid spacer column for horizontal layout */}
@@ -134,19 +139,22 @@ const GetEmbedCode = () => {
 
                     <Col xs={4} lg="auto" className="my-auto">
                       <Form.Label htmlFor="language" className="mb-0">
-                        Language:
+                        Language
                       </Form.Label>
                     </Col>
 
-                    <Col xs={8} lg={3}>
+                    <Col xs={8} lg={3} className="d-flex align-items-center">
                       <Form.Control
                         id="language"
                         as="select"
+                        disabled
                         onChange={(event) => setLanguage(event.target.value)}
                       >
                         <option value="en">English</option>
-                        <option value="lt">Lithuanian</option>
                       </Form.Control>
+                      <InfoPopover>
+                        How to use: <Link to="/#multilingual-embeds">Multilingual embeds</Link>
+                      </InfoPopover>
                     </Col>
 
                     {/* Fluid spacer column for horizontal layout */}
@@ -157,7 +165,7 @@ const GetEmbedCode = () => {
 
                     <Col xs={4} className="my-auto d-lg-none py-2">
                       <Form.Label htmlFor="displayList" className="mb-0">
-                        List:
+                        List
                       </Form.Label>
                     </Col>
 
@@ -181,7 +189,7 @@ const GetEmbedCode = () => {
           <LinkContainer to="#">
             <Card.Link
               onClick={() => setCustomizeIsActive(!customizeIsActive)}
-              className="d-block mt-4"
+              className="d-inline-block mt-4"
             >
               Customize embed
               <FontAwesomeIcon icon={customizeIsActive ? faChevronUp : faChevronDown} size="xs" />

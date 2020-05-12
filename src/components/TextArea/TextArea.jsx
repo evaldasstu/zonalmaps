@@ -39,7 +39,9 @@ const TextArea = ({ embedCode }) => {
           id="embedCode"
           as="textarea"
           value={embedCode || 'Waiting for a Google Sheets link...'}
-          rows="5"
+          className={
+            !embedCode || embedCode.length < 200 ? 'zm-text-area-low' : 'zm-text-area-high'
+          }
           readOnly
           ref={(element) => {
             textArea = element;

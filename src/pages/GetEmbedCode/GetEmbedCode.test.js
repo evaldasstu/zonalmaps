@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import GetEmbedCode from './GetEmbedCode';
 
-const envUrl = `${window.location.origin}${process.env.PUBLIC_URL}`;
+const envUrl = window.location.origin + process.env.PUBLIC_URL;
 
 const setup = async () => {
   const getEmbedCode = render(

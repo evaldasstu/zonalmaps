@@ -22,25 +22,25 @@ code textarea.form-control[readonly] {
 }
 
 // 7 lines
-textarea.zm-text-area-high {
+textarea.form-control.zm-text-area-high {
   height: 7 * $zm-text-area-font-size * $input-line-height + $zm-text-area-padding-y * 2;
 }
 
 // 6 lines
 @include media-breakpoint-up(md) {
-  textarea.zm-text-area-high {
+  textarea.form-control.zm-text-area-high {
     height: 6 * $zm-text-area-font-size * $input-line-height + $zm-text-area-padding-y * 2;
   }
 }
 
 // 4 lines
 @include media-breakpoint-up(lg) {
-  textarea.zm-text-area-high {
+  textarea.form-control.zm-text-area-high {
     height: 4 * $zm-text-area-font-size * $input-line-height + $zm-text-area-padding-y * 2;
   }
 }
 
 // 2 lines
-textarea.zm-text-area-low {
+textarea.form-control.zm-text-area-low {
   height: 2 * $zm-text-area-font-size * $input-line-height + $zm-text-area-padding-y * 2;
 }

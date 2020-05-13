@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/zonalmaps/static/css/main.67dfc417.chunk.css",
-    "main.js": "/zonalmaps/static/js/main.0bdaf6ff.chunk.js",
-    "main.js.map": "/zonalmaps/static/js/main.0bdaf6ff.chunk.js.map",
+    "main.css": "/zonalmaps/static/css/main.f4a6bf89.chunk.css",
+    "main.js": "/zonalmaps/static/js/main.4c6f0932.chunk.js",
+    "main.js.map": "/zonalmaps/static/js/main.4c6f0932.chunk.js.map",
     "runtime-main.js": "/zonalmaps/static/js/runtime-main.b35e037b.js",
     "runtime-main.js.map": "/zonalmaps/static/js/runtime-main.b35e037b.js.map",
-    "static/js/2.e47ad297.chunk.js": "/zonalmaps/static/js/2.e47ad297.chunk.js",
-    "static/js/2.e47ad297.chunk.js.map": "/zonalmaps/static/js/2.e47ad297.chunk.js.map",
+    "static/js/2.9e31b318.chunk.js": "/zonalmaps/static/js/2.9e31b318.chunk.js",
+    "static/js/2.9e31b318.chunk.js.map": "/zonalmaps/static/js/2.9e31b318.chunk.js.map",
     "index.html": "/zonalmaps/index.html",
-    "precache-manifest.4978320217dac1c9f79448c6c5bf997f.js": "/zonalmaps/precache-manifest.4978320217dac1c9f79448c6c5bf997f.js",
+    "precache-manifest.629a0b6366191a97ae35cffe5a01c0f6.js": "/zonalmaps/precache-manifest.629a0b6366191a97ae35cffe5a01c0f6.js",
     "service-worker.js": "/zonalmaps/service-worker.js",
-    "static/css/main.67dfc417.chunk.css.map": "/zonalmaps/static/css/main.67dfc417.chunk.css.map",
-    "static/js/2.e47ad297.chunk.js.LICENSE.txt": "/zonalmaps/static/js/2.e47ad297.chunk.js.LICENSE.txt"
+    "static/css/main.f4a6bf89.chunk.css.map": "/zonalmaps/static/css/main.f4a6bf89.chunk.css.map",
+    "static/js/2.9e31b318.chunk.js.LICENSE.txt": "/zonalmaps/static/js/2.9e31b318.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b35e037b.js",
-    "static/js/2.e47ad297.chunk.js",
-    "static/css/main.67dfc417.chunk.css",
-    "static/js/main.0bdaf6ff.chunk.js"
+    "static/js/2.9e31b318.chunk.js",
+    "static/css/main.f4a6bf89.chunk.css",
+    "static/js/main.4c6f0932.chunk.js"
   ]
 }

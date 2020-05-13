@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import AnimatedContainer from '../../components/AnimatedContainer/AnimatedContainer';
-import { Message } from '../../components/Message/Message';
+import Message from '../../components/Message/Message';
 import TextArea from '../../components/TextArea/TextArea';
 import InfoPopover from '../../components/InfoPopover/InfoPopover';
 import generateEmbedCode from '../../utils/generateEmbedCode';
@@ -29,6 +29,7 @@ const messages = {
     type: 'success',
     text: 'Spreadsheet data received successfully.',
     dismissible: true,
+    selfDestructive: true,
   },
 };
 
@@ -105,6 +106,7 @@ const GetEmbedCode = () => {
                 type={messages[setupMessage].type}
                 text={messages[setupMessage].text}
                 dismissible={messages[setupMessage].dismissible}
+                selfDestructive={messages[setupMessage].selfDestructive}
                 dismiss={() => setSetupMessage(null)}
               />
             ) : null}

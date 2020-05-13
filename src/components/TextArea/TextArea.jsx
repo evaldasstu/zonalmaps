@@ -5,7 +5,7 @@ import { Card, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 import AnimatedContainer from '../AnimatedContainer/AnimatedContainer';
-import { SelfDestructiveMessage } from '../Message/Message';
+import Message from '../Message/Message';
 import './TextArea.scss';
 
 const TextArea = ({ embedCode }) => {
@@ -23,10 +23,12 @@ const TextArea = ({ embedCode }) => {
       {/* Successfully copied to clipboard */}
       {copySuccess && (
         <AnimatedContainer isExpanded={copySuccess}>
-          <SelfDestructiveMessage
+          <Message
             type="success"
             text="Embed code copied to clipboard."
             dismiss={() => setCopySuccess(false)}
+            dismissible
+            selfDestructive
           />
         </AnimatedContainer>
       )}

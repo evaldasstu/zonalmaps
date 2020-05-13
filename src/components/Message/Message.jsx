@@ -18,28 +18,7 @@ const icons = {
   success: <FontAwesomeIcon icon={faCheckCircle} />,
 };
 
-const Message = ({ type, text, dismissible, dismiss }) => (
-  <Alert variant={type} className="d-flex" dismissible={dismissible} onClose={() => dismiss()}>
-    {icons[type]}
-    {text}
-  </Alert>
-);
-
-Message.propTypes = {
-  type: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  dismissible: PropTypes.bool,
-  dismiss: PropTypes.func,
-};
-
-Message.defaultProps = {
-  dismissible: false,
-  dismiss: () => {},
-};
-
-export { Message };
-
-const SelfDestructiveMessage = ({ type, text, dismiss }) => {
+const Message = ({ type, text, dismissible, selfDestructive, dismiss }) => {
   const message = useRef();
 
   const [props, setAnimationParams] = useSpring(() => ({
@@ -60,23 +39,41 @@ const SelfDestructiveMessage = ({ type, text, dismiss }) => {
     setAnimationParams({ config: { duration: 200 } });
   };
 
+  const handleClose = () => {
+    if (selfDestructive) {
+      speedUp();
+    } else {
+      dismiss();
+    }
+  };
+
   return (
-    <Alert variant={type} ref={message} className="d-flex" dismissible onClose={speedUp}>
+    <Alert
+      variant={type}
+      className="d-flex"
+      dismissible={dismissible}
+      onClose={() => handleClose()}
+      ref={message}
+    >
       {icons[type]}
       {text}
-      <animated.div className="zm-progress-bar" style={props} />
+      {selfDestructive && <animated.div className="zm-progress-bar" style={props} />}
     </Alert>
   );
 };
 
-SelfDestructiveMessage.propTypes = {
+Message.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  dismissible: PropTypes.bool,
+  selfDestructive: PropTypes.bool,
   dismiss: PropTypes.func,
 };
 
-SelfDestructiveMessage.defaultProps = {
+Message.defaultProps = {
+  dismissible: false,
+  selfDestructive: false,
   dismiss: () => {},
 };
 
-export { SelfDestructiveMessage };
+export default Message;

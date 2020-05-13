@@ -1,0 +1,16 @@
+// Bootstrap variable overrides
+@import '../../scss/variable-overrides';
+
+// Bootstrap variables
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+// *** Footer *** //
+
+footer {
+  padding-top: $spacer / 4;
+  border-top-style: solid;
+  border-top-width: 2 * $table-border-width;
+  border-top-color: $table-border-color;
+  margin-top: $headings-margin-bottom;
+}

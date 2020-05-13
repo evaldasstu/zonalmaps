@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import Menu from './components/Menu/Menu';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 import HowToUse from './pages/HowToUse/HowToUse';
 import GetEmbedCode from './pages/GetEmbedCode/GetEmbedCode';
 import Embed from './components/Embed/Embed';
@@ -13,21 +14,23 @@ const App = () => (
       <Route path="/embed/:spreadsheetId">
         <Embed />
       </Route>
+      {/* All other routes except /embed/:spreadsheetId */}
       <Route path="/">
-        {/* All other routes except /embed */}
         <Container className="my-4">
           <Row className="justify-content-center">
             <Col xl={10}>
-              <Menu />
+              <Header />
               <Switch>
                 <Route exact path="/">
                   <HowToUse />
                 </Route>
                 <Route path="/example/:exampleNo">
                   <Example />
+                  <Footer />
                 </Route>
                 <Route exact path="/embed">
                   <GetEmbedCode />
+                  <Footer />
                 </Route>
               </Switch>
             </Col>

@@ -1,8 +1,9 @@
-// Bootstrap
+// Bootstrap variables
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 
-// Info popover
+// *** InfoPopover *** //
+
 .zm-info-trigger {
   color: $gray-500;
 }

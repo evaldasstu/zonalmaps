@@ -1,4 +1,4 @@
-// *** Message, SelfDestructiveMessage *** //
+// *** Message *** //
 
 .alert {
   font-size: 0.813rem; // 13px
@@ -10,7 +10,7 @@
   margin-right: 0.75rem; // 12px
 }
 
-// No accessibility imparment due to self destruct
+// No accessibility impairment due to self destruct
 .close:focus {
   outline: none;
 }

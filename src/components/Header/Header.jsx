@@ -6,9 +6,9 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import './Menu.scss';
+import './Header.scss';
 
-const Menu = () => (
+const Header = () => (
   <Navbar variant="dark" bg="dark" className="rounded mb-4 flex-column flex-md-row">
     <LinkContainer to="/">
       <Navbar.Brand className="align-self-start">
@@ -45,4 +45,4 @@ const Menu = () => (
   </Navbar>
 );
 
-export default Menu;
+export default Header;

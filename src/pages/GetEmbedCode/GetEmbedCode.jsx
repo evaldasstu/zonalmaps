@@ -213,7 +213,7 @@ const GetEmbedCode = () => {
 
       <h2 className={displayEmbed ? 'zm-embed-title' : 'zm-embed-title zm-muted'}>Embed output</h2>
       {!displayEmbed ? (
-        <p className="zm-waiting-label zm-muted">Map will load here...</p>
+        <p className="zm-waiting-label zm-muted">Embed preview will load here...</p>
       ) : (
         <div
           dangerouslySetInnerHTML={{

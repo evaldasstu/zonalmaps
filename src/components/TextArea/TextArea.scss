@@ -1,6 +1,7 @@
-// Import Bootstrap variables
-
+// Bootstrap variable overrides
 @import '../../scss/variable-overrides';
+
+// Bootstrap variables and mixins
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';

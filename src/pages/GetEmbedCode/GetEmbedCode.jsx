@@ -28,6 +28,7 @@ const messages = {
   success: {
     type: 'success',
     text: 'Spreadsheet data received successfully.',
+    dismissible: true,
   },
 };
 
@@ -38,6 +39,17 @@ const GetEmbedCode = () => {
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
   const [language, setLanguage] = useState('en');
   const [displayList, setDisplayList] = useState(true);
+  const [displayEmbed, setDisplayEmbed] = useState(false);
+
+  const handleSuccessfulConnection = () => {
+    setSetupMessage('success');
+    setDisplayEmbed(true);
+  };
+
+  const connectGoogleSheetsAPI = () => {
+    // Connect call placeholder
+    handleSuccessfulConnection();
+  };
 
   // Extract spreadsheet ID from URL
   const handleSpreadsheetUrlChange = (event) => {
@@ -47,12 +59,15 @@ const GetEmbedCode = () => {
     );
     extractedSpreadsheetId = extractedSpreadsheetId ? extractedSpreadsheetId[1] : null;
     if (event.target.value && extractedSpreadsheetId) {
-      // Connect call placeholder
       setSetupMessage('progress');
+      connectGoogleSheetsAPI();
     } else if (event.target.value && !spreadsheetId) {
       setSetupMessage('invalidUrl');
+      setDisplayEmbed(false);
     } else {
+      // On clearing input field
       setSetupMessage(null);
+      setDisplayEmbed(false);
     }
     setSpreadsheetId(extractedSpreadsheetId);
   };
@@ -86,7 +101,12 @@ const GetEmbedCode = () => {
         <Card.Body>
           <AnimatedContainer isExpanded={Boolean(setupMessage)}>
             {setupMessage ? (
-              <Message type={messages[setupMessage].type} text={messages[setupMessage].text} />
+              <Message
+                type={messages[setupMessage].type}
+                text={messages[setupMessage].text}
+                dismissible={messages[setupMessage].dismissible}
+                dismiss={() => setSetupMessage(null)}
+              />
             ) : null}
           </AnimatedContainer>
 
@@ -151,7 +171,9 @@ const GetEmbedCode = () => {
                         <option value="en">English</option>
                       </Form.Control>
                       <InfoPopover>
-                        How to use: <Link to="/#multilingual-embeds">Multilingual embeds</Link>
+                        <span>
+                          How to use: <Link to="/#multilingual-embeds">Multilingual embeds</Link>
+                        </span>
                       </InfoPopover>
                     </Col>
                   </Row>
@@ -186,9 +208,16 @@ const GetEmbedCode = () => {
           />
         </Card.Body>
       </Card>
-      <h2 className={spreadsheetId ? 'mt-4' : 'mt-4 zm-muted'}>Embed output</h2>
-      {!spreadsheetId && (
-        <p className="zm-waiting-label zm-muted">Waiting for a Google Sheets link...</p>
+
+      <h2 className={displayEmbed ? 'zm-embed-title' : 'zm-embed-title zm-muted'}>Embed output</h2>
+      {!displayEmbed ? (
+        <p className="zm-waiting-label zm-muted">Map will load here...</p>
+      ) : (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: generateEmbedCode({ spreadsheetId }),
+          }}
+        />
       )}
     </>
   );

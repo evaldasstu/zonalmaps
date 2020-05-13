@@ -18,8 +18,8 @@ const icons = {
   success: <FontAwesomeIcon icon={faCheckCircle} />,
 };
 
-const Message = ({ type, text }) => (
-  <Alert variant={type} className="d-flex">
+const Message = ({ type, text, dismissible, dismiss }) => (
+  <Alert variant={type} className="d-flex" dismissible={dismissible} onClose={() => dismiss()}>
     {icons[type]}
     {text}
   </Alert>
@@ -28,6 +28,13 @@ const Message = ({ type, text }) => (
 Message.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  dismissible: PropTypes.bool,
+  dismiss: PropTypes.func,
+};
+
+Message.defaultProps = {
+  dismissible: false,
+  dismiss: () => {},
 };
 
 export { Message };

@@ -1,10 +1,19 @@
 // Bootstrap variable overrides
 @import '../../scss/variable-overrides';
 
+// Bootstrap variables
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
 .zm-muted {
   opacity: 0.25;
 }
 
 .zm-waiting-label {
   margin-left: $card-spacer-x;
+}
+
+.zm-embed-title {
+  margin-top: $spacer * 3;
 }

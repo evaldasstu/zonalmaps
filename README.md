@@ -103,6 +103,8 @@ To do: more on locale and numbers?
 
 ## Browser support
 
+Following browsers are supported for correct embed rendering:
+
 | Desktop              | Mobile             |
 |:---------------------|:-------------------|
 | Chrome               | Chrome             |

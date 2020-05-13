@@ -46,7 +46,7 @@ const GetEmbedCode = () => {
     setDisplayEmbed(true);
   };
 
-  const connectGoogleSheetsAPI = () => {
+  const connectGoogleSheetsApi = () => {
     // Connect call placeholder
     handleSuccessfulConnection();
   };
@@ -60,7 +60,7 @@ const GetEmbedCode = () => {
     extractedSpreadsheetId = extractedSpreadsheetId ? extractedSpreadsheetId[1] : null;
     if (event.target.value && extractedSpreadsheetId) {
       setSetupMessage('progress');
-      connectGoogleSheetsAPI();
+      connectGoogleSheetsApi();
     } else if (event.target.value && !spreadsheetId) {
       setSetupMessage('invalidUrl');
       setDisplayEmbed(false);
@@ -215,7 +215,7 @@ const GetEmbedCode = () => {
       ) : (
         <div
           dangerouslySetInnerHTML={{
-            __html: generateEmbedCode({ spreadsheetId }),
+            __html: generateEmbedCode({ spreadsheetId, language, displayList }),
           }}
         />
       )}

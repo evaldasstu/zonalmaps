@@ -10,7 +10,7 @@ import Example from './pages/Example/Example';
 const App = () => (
   <Router basename={process.env.PUBLIC_URL}>
     <Switch>
-      <Route path="/embed/:embedParams">
+      <Route path="/embed/:spreadsheetId">
         <Embed />
       </Route>
       <Route path="/">

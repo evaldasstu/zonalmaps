@@ -50,10 +50,21 @@ table th {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  color: $link-color;
 }
 
-.card-link:not([href]),
+.card-link:not([href]) {
+  color: $link-color;
+  cursor: pointer;
+}
+
 .card-link:not([href]):hover {
+  color: $link-hover-color;
+  cursor: pointer;
+}
+
+.card-link.zm-card-link-disabled,
+.card-link.zm-card-link-disabled:hover {
   color: $nav-link-disabled-color;
   cursor: default;
 }

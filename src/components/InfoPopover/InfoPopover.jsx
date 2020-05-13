@@ -17,12 +17,8 @@ const InfoPopover = ({ children }) => {
       padding={0}
       content={<div className="popover-body">{children}</div>}
     >
-      <div>
-        <Button
-          variant="link"
-          className="zm-info-trigger pr-0"
-          onClick={() => setPopoverOpen(!popoverOpen)}
-        >
+      <div className="zm-info-trigger">
+        <Button variant="link" className="pr-0" onClick={() => setPopoverOpen(!popoverOpen)}>
           <FontAwesomeIcon icon={faQuestionCircle} size="xs" />
         </Button>
       </div>

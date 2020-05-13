@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
-import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Form, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -184,15 +183,13 @@ const GetEmbedCode = () => {
             </Card>
           </AnimatedContainer>
 
-          <LinkContainer to="#">
-            <Card.Link
-              onClick={() => setCustomizeIsActive(!customizeIsActive)}
-              className="d-inline-block mt-4"
-            >
-              Customize embed
-              <FontAwesomeIcon icon={customizeIsActive ? faChevronUp : faChevronDown} size="xs" />
-            </Card.Link>
-          </LinkContainer>
+          <Card.Link
+            onClick={() => setCustomizeIsActive(!customizeIsActive)}
+            className="d-inline-block mt-4"
+          >
+            Customize embed
+            <FontAwesomeIcon icon={customizeIsActive ? faChevronUp : faChevronDown} size="xs" />
+          </Card.Link>
         </Card.Body>
       </Card>
 

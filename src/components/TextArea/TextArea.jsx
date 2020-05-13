@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { LinkContainer } from 'react-router-bootstrap';
 import { Card, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
@@ -53,15 +52,13 @@ const TextArea = ({ embedCode }) => {
 
       {embedCode ? (
         // Enabled copy button
-        <LinkContainer to="#">
-          <Card.Link onClick={copyToClipboard} className="d-inline-block mt-4">
-            Copy to clipboard
-            <FontAwesomeIcon icon={faCopy} size="xs" />
-          </Card.Link>
-        </LinkContainer>
+        <Card.Link onClick={copyToClipboard} className="d-inline-block mt-4">
+          Copy to clipboard
+          <FontAwesomeIcon icon={faCopy} size="xs" />
+        </Card.Link>
       ) : (
         // Disabled copy button
-        <Card.Link className="d-inline-block mt-4">
+        <Card.Link className="d-inline-block mt-4 zm-card-link-disabled">
           Copy to clipboard
           <FontAwesomeIcon icon={faCopy} size="xs" />
         </Card.Link>

@@ -18,7 +18,8 @@
   // Hide title and subtitle
 
   h1,
-  h1 + blockquote {
+  h1 + p,
+  h1 + p + p {
     display: none;
   }
 

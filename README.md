@@ -1,6 +1,8 @@
 # Zonal Maps
 
-> https://evaldasstu.github.io/zonalmaps
+https://evaldasstu.github.io/zonalmaps
+
+![Build and deploy CI](https://github.com/evaldasstu/zonalmaps/workflows/Build%20and%20deployCI/badge.svg)
 
 ## Overview
 

@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 
-function App() {
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import HowToUse from './pages/HowToUse/HowToUse';
+import GetEmbedCode from './pages/GetEmbedCode/GetEmbedCode';
+import Embed from './components/Embed/Embed';
+import Example from './pages/Example/Example';
+
+import { initAnalytics, usePageView } from './utils/analytics';
+
+initAnalytics();
+
+const App = () => {
+  usePageView();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route path="/embed/:spreadsheetId">
+          <Embed />
+        </Route>
+        {/* All other routes except /embed/:spreadsheetId */}
+        <Route path="/">
+          <Container className="my-4">
+            <Row className="justify-content-center">
+              <Col xl={10}>
+                <Header />
+                <Switch>
+                  <Route exact path="/">
+                    <HowToUse />
+                  </Route>
+                  <Route path="/example/:exampleNo">
+                    <Example />
+                    <Footer />
+                  </Route>
+                  <Route exact path="/embed">
+                    <GetEmbedCode />
+                    <Footer />
+                  </Route>
+                </Switch>
+              </Col>
+            </Row>
+          </Container>
+        </Route>
+      </Switch>
+    </>
   );
-}
+};
 
 export default App;

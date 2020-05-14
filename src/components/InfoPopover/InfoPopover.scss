@@ -1,0 +1,16 @@
+// Bootstrap variables
+// @import '../../scss/variable-overrides';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
+// *** InfoPopover *** //
+
+.zm-info-trigger {
+  .btn-link {
+    color: $gray-500;
+  }
+
+  .btn-link:hover {
+    color: $gray-600;
+  }
+}

@@ -1,0 +1,81 @@
+// *** Bootstrap: post-load overrides *** //
+// Here is what could not be themed using Bootstrap variables
+
+// HTML elements
+
+strong {
+  font-family: $headings-font-family;
+  color: $black;
+}
+
+// Typography
+
+h1 {
+  margin-top: 3.5rem; // 56px
+  margin-bottom: 1.5rem; // 24px
+}
+
+h1 small {
+  font-size: 70%;
+}
+
+:not(.card-body) > h1,
+:not(.card-body) > h2 {
+  margin-left: $card-spacer-x;
+}
+
+// Tables
+// not yet used
+
+table th {
+  border-top: 0;
+}
+
+// Cards
+
+.card-header {
+  font-family: $headings-font-family;
+  font-size: 1rem; // 16px
+  font-weight: 500;
+  padding-top: 1rem;
+  padding-bottom: 0.8rem;
+}
+
+.card-body {
+  padding: $card-spacer-x;
+}
+
+.card-link {
+  font-size: 0.75rem; // 12px
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $link-color;
+}
+
+.card-link:not([href]) {
+  color: $link-color;
+  cursor: pointer;
+}
+
+.card-link:not([href]):hover {
+  color: $link-hover-color;
+  cursor: pointer;
+}
+
+.card-link.zm-card-link-disabled,
+.card-link.zm-card-link-disabled:hover {
+  color: $nav-link-disabled-color;
+  cursor: default;
+}
+
+.card-link .fa-xs {
+  margin-bottom: 0.063rem; // 1px
+  margin-left: 0.313rem; // 5px
+}
+
+// TEMP //
+
+iframe {
+  @extend .border !optional;
+}

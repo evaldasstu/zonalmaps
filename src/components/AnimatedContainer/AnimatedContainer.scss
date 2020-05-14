@@ -1,0 +1,11 @@
+// *** AnimatedContainer *** //
+
+.zm-animated-container {
+  will-change: opacity, height;
+  overflow: hidden;
+}
+
+// Invisible border forces ResizeObserver to include child's margins
+.zm-animated-container > div {
+  border: 1px solid transparent;
+}

@@ -4,6 +4,10 @@ https://evaldasstu.github.io/zonalmaps
 
 ![Build and deploy CI](https://github.com/evaldasstu/zonalmaps/workflows/Build%20and%20deploy%20CI/badge.svg)
 
+## Work in Progress
+
+This is work in progress. Check towards the end of May for the 1.0 release.
+
 ## Overview
 
 Zonal Maps creates embeddable maps with location markers using data from [Google Sheets](https://www.google.com/sheets/about/) spreadsheets. It has a powerful **zoning feature** which allows assigning object sets to geographical areas and automatically displays boundaries of such zones.

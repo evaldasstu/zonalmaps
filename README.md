@@ -117,18 +117,6 @@ Following browsers are supported for correct embed rendering:
 | IE 10+               |                    |
 | Edge                 |                    |
 
-## Development
-
-Project source code is stored in a public GitHub repository at https://github.com/evaldasstu/zonalmaps.
-
-This project is based on Create React App. Standard `npm start`, `npm test`, `npm run build` scripts are available in a Node.js development environment. More on this [here](https://create-react-app.dev/docs/available-scripts).
-
-To do: add more on integration, branches, GitHub's encrypted secrets, Google Sheets API code.
-
-### Deployment
-
-Project's `package.json` is configured for deployment to GitHub Pages using `npm run deploy` script.
-
 ## Acknowledgements
 
 Zonal Maps runs using:

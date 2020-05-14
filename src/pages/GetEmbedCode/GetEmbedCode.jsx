@@ -34,8 +34,8 @@ const messages = {
 
 const GetEmbedCode = () => {
   const [spreadsheetUrl, setSpreadsheetUrl] = useState('');
-  const [spreadsheetId, setSpreadsheetId] = useState('');
-  const [setupMessage, setSetupMessage] = useState('');
+  const [spreadsheetId, setSpreadsheetId] = useState(null);
+  const [setupMessage, setSetupMessage] = useState(null);
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
   const [language, setLanguage] = useState('en');
   const [displayList, setDisplayList] = useState(true);

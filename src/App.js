@@ -16,36 +16,34 @@ initAnalytics();
 const App = () => {
   usePageView();
   return (
-    <>
-      <Switch>
-        <Route path="/embed/:spreadsheetId">
-          <Embed />
-        </Route>
-        {/* All other routes except /embed/:spreadsheetId */}
-        <Route path="/">
-          <Container className="my-4">
-            <Row className="justify-content-center">
-              <Col xl={10}>
-                <Header />
-                <Switch>
-                  <Route exact path="/">
-                    <HowToUse />
-                  </Route>
-                  <Route path="/example/:exampleNo">
-                    <Example />
-                    <Footer />
-                  </Route>
-                  <Route exact path="/embed">
-                    <GetEmbedCode />
-                    <Footer />
-                  </Route>
-                </Switch>
-              </Col>
-            </Row>
-          </Container>
-        </Route>
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/embed/:spreadsheetId">
+        <Embed />
+      </Route>
+      {/* All other routes except /embed/:spreadsheetId */}
+      <Route path="/">
+        <Container className="my-4">
+          <Row className="justify-content-center">
+            <Col xl={10}>
+              <Header />
+              <Switch>
+                <Route exact path="/">
+                  <HowToUse />
+                </Route>
+                <Route path="/example/:exampleNo">
+                  <Example />
+                  <Footer />
+                </Route>
+                <Route exact path="/embed">
+                  <GetEmbedCode />
+                  <Footer />
+                </Route>
+              </Switch>
+            </Col>
+          </Row>
+        </Container>
+      </Route>
+    </Switch>
   );
 };
 

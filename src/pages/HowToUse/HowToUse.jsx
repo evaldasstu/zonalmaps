@@ -6,6 +6,7 @@ import ReadMe from '../../../README.md';
 import './HowToUse.scss';
 
 // Render heading anchors for section links
+
 function flatten(text, child) {
   return typeof child === 'string'
     ? text + child
@@ -24,8 +25,15 @@ HeadingRenderer.propTypes = {
   children: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-// Remove 'public/' from image paths
-function ImageRenderer(props) {
+// Filter out GitHub Actions badge to avoid cross-site cookie warning
+
+function ImageRenderer() {
+  return null;
+}
+
+// Remove 'public/' from HTML image paths
+
+function HtmlRenderer(props) {
   const { value } = props;
   const parsedHtml = new DOMParser().parseFromString(value, 'text/html');
   const src = parsedHtml.images[0].src.replace('public/', '');
@@ -33,7 +41,7 @@ function ImageRenderer(props) {
   return createElement('img', { src, width, className: 'img-fluid mb-4' });
 }
 
-ImageRenderer.propTypes = {
+HtmlRenderer.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
@@ -44,7 +52,7 @@ const HowToUse = () => (
       <Card.Body>
         <ReactMarkdown
           source={ReadMe}
-          renderers={{ heading: HeadingRenderer, html: ImageRenderer }}
+          renderers={{ heading: HeadingRenderer, html: HtmlRenderer, image: ImageRenderer }}
         />
       </Card.Body>
     </Card>

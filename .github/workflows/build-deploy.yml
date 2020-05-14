@@ -1,32 +1,28 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests on Node v12
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# This workflow will do a clean install of node dependencies, build the source code,
+# run tests on Node.js v12.x and deploy to GitHub Pages
 
 name: Build and deploy CI
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
-  build:
+  build and deploy:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Build using Node.js 12.x
       uses: actions/setup-node@v1
       with:
-        node-version: 12
+        node-version: 12.x
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
     
-    # Additional step: Deploy to GitHub Pages
-
-    - name: GitHub Pages action
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -2,16 +2,14 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import HowToUse from './pages/HowToUse/HowToUse';
-import GetEmbedCode from './pages/GetEmbedCode/GetEmbedCode';
-import Embed from './components/Embed/Embed';
-import Example from './pages/Example/Example';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import HowToUse from '../../pages/HowToUse/HowToUse';
+import GetEmbedCode from '../../pages/GetEmbedCode/GetEmbedCode';
+import Embed from '../Embed/Embed';
+import Example from '../../pages/Example/Example';
 
-import { initAnalytics, usePageView } from './utils/analytics';
-
-initAnalytics();
+import usePageView from '../../utils/analytics';
 
 const App = () => {
   usePageView();

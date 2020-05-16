@@ -3,14 +3,17 @@ import { useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
 // Init Google Analytics once
-const initAnalytics = () => {
-  if (process.env.NODE_ENV === 'production') {
-    ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
-  }
+const useInitAnalytics = () => {
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_TRACKING_ID);
+    }
+  }, []);
 };
 
 // Register pageviews
 const usePageView = () => {
+  useInitAnalytics();
   const location = useLocation();
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
@@ -19,4 +22,4 @@ const usePageView = () => {
   }, [location]);
 };
 
-export { initAnalytics, usePageView };
+export default usePageView;

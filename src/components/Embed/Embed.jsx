@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import queryString from 'query-string'; // keep at v^5 for legacy browser support
+import queryString from 'query-string'; // keeping at v^5 for legacy browser support
 
 const Embed = () => {
   const { spreadsheetId } = useParams();

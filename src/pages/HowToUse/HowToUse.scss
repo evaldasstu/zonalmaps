@@ -37,16 +37,17 @@
   }
 
   h2:not(:first-of-type) {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
   }
 
   h3 {
-    margin-top: 2.75rem;
+    margin-top: 3.25rem;
   }
 
   h4,
   h5 {
-    margin-top: 2.5rem;
+    font-weight: 500;
+    margin-top: 3rem;
   }
 
   h5 {
@@ -64,10 +65,6 @@
     @extend .table;
     @extend .table-sm;
     table-layout: fixed;
-  }
-
-  table th {
-    border-top: 0;
   }
 
   // Code

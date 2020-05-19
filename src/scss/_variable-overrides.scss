@@ -24,10 +24,12 @@ $grid-gutter-width: 15px;
 
 // Typography
 
-$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-family-sans-serif: 'Lato', sans-serif;
 $font-family-monospace: 'Roboto Mono', monospace;
 
-$font-size-base: 0.938rem; // 15px
+$font-size-base: 1.063rem; // 17px
+
+$font-weight-bolder: 900;
 
 $line-height-base: 1.7;
 
@@ -43,6 +45,11 @@ $headings-font-weight: 400;
 $headings-color: #000;
 
 $display4-size: 2.75rem;
+
+// Tables
+
+$table-hover-bg: rgba(0, 0, 0, 0.03);
+$table-head-color: #000;
 
 // Forms
 

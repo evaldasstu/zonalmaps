@@ -38,7 +38,7 @@ const GetEmbedCode = () => {
   const [setupMessage, setSetupMessage] = useState(null);
   const [customizeIsActive, setCustomizeIsActive] = useState(false);
   const [language, setLanguage] = useState('en');
-  const [displayList, setDisplayList] = useState(true);
+  const [displayTable, setDisplayTable] = useState(true);
   const [displayEmbed, setDisplayEmbed] = useState(false);
 
   const handleSuccessfulConnection = () => {
@@ -133,19 +133,19 @@ const GetEmbedCode = () => {
                 <Form>
                   <Row>
                     <Col xs={4} className="my-auto d-lg-none py-2">
-                      <Form.Label htmlFor="displayList" className="mb-0">
-                        List
+                      <Form.Label htmlFor="displayTable" className="mb-0">
+                        Table
                       </Form.Label>
                     </Col>
 
                     <Col xs={8} lg="auto" className="my-auto py-2">
                       <Form.Check
-                        id="displayList"
+                        id="displayTable"
                         type="checkbox"
-                        label="Display location list"
-                        checked={displayList}
+                        label="Display location table"
+                        checked={displayTable}
                         onChange={() => {
-                          setDisplayList(!displayList);
+                          setDisplayTable(!displayTable);
                         }}
                       />
                     </Col>
@@ -202,7 +202,7 @@ const GetEmbedCode = () => {
             embedCode={generateEmbedCode({
               spreadsheetId,
               language,
-              displayList,
+              displayTable,
             })}
           />
         </Card.Body>
@@ -214,7 +214,7 @@ const GetEmbedCode = () => {
       ) : (
         <div
           dangerouslySetInnerHTML={{
-            __html: generateEmbedCode({ spreadsheetId, language, displayList }),
+            __html: generateEmbedCode({ spreadsheetId, language, displayTable }),
           }}
         />
       )}

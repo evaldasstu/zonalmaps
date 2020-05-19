@@ -1,0 +1,24 @@
+// Import PrimeReact styles
+
+// @import '~primereact/resources/themes/nova-light/theme.css';
+@import '~primereact/resources/primereact.min.css';
+@import '~primeicons/primeicons.css';
+
+// Table
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+}
+
+.coordinates {
+  display: none;
+}
+
+// Icons
+
+.pi {
+  font-size: 0.625rem; // 10px
+  margin-left: 0.125rem;
+  opacity: 0.5;
+}

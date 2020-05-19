@@ -4,13 +4,14 @@
 // HTML elements
 
 strong {
-  font-family: $headings-font-family;
+  // font-family: $headings-font-family;
   color: $black;
 }
 
 // Typography
 
 h1 {
+  font-weight: 400;
   margin-top: 3.5rem; // 56px
   margin-bottom: 1.5rem; // 24px
 }
@@ -25,10 +26,10 @@ h1 small {
 }
 
 // Tables
-// not yet used
 
-table th {
+.table th {
   border-top: 0;
+  font-weight: 900;
 }
 
 // Cards
@@ -47,7 +48,7 @@ table th {
 
 .card-link {
   font-size: 0.75rem; // 12px
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: $link-color;

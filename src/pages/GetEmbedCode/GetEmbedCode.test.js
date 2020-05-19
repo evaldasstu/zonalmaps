@@ -27,9 +27,9 @@ test('displays embed code after valid URL entry', async () => {
   expect(output).toHaveValue(expectedOutput);
 });
 
-test('displays map only embed code after valid URL entry and list uncheck', async () => {
+test('displays map only embed code after valid URL entry and table display uncheck', async () => {
   const { getEmbedCode, output } = await setup();
-  userEvent.click(getEmbedCode.getByLabelText(/list/i));
-  const expectedOutput = `<div class="zm"><iframe src="${envUrl}/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM?list=0" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>`;
+  userEvent.click(getEmbedCode.getByLabelText(/table/i));
+  const expectedOutput = `<div class="zm"><iframe src="${envUrl}/embed/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM?table=0" frameborder="0"></iframe><style>.zm {position: relative; padding-bottom: 150%; height: 0; overflow: hidden; max-width: 100%} .zm iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%}</style></div>`;
   expect(output).toHaveValue(expectedOutput);
 });

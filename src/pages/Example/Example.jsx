@@ -39,7 +39,7 @@ const Example = () => {
     gapi.load('client', () => {
       gapi.client
         .init({
-          apiKey: process.env.REACT_APP_GOOGLE_SHEETS_API_KEY,
+          apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
         })
         .then(() => {
           return gapi.client.request({

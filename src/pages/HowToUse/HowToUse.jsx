@@ -38,7 +38,7 @@ function HtmlRenderer(props) {
   const parsedHtml = new DOMParser().parseFromString(value, 'text/html');
   const src = parsedHtml.images[0].src.replace('public/', '');
   const { width } = parsedHtml.images[0];
-  return createElement('img', { src, width, className: 'img-fluid mb-4' });
+  return createElement('img', { src, width, className: 'img-fluid d-block mb-4' });
 }
 
 HtmlRenderer.propTypes = {

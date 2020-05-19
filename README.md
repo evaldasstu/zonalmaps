@@ -32,13 +32,13 @@ To do: add visuals.
 
 ### Spreadsheet specification
 
-The simplest possible spreadsheet that could be understood by Zonal Maps would look like this:
+The simplest possible spreadsheet that could be understood by Zonal Maps would consist of a single sheet named `Data` which would look like this:x
 
 <img src="./public/readme/spreadsheet-screenshot-927427.png" alt="Spreadsheet screenshot" width="175" />
 
-Pasting a link to this spreadhsheat into [Get embed code](https://evaldasstu.github.io/zonalmaps/embed) form would result a map centered around a single marked point. `Coordinates` is the only required _attribute_ in the spreadsheet, but there can be more of them.
+Pasting a link to this spreadsheet into [Get embed code](https://evaldasstu.github.io/zonalmaps/embed) form would result a map centered around a single marked point. `Coordinates` is the only required _attribute_ in the spreadsheet, but there can be more of them.
 
-Attributes can be freely named, except `Coordinates` and `Zone`, which are [special attributes](#special-attributes). All attributes must reside in spreadsheet's Row 1. Each subsequent row represents a location displayed on the map. There is no need for a list numbering attribute, as numbers are assigned automatically.
+Attributes can be freely named, except `Coordinates` and `Zone`, which are [special attributes](#special-attributes). All attributes must reside in spreadsheet's Row 1. Each subsequent row represents a location displayed on the map. There is no need for a numbering attribute, as numbers are assigned automatically.
 
 This is an example of a bit more complex spreadsheet, which includes [`Zone`](#zone), another special attribute:
 
@@ -46,12 +46,12 @@ This is an example of a bit more complex spreadsheet, which includes [`Zone`](#z
 
 #### Special attributes
 
-Special attribute names are presented in uppercase form to keep consistency with custom attributes, however they are case–insensitive. Special attributes are not displayed in location lists.
+Special attribute names are presented in uppercase form to keep consistency with custom attributes, however they are case–insensitive.
 
-| Special attribute | Required | Example value             |
-| :---------------- | :------- | :------------------------ |
-| `Coordinates`     | +        | `54.698415, 25.271016`    |
-| `Zone`            |          | Central Business District |
+| Special attribute | Required | Visible in table | Example value          |
+| :---------------- | :------- | :--------------- | :--------------------- |
+| `Coordinates`     | +        |                  | `54.698415, 25.271016` |
+| `Zone`            |          | +                | Airport area           |
 
 ##### `Coordinates`
 
@@ -67,12 +67,12 @@ To do: add more.
 
 | Sheet name     | Required | Notes                                                 |
 | :------------- | :------- | :---------------------------------------------------- |
-| `Data`         | +        | Can have any name when no other sheets are present    |
+| `Data`         | +        |                                                       |
 | `Translations` |          | See [Multilingual embeds](#multilingual-embeds) below |
 
 #### Multilingual embeds
 
-If there is a need to offer map versions in more than one language, it is possible to provide attribute translations in the same spreadsheet. In such case, the main sheet of the spreadsheet containing the list of locations will have to be named `Data`, while another sheet named `Translations` will have to be created.
+If there is a need to offer map versions in more than one language, it is possible to provide attribute translations in a sheet named `Translations` inside the same spreadsheet.
 
 Open [this spreadsheet](https://docs.google.com/spreadsheets/d/1hEG0yonVRlBs50UNzGc2uiv6pBJyzY1mQczfINHwnEM/edit?usp=sharing), which is the source for [Example 1](https://evaldasstu.github.io/zonalmaps/example/1) and check `Translations` sheet to see how multilingual map versions can be implemented.
 
@@ -98,7 +98,7 @@ It should be relatively easy to use such embed code by adding it if you have acc
 
 If attribute translations are provided in the spreadsheet, language can be changed by choosing **Customize embed** and selecting **Language**. See [Multilingual embeds](#multilingual-embeds) for details.
 
-By default, Zonal Maps displays a location list as a sortable table below the map. If this functionality is not needed, list display can be turned off by choosing **Customize embed** and unchecking **Display location list**.
+By default, Zonal Maps displays a sortable location table below the map. If this functionality is not needed, table display can be turned off by choosing **Customize embed** and unchecking **Display location table**.
 
 ## Use embed code
 

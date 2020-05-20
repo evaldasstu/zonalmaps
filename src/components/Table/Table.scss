@@ -1,4 +1,9 @@
-// Import PrimeReact styles
+// Bootstrap variables
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// PrimeReact styles
 
 // @import '~primereact/resources/themes/nova-light/theme.css';
 @import '~primereact/resources/primereact.min.css';
@@ -7,22 +12,40 @@
 // Table
 
 .p-datatable {
-  font-size: 0.688rem; //11px
-
   .p-datatable-tbody > tr > td {
-    padding-top: 0.15em;
-    padding-bottom: 0.15em;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
   }
 
   // Hide coordinate column
+
   .coordinates {
     display: none;
   }
 
   // Icons
+
   .pi {
-    font-size: 0.5rem; // 8px
+    font-size: 0.75em; // 8px
     margin-left: 0.125rem;
     opacity: 0.5;
+  }
+
+  // Responsive font sizes
+
+  @include media-breakpoint-up(xs) {
+    font-size: 8px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    font-size: 9px; //9px
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 10px; //10px
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: 0.688rem; //11px
   }
 }

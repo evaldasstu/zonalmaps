@@ -6,19 +6,23 @@
 
 // Table
 
-.p-datatable .p-datatable-tbody > tr > td {
-  padding-top: 0.15em;
-  padding-bottom: 0.15em;
-}
+.p-datatable {
+  font-size: 0.688rem; //11px
 
-.coordinates {
-  display: none;
-}
+  .p-datatable-tbody > tr > td {
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+  }
 
-// Icons
+  // Hide coordinate column
+  .coordinates {
+    display: none;
+  }
 
-.pi {
-  font-size: 0.625rem; // 10px
-  margin-left: 0.125rem;
-  opacity: 0.5;
+  // Icons
+  .pi {
+    font-size: 0.5rem; // 8px
+    margin-left: 0.125rem;
+    opacity: 0.5;
+  }
 }

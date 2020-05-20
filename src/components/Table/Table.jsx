@@ -33,11 +33,9 @@ const Table = ({ headers, data }) => {
   }, [headers, data]);
 
   return (
-    <small>
-      <DataTable value={data} autoLayout sortField="no" sortOrder={1} className="table table-hover">
-        {cols}
-      </DataTable>
-    </small>
+    <DataTable value={data} autoLayout sortField="no" sortOrder={1} className="table table-hover">
+      {cols}
+    </DataTable>
   );
 };
 

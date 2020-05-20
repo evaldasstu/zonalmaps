@@ -20,19 +20,18 @@ const Data = ({ spreadsheetId, onLoad }) => {
     };
 
     // Convert spreadsheet array output to object
-    const prepareData = (gridData) => {
-      const objectData = [];
+    const prepareData = (grid) => {
+      const prepared = [];
       // Iterate starting with row 2
-      for (let rowIndex = 1; rowIndex < gridData.length; rowIndex += 1) {
+      for (let rowIndex = 1; rowIndex < grid.length; rowIndex += 1) {
         // Add number column
-        objectData.push({ no: rowIndex });
+        prepared.push({ no: rowIndex });
 
-        gridData[rowIndex].forEach((value, colIndex) => {
-          objectData[rowIndex - 1][toCamelCase(gridData[0][colIndex])] = value;
+        grid[rowIndex].forEach((value, colIndex) => {
+          prepared[rowIndex - 1][toCamelCase(grid[0][colIndex])] = value;
         });
       }
-
-      setData(objectData);
+      setData(prepared);
     };
 
     gapi.load('client', () => {

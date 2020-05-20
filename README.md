@@ -32,7 +32,7 @@ To do: add visuals.
 
 ### Spreadsheet specification
 
-The simplest possible spreadsheet that could be understood by Zonal Maps would consist of a single sheet named `Data` which would look like this:x
+The simplest possible spreadsheet that could be understood by Zonal Maps would consist of a single sheet named `Data` which would look like this:
 
 <img src="./public/readme/spreadsheet-screenshot-927427.png" alt="Spreadsheet screenshot" width="175" />
 
@@ -48,10 +48,10 @@ This is an example of a bit more complex spreadsheet, which includes [`Zone`](#z
 
 Special attribute names are presented in uppercase form to keep consistency with custom attributes, however they are case–insensitive.
 
-| Special attribute | Required | Visible in table | Example value          |
-| :---------------- | :------- | :--------------- | :--------------------- |
-| `Coordinates`     | +        |                  | `54.698415, 25.271016` |
-| `Zone`            |          | +                | Airport area           |
+| Special attribute | Required | Visible in table | Example value             |
+| :---------------- | :------- | :--------------- | :------------------------ |
+| `Coordinates`     | +        |                  | `54.698415, 25.271016`    |
+| `Zone`            |          | +                | Central Business District |
 
 ##### `Coordinates`
 

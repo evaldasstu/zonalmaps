@@ -6,7 +6,7 @@ https://evaldasstu.github.io/zonalmaps
 
 ## Work in Progress
 
-This is work in progress. Check towards the end of May for the 1.0 release.
+This is work in progress.
 
 ## Overview
 
@@ -134,4 +134,4 @@ As well as with the help of [Bootstrap](https://getbootstrap.com), [Sass](https:
 ## License
 
 Zonal Maps is open source software licensed under the MIT license.  
-Copyright © 2020 Evaldas Stulgaitis
+Copyright © 2020-2021 Evaldas Stulgaitis
